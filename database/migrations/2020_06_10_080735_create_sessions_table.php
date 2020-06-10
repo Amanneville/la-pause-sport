@@ -22,6 +22,7 @@ class CreateSessionsTable extends Migration
             $table->date('date');
             $table->string('adresse');
             $table->string('ville');
+            $table->integer('code_postal');
             $table->integer('niveau');
             $table->integer('nb_max_participants');
             $table->integer('prix');
