@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
             $table->integer('sport3');
             $table->integer('niveau3');
             $table->integer('exp3');
-            $table->integer('reputation_coach');
+            $table->integer('reputation_coach')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

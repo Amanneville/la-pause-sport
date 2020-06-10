@@ -15,8 +15,8 @@ class CreateSessionsTable extends Migration
     {
         Schema::create('sessions', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_auteur');
-            $table->foreignId('id_sport')->constrained('sports');
+            $table->unsignedBigInteger('id_auteur')->nullable();
+            $table->foreignId('id_sport')->nullable()->constrained('sports')->onUpdate('cascade')->onDelete('cascade');
             $table->time('heure_debut');
             $table->time('heure_fin');
             $table->date('date');

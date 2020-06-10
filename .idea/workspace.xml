@@ -20,10 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f52e81c-c5a9-4b5b-bd11-e2481fa9b13f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/la-pause-sport.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/la-pause-sport.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_10_080735_create_sessions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_10_080735_create_sessions_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +168,16 @@
       <option name="presentableId" value="Default" />
       <updated>1591733668935</updated>
       <workItem from="1591733671518" duration="5105000" />
-      <workItem from="1591781447507" duration="663000" />
+      <workItem from="1591781447507" duration="858000" />
+      <workItem from="1591783261583" duration="286000" />
+      <workItem from="1591783699049" duration="409000" />
+      <workItem from="1591784278570" duration="2279000" />
+      <workItem from="1591791528235" duration="1389000" />
+      <workItem from="1591793609226" duration="383000" />
+      <workItem from="1591794047723" duration="2305000" />
+      <workItem from="1591796745630" duration="1655000" />
+      <workItem from="1591798683814" duration="3692000" />
+      <workItem from="1591817731809" duration="6080000" />
     </task>
     <servers />
   </component>
@@ -191,6 +202,10 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
+    <state x="1044" y="330" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591794212940">
+      <screen x="0" y="23" width="2048" height="1056" />
+    </state>
+    <state x="1044" y="330" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.2048.1056@0.23.2048.1056" timestamp="1591794212940" />
     <state x="580" y="169" key="FileChooserDialogImpl" timestamp="1591628215108">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
