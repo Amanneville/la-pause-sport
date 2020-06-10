@@ -18,6 +18,7 @@ use Illuminate\Support\Str;
 */
 
 // php artisan tinker
+// @documentation : https://github.com/fzaninotto/Faker
 // @link : https://www.youtube.com/watch?v=TxfFw6AyVnc
 //                  nb de personnes à créer.
 // factory(App\User::class, 15)->create()
