@@ -17,7 +17,7 @@ class CreateSessionsTable extends Migration
             $table->id();
             $table->bigInteger('id_auteur');
             //$table->foreignId('id_sport')->constrained('sports')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('id_sport');
+            //$table->integer('id_sport');
             $table->time('heure_debut');
             $table->time('heure_fin');
             $table->date('date');

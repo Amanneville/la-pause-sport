@@ -15,7 +15,7 @@ class SessionsTableSeeder extends Seeder
     {
         Session::insert([
             ['id_auteur' => '2'],
-            ['id_sport' => '1'],
+           // ['id_sport' => '1'],
             ['heure_debut' => '15:35:23'],
             ['heure_fin' => ' 14:33:22'],
             ['date' => '2020-06-10'],

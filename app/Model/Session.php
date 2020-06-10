@@ -8,7 +8,7 @@ class Session extends Model
 {
     protected $fillable = [
         'id_auteur',
-        'id_sport',
+        //'id_sport',
         'heure_debut',
         'heure_fin',
         'date',
