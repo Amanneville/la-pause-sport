@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Session;
+namespace App\Http\Controllers;
 
 use App\Model\Session;
 use Illuminate\Http\Request;
