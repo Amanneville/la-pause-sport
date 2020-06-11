@@ -18,6 +18,7 @@ use Illuminate\Support\Str;
 */
 
 // php artisan tinker
+// Attention : importer la classe
 // @documentation : https://github.com/fzaninotto/Faker
 // @link : https://www.youtube.com/watch?v=TxfFw6AyVnc
 //                  nb de personnes à créer.
@@ -40,7 +41,6 @@ $factory->define(User::class, function (Faker $faker) {
         'exp2' =>  $faker->numberBetween(200,400),
         'sport3'=> $faker->numberBetween(1,4),
         'niveau3' =>$faker->numberBetween (1,4),
-
         'reputation_coach' => $faker->numberBetween(10,50),
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
