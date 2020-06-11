@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('lastname');
             $table->integer('age');
             $table->string('adresse');
-            $table->integer('code_postal');
+            $table->string('code_postal');
             $table->integer('sport1');
             $table->integer('niveau1');
             $table->integer('exp1');
