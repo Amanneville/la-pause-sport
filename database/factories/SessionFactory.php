@@ -6,6 +6,7 @@ use App\Session;
 use Faker\Generator as Faker;
 
 // php artisan tinker
+// voir dépendances
 // factory(App\Session::class, 15)->create()
 
 

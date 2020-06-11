@@ -31,8 +31,8 @@ $factory->define(User::class, function (Faker $faker) {
         'firstname' => $faker->name,
         'lastname' => $faker->lastName,
         'age' => $faker->numberBetween(18,70),
-        'adresse' => $faker->address, // changer en string
-        'code_postal' => $faker->postcode,
+        'adresse' => $faker->address,
+        'code_postal' => $faker->postcode, // changer en string
         'sport1' => $faker->numberBetween(1,4),
         'niveau1' => $faker->numberBetween(1,4),
         'exp1' =>  $faker->numberBetween(2,99),
