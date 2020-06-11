@@ -14,15 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('layouts/master');
-//});
 
 Route::get('/', function () {
     return view('welcome');
 });
-
-Auth::routes();
 
 // Création d'une session
 Route::get('/session', 'SessionController@index');
@@ -36,3 +31,11 @@ Route::get('/role', 'RoleController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/tchat', function () {
+    return view('tchat.tchatHome');
+});
