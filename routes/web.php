@@ -16,6 +16,13 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', function () {
 //    return view('layouts/master');
 //});
+Route::get('/', function () {
+    return view('layouts.master');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,6 +36,10 @@ Route::get('/session-list', 'SessionListController@index');
 
 // Accés ADMIN
 Route::get('/role', 'RoleController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 

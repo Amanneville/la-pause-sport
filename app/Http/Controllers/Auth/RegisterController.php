@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\User;
+use App\Model\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -52,12 +52,12 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'firstname' => ['required', 'string', 'max:255'],
             'lastname' => ['required', 'string', 'max:255'],
-            'age' => ['required', 'string', 'max:255'],
+            'age' => ['required', 'int', 'max:150'],
             'adresse' => ['required', 'string', 'max:255'],
-            'code_postal' => ['required', 'date', 'max:255'],
-            'sport1' => ['required', 'string', 'max:255'],
-            'sport2' => ['required', 'string', 'max:255'],
-            'sport3' => ['required', 'string', 'max:255'],
+            'code_postal' => ['required', 'string'],
+            'niveau1' => ['required', 'int', 'max:11'],
+            'niveau2' => ['required', 'int', 'max:11'],
+            'niveau3' => ['required', 'int', 'max:11'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -67,20 +67,20 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \App\Model\User
      */
     protected function create(array $data)
     {
         return User::create([
-            'firstname' => ['required', 'string', 'max:255'],
-            'lastname' => ['required', 'string', 'max:255'],
-            'age' => ['required', 'string', 'max:255'],
-            'adresse' => ['required', 'string', 'max:255'],
-            'code_postal' => ['required', 'date', 'max:255'],
-            'sport1' => ['required', 'string', 'max:255'],
-            'sport2' => ['required', 'string', 'max:255'],
-            'sport3' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'firstname' => $data['firstname'],
+            'lastname' => $data['lastname'],
+            'age' => $data['age'],
+            'adresse' => $data['adresse'],
+            'code_postal' => $data['code_postal'],
+            'niveau1' => $data['niveau1'],
+            'niveau2' => $data['niveau2'],
+            'niveau3' => $data['niveau3'],
+            'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
     }
