@@ -12,6 +12,7 @@ use Faker\Generator as Faker;
 $factory->define(\App\Session::class, function (Faker $faker) {
     return [
             'id_sport' => $faker->numberBetween(1,4),
+            'id_auteur' => $faker->numberBetween(1,99),
             'heure_debut' => now(),
             'heure_fin' => now(),
             'date' => $faker->date('Y-m-d'),
