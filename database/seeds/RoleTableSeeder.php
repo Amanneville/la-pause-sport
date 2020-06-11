@@ -13,9 +13,9 @@ class RolesTableSeeder extends Seeder
     public function run()
     {
         Role::insert([
-            ['statut' => 'administrateur'],
-            ['statut' => 'coach'],
-            ['statut' => 'membre']
+            ['name' => 'administrateur'],
+            ['name' => 'coach'],
+            ['name' => 'membre']
         ]);
     }
 }
