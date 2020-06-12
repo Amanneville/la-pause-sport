@@ -1,10 +1,8 @@
 <?php
 
-use App\Model\User;
-
 use Illuminate\Database\Seeder;
 
-class UserTableSeeder extends Seeder
+class RoleUserTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +11,6 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
     }
 }

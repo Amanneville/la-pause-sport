@@ -15,19 +15,21 @@ class CreateSessionsTable extends Migration
     {
         Schema::create('sessions', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_auteur');
-            $table->bigInteger('id_sport');
+            $table->unsignedBigInteger('id_auteur')->nullable();
+            $table->foreignId('id_sport')->nullable()->constrained('sports')->onUpdate('cascade')->onDelete('cascade');
             $table->time('heure_debut');
             $table->time('heure_fin');
             $table->date('date');
             $table->string('adresse');
             $table->string('ville');
+            $table->string('code_postal');
             $table->integer('niveau');
             $table->integer('nb_max_participants');
             $table->integer('prix');
             $table->integer('note');
             $table->integer('chat_id');
             $table->timestamps();
+
         });
     }
 

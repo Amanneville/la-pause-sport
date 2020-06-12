@@ -19,10 +19,21 @@
 {{--<p>Bienvenue <b>{{ $prenom }}</b> ! </p>--}}
 
 <div id="contenu">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+</head>
+<body>
+
+<div id="content">
+
     @yield('content')
 </div>
 
 @yield('scripts-footer')
 <h3>FOOTER DE PAGE MASTER</h3>
 
+<script src="{{ asset ('js/app.js') }}" defer></script>
+</body>
+</html>
 
