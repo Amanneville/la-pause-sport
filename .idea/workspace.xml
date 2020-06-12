@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f52e81c-c5a9-4b5b-bd11-e2481fa9b13f" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -31,13 +32,28 @@
       <change afterPath="$PROJECT_DIR$/database/migrations/2020_06_10_082901_create_session_user_table.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/database/migrations/2020_06_10_083221_create_messages_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/session-list/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SessionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Sport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Sport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/SessionFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/SessionFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_09_200543_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_09_200543_create_roles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+>>>>>>> paul
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -172,7 +188,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1591733668935</updated>
+<<<<<<< HEAD
       <workItem from="1591733671518" duration="5508000" />
+=======
+      <workItem from="1591733671518" duration="5105000" />
+      <workItem from="1591781447507" duration="858000" />
+      <workItem from="1591783261583" duration="286000" />
+      <workItem from="1591783699049" duration="409000" />
+      <workItem from="1591784278570" duration="2279000" />
+      <workItem from="1591791528235" duration="1389000" />
+      <workItem from="1591793609226" duration="383000" />
+      <workItem from="1591794047723" duration="2305000" />
+      <workItem from="1591796745630" duration="1655000" />
+      <workItem from="1591798683814" duration="3692000" />
+      <workItem from="1591817731809" duration="6510000" />
+      <workItem from="1591861513056" duration="1557000" />
+      <workItem from="1591877384249" duration="21463000" />
+>>>>>>> paul
     </task>
     <servers />
   </component>
@@ -197,6 +229,11 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
+    <state x="1044" y="329" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591882299665">
+      <screen x="0" y="23" width="2048" height="1052" />
+    </state>
+    <state x="1044" y="329" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.2048.1052@0.23.2048.1052" timestamp="1591882299665" />
+    <state x="1044" y="330" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.2048.1056@0.23.2048.1056" timestamp="1591794212940" />
     <state x="580" y="169" key="FileChooserDialogImpl" timestamp="1591628215108">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

@@ -15,8 +15,8 @@ class CreateSessionUserTable extends Migration
     {
         Schema::create('session_user', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('session_id');
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('session_id')->constrained();
         });
     }
 
