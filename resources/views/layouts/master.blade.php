@@ -25,5 +25,4 @@
 @yield('scripts-footer')
 <h3>FOOTER DE PAGE MASTER</h3>
 
-</body>
-</html>
+

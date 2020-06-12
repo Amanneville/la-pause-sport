@@ -36,6 +36,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/tchat', function () {
-    return view('tchat.tchatHome');
-});
+// Tchat
+
+Route::post('/message', 'MessageController@store');
+Route::get('/message', 'MessageController@index');
+
+
+
+
+

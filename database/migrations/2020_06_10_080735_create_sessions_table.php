@@ -23,7 +23,7 @@ class CreateSessionsTable extends Migration
             $table->time('heure_fin')->nullable();
             $table->date('date')->nullable();
             $table->string('adresse')->nullable();
-            $table->integer('code_postal')->nullable();
+            $table->string('code_postal')->nullable();
             $table->string('ville')->nullable();
             $table->integer('niveau')->nullable();
             $table->integer('nb_max_participants')->nullable();
