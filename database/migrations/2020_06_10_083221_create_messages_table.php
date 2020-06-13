@@ -22,9 +22,6 @@ class CreateMessagesTable extends Migration
             $table->tinyInteger('is_read');
             $table->foreignId('session_id')->nullable()->constrained();
 
-            $table->foreignId('chat_id')->constrained('chat');
-            $table->text('content');
-
             $table->timestamps();
         });
     }

@@ -41,15 +41,39 @@
 
     <div id="chatBox"></div>
 
-    <form name="message" action="">
-        <input name="msgUser" type="text" id="msgUser" size="63" placeholder="votre message ici"/>
-        <input name="btnMsg" type="submit"  id="btnMsg" value="Envoyer" />
+    <form name="message" action="" method="post">
+
+<div class="col-md-6">
+    <input name="from" type="text" id="from" size="63" placeholder="user"/>
+</div>
+        <div class="col-md-6">
+            <input name="to" type="text" id="to" size="63" placeholder="destinataire"/>
+        </div>
+
+    <div class="col-md-6">
+        <input name="message" type="text" id="msgUser" size="63" placeholder="votre message ici"/>
+    </div>
+
+
+        <div class="col-md-6">
+            <input name="is_read" type="text" id="is_read" size="63"/>
+        </div>
+
+        <div class="col-md-6">
+            <input name="session_id" type="text" id="session_id" size="63"/>
+        </div>
+
+<div>
+    <input name="message" type="submit"  id="message" value="Envoyer" />
+</div>
+
+
     </form>
 
 </div>
 
 <br>
-<h3>Table des messages</h3>
+<h3>Table des messages de la Session N°2 - ordre récents->anciens</h3>
     <table>
         <thead>
         <tr class="table table-dark">
