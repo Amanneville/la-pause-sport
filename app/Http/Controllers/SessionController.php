@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\LevelSportUser;
 use App\Session;
+use App\SessionUser;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -39,6 +40,8 @@ class SessionController extends Controller
             ->whereDate('date', '>=', Carbon::now() )
             ->get();
 
-        dd($users->all());
+       // dd($users->all());
+
+
     }
 }
