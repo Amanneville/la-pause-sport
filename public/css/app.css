@@ -64,6 +64,37 @@ section {
   display: block;
 }
 
+.back1
+{
+    background-image: url("../assets/images/inscriptionback.jpg");
+    background-repeat: no-repeat;
+    min-width:100%;
+    height: auto;
+}
+
+{
+    background-image: url("../assets/images/inscriptionback.jpg");
+}
+.background1{
+    background-image: url("../assets/images/inscriptionback.jpg") no-repeat;
+    height: 100%;
+    width: 100%;
+}
+.background2{
+    background-image: url("../assets/images/inscriptioncoachback.jpg") no-repeat;
+    padding-top: 0px;
+    height: 100%;
+}
+.background3{
+    background-image: url("../assets/images/homeback.jpg") no-repeat;
+    padding-top: 0px;
+    height: 100%;
+}
+.background4{
+    background-image: url("../assets/images/sessionback.jpg") no-repeat;
+    padding-top: 0px;
+    height: 100%;
+}
 body {
   margin: 0;
   font-family: "Nunito", sans-serif;

@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
-class RegisterController extends Controller
+class RegisterControllerCoach extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -55,10 +55,10 @@ class RegisterController extends Controller
             'age' => ['required', 'int', 'max:150'],
             'adresse' => ['required', 'string', 'max:255'],
             'code_postal' => ['required', 'string'],
-            'niveauRunning' => ['string', 'max:255'],
-            'niveauMusculation' => ['string', 'max:255'],
-            'niveauYoga' => ['string', 'max:255'],
-            'niveauFitness' => ['string', 'max:255'],
+            'niveauRunning' => ['required', 'int', 'max:11'],
+            'niveauMusculation' => ['required', 'int', 'max:11'],
+            'niveauYoga' => ['required', 'int', 'max:11'],
+            'niveauFitness' => ['required', 'int', 'max:11'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);

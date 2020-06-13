@@ -29,7 +29,7 @@ Route::get('/', function () {
 });
 
 // Création d'une session
-Route::get('/session', 'SessionController@index');
+Route::get('/session', 'SessionController@index')->name('creationSession');
 //Liste des sessions existantes
 Route::get('/session-list', 'SessionListController@index');
 
@@ -37,10 +37,32 @@ Route::get('/session-list', 'SessionListController@index');
 // Accés ADMIN
 Route::get('/role', 'RoleController@index');
 
-Auth::routes();
+// Accés Coach
+Route::get('/registerCoach', 'Auth\RegisterController@registerCoach')->name('registerCoach');;
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+
+// Image Profil route controleur
+Route::middleware ('auth', 'verified')->group (function (){
+    Route::resource ('image',
+    'ImageController', [
+        'only'=>['create', 'store', 'destroy', 'update']
+        ]);
+});
+
+// Route vers la gestion de profil
+
+Route::get('profile', 'UserController@profile');
+Route::post('profile', 'UserController@update_avatar');
+
+
+// Profil Controleur   a verifier a bientot suprimer
+
+Route::middleware ('auth', 'verified')->group (function () {
+    Route::resource ('profile', 'ProfileController', [
+        'only' => ['edit', 'update', 'destroy', 'show'],
+        'parameters' => ['profile' => 'user']
+    ]);
+});

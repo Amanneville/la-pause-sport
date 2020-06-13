@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="container-fluid text-center  bac1">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -12,8 +11,12 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
+
+                        //Image
+
+
                         <div class="form-group row">
-                            <label for="firstname" class="col-md-4 col-form-label text-md-right">{{ __('Prenom') }}</label>
+                            <label for="firstname" class="col-md-4 col-form-label text-md-right">{{ __('Firstname') }}</label>
 
                             <div class="col-md-6">
                                 <input id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="firstname" autofocus>
@@ -26,7 +29,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Nom') }}</label>
+                            <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Lastname') }}</label>
 
                             <div class="col-md-6">
                                 <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
@@ -40,9 +43,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('Age') }}</label>
+                            <label for="age" class="col-md-2 col-form-label text-md-right">{{ __('Age') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-2">
                                 <input id="age" type="number" class="form-control @error('age') is-invalid @enderror" name="age" value="{{ old('age') }}" required autocomplete="age" autofocus>
 
                                 @error('age')
@@ -67,7 +70,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="code_postal" class="col-md-4 col-form-label text-md-right">{{ __('Code postal') }}</label>
+                            <label for="code_postal" class="col-md-4 col-form-label text-md-right">{{ __('Code_postal') }}</label>
 
                             <div class="col-md-6">
                                 <input id="code_postal" type="number" class="form-control @error('code_postal') is-invalid @enderror" name="code_postal" value="{{ old('code_postal') }}" required autocomplete="code_postal" autofocus>
@@ -81,7 +84,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Addresse mail') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -95,7 +98,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Mot de passe') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -109,7 +112,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmation mot de passe') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
@@ -117,20 +120,19 @@
                         </div>
 
 
-                                         Votre niveau de sport:
-                        <br>
+                        // les niveaux de sport
 
                         <div class="form-group row">
-                            <label for="niveauRunning" class="col-md-4 col-form-label text-md-right">{{ __('Niveau en running') }}</label>
+                            <label for="niveau1" class="col-md-4 col-form-label text-md-right">{{ __('Niveau1') }}</label>
 
                             <div class="col-md-6">
-                                <select id="niveauRunning" class="form-control @error('niveauRunning') is-invalid @enderror" name="niveauRunning">
-                                    <option value="1" selected>Je débute</option>
-                                    <option value="2">Je pratique ce sport regulièrement</option>
-                                    <option value="3">Je pratique très bien ce sport</option>
+                                <select id="niveau1" class="form-control @error('niveau1') is-invalid @enderror" name="niveau1" value="{{ old('niveau1') }}" required autocomplete="niveau1" autofocus>
+                                    <option value="1" selected>Je veux coacher des membres debutant</option>
+                                    <option value="2">Je veux coacher des membres intermediaire</option>
+                                    <option value="3">Je veux coacher des membre de haut niveau</option>
                                 </select>
 
-                                @error('niveauRunning')
+                                @error('niveau1')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -140,15 +142,15 @@
 
 
                         <div class="form-group row">
-                            <label for="niveauMusculation" class="col-md-4 col-form-label text-md-right">{{ __('Niveau en musculation') }}</label>
+                            <label for="niveau2" class="col-md-4 col-form-label text-md-right">{{ __('Niveau2') }}</label>
 
                             <div class="col-md-6">
-                                <select id="niveauMusculation" class="form-control @error('niveauMusculation') is-invalid @enderror" name="niveauMusculation">
-                                <option value="1" selected>Je débute</option>
-                                <option value="2">Je pratique ce sport regulièrement</option>
-                                <option value="3">Je pratique très bien ce sport</option>
+                                <select id="niveau2" class="form-control @error('niveau2') is-invalid @enderror" name="niveau2" value="{{ old('niveau2') }}" required autocomplete="niveau2" autofocus>
+                                    <option value="1" selected>Je veux coacher des membres debutant</option>
+                                    <option value="2">Je veux coacher des membres intermediaire</option>
+                                    <option value="3">Je veux coacher des membre de haut niveau</option>
                                 </select>
-                                @error('niveauMusculation')
+                                @error('niveau2')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -158,32 +160,15 @@
 
 
                         <div class="form-group row">
-                            <label for="niveauYoga" class="col-md-4 col-form-label text-md-right">{{ __('Niveau en yoga') }}</label>
+                            <label for="niveau3" class="col-md-4 col-form-label text-md-right">{{ __('Niveau3') }}</label>
 
                             <div class="col-md-6">
-                                <select id="niveauYoga" class="form-control @error('niveauYoga') is-invalid @enderror" name=niveauYoga">
-                                <option value="1" selected>Je débute</option>
-                                <option value="2">Je pratique ce sport regulièrement</option>
-                                <option value="3">Je pratique très bien ce sport</option>
+                                <select id="niveau3" class="form-control @error('niveau3') is-invalid @enderror" name="niveau3" value="{{ old('niveau3') }}" required autocomplete="niveau3" autofocus>
+                                    <option value="1" selected>Je veux coacher des membres debutant</option>
+                                    <option value="2">Je veux coacher des membres intermediaire</option>
+                                    <option value="3">Je veux coacher des membre de haut niveau</option>
                                 </select>
-                                @error('niveauYoga')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row ">
-                            <label for="niveauFitness" class="col-md-4 col-form-label text-md-right">{{ __('Niveau en fitness') }}</label>
-
-                            <div class="col-md-6">
-                                <select id="niveauFitness" class="form-control @error('niveauFitness') is-invalid @enderror" name=niveauFitness">
-                                    <option value="1" selected>Je débute</option>
-                                    <option value="2">Je pratique ce sport regulièrement</option>
-                                    <option value="3">Je pratique très bien ce sport</option>
-                                </select>
-                                @error('niveauFitness')
+                                @error('niveau3')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -207,5 +192,4 @@
         </div>
     </div>
 </div>
-</section>
 @endsection

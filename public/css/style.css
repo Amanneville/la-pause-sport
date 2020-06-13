@@ -1,0 +1,21 @@
+.background1{
+    background: url('../../public/uploads/inscriptionback.jpg') no-repeat;
+    padding-top: 0px;
+    height: 100%;
+    width: 1280px;
+}
+.background2{
+    background: url('../../public/uploads/inscriptioncoachback.jpg') no-repeat;
+    padding-top: 0px;
+    height: 100%;
+}
+.background3{
+    background: url('../../public/uploads/homeback.jpg') no-repeat;
+    padding-top: 0px;
+    height: 100%;
+}
+.background4{
+    background: url('../../public/uploads/sessionback.jpg') no-repeat;
+    padding-top: 0px;
+    height: 100%;
+}

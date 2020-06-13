@@ -1,9 +1,11 @@
 <?php
 
-use App\Model\Sport;
+use App\Sport;
 use Illuminate\Database\Seeder;
+use Faker\Generator as Faker;
 
-class SportsTableSeeder extends Seeder
+
+class SportTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,11 +14,13 @@ class SportsTableSeeder extends Seeder
      */
     public function run()
     {
-        Sport::insert([
-            ['name' => 'Yoga'],
-            ['name' => 'Musculation'],
-            ['name' => 'Running'],
-            ['name' => 'Fitness']
+        $sport = Sport::insert([
+            [ 'name' => 'yoga'],
+            [ 'name' => 'running'],
+            [ 'name' => 'musculation'],
+            [ 'name' => 'makarena'],
+            [ 'name' => 'zumba'],
+            [ 'name' => 'batchata'],
         ]);
     }
 }
