@@ -32,20 +32,15 @@ $factory->define(User::class, function (Faker $faker) {
 
         'firstname' => $faker->name,
         'lastname' => $faker->lastName,
-        'avatar' => 'https://via.placeholder.com/150',
         'age' => $faker->numberBetween(18,70),
-        'adresse' => $faker->address, // changer en string
-        'code_postal' => $faker->postcode,
-        'sport1' => $faker->numberBetween(1,4),
-        'niveau1' => $faker->numberBetween(1,4),
-        'exp1' =>  $faker->numberBetween(2,99),
-        'sport2'=> $faker->numberBetween(1,4),
-        'niveau2' =>$faker->numberBetween(1,3),
-        'exp2' =>  $faker->numberBetween(200,400),
-        'sport3'=> $faker->numberBetween(1,4),
-        'niveau3' =>$faker->numberBetween (1,4),
-        'exp3' => $faker->numberBetween(2,40),
-        'reputation_coach' => $faker->numberBetween(10,50),
+        'adresse' => $faker->address,
+        'code_postal' => $faker->postcode, // changer en string
+        'avatar' => $faker->ipv4,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
-]
+        'ip_address' => $faker->ipv4,
+        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        'remember_token' => Str::random(10),
+    ];
+
+});
