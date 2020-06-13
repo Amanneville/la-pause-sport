@@ -38,9 +38,14 @@ class SessionController extends Controller
             ->leftJoin('sessions', 'sessions.id_sport', '=', 'level_sport_users.id_sport')
             ->whereRaw('niveau = level_sport_users.user_current_level')
             ->whereDate('date', '>=', Carbon::now() )
+            ->leftJoin('session_users', 'session_users.session_id', '=', 'sessions.id')
+            ->where('sessions.nb_max_participants', '<', '15')
             ->get();
 
-       // dd($users->all());
+        dd($users);
+
+      // $sessions = SessionUser::all();
+       // dd($sessions->where('session_id', '=', 69)->count());
 
 
     }
