@@ -120,76 +120,129 @@
                                          Votre niveau de sport:
                         <br>
 
+
+
+
                         <div class="form-group row">
-                            <label for="niveauRunning" class="col-md-4 col-form-label text-md-right">{{ __('Niveau en running') }}</label>
+                            <label for="sportMusculation" class="col-md-4 col-form-label text-md-right">{{ __('Sport') }}</label>
 
                             <div class="col-md-6">
-                                <select id="niveauRunning" class="form-control @error('niveauRunning') is-invalid @enderror" name="niveauRunning">
+                                <select id="sportMusculation" class="form-control @error('sportMusculation') is-invalid @enderror" name="sportMusculation">
+                                <option value="1" selected>Musculation</option>
+                                </select>
+                                @error('sportMusculation')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <label for="niveauSportMusculation" class="col-md-4 col-form-label text-md-right">{{ __('Niveau') }}</label>
+                            <div class="col-md-6">
+                                <select id="niveauSportMusculation" class="form-control @error('niveauSportMusculation') is-invalid @enderror" name="niveauSportMusculation">
                                     <option value="1" selected>Je débute</option>
                                     <option value="2">Je pratique ce sport regulièrement</option>
                                     <option value="3">Je pratique très bien ce sport</option>
                                 </select>
-
-                                @error('niveauRunning')
+                                @error('niveauSportMusculation')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
-
 
                         <div class="form-group row">
-                            <label for="niveauMusculation" class="col-md-4 col-form-label text-md-right">{{ __('Niveau en musculation') }}</label>
+                            <label for="sportYoga" class="col-md-4 col-form-label text-md-right">{{ __('Sport') }}</label>
 
                             <div class="col-md-6">
-                                <select id="niveauMusculation" class="form-control @error('niveauMusculation') is-invalid @enderror" name="niveauMusculation">
-                                <option value="1" selected>Je débute</option>
-                                <option value="2">Je pratique ce sport regulièrement</option>
-                                <option value="3">Je pratique très bien ce sport</option>
+                                <select id="sportYoga" class="form-control @error('sportYoga') is-invalid @enderror" name="sportYoga">
+                                    <option value="2" selected>Yoga</option>
                                 </select>
-                                @error('niveauMusculation')
+                                @error('sportYoga')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                        </div>
 
-
-                        <div class="form-group row">
-                            <label for="niveauYoga" class="col-md-4 col-form-label text-md-right">{{ __('Niveau en yoga') }}</label>
-
+                            <label for="niveauSportYoga" class="col-md-4 col-form-label text-md-right">{{ __('Niveau') }}</label>
                             <div class="col-md-6">
-                                <select id="niveauYoga" class="form-control @error('niveauYoga') is-invalid @enderror" name=niveauYoga">
-                                <option value="1" selected>Je débute</option>
-                                <option value="2">Je pratique ce sport regulièrement</option>
-                                <option value="3">Je pratique très bien ce sport</option>
-                                </select>
-                                @error('niveauYoga')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row ">
-                            <label for="niveauFitness" class="col-md-4 col-form-label text-md-right">{{ __('Niveau en fitness') }}</label>
-
-                            <div class="col-md-6">
-                                <select id="niveauFitness" class="form-control @error('niveauFitness') is-invalid @enderror" name=niveauFitness">
+                                <select id="niveauSportYoga" class="form-control @error('niveauSportYoga') is-invalid @enderror" name="niveauSportYoga">
                                     <option value="1" selected>Je débute</option>
                                     <option value="2">Je pratique ce sport regulièrement</option>
                                     <option value="3">Je pratique très bien ce sport</option>
                                 </select>
-                                @error('niveauFitness')
+                                @error('niveauSportYoga')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="sportRunning" class="col-md-4 col-form-label text-md-right">{{ __('Sport') }}</label>
+
+                            <div class="col-md-6">
+                                <select id="sportRunning" class="form-control @error('sportRunning') is-invalid @enderror" name="sportRunning">
+                                    <option value="3" selected>Running</option>
+                                </select>
+                                @error('sportRunning')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <label for="niveauSportRunning" class="col-md-4 col-form-label text-md-right">{{ __('Niveau') }}</label>
+                            <div class="col-md-6">
+                                <select id="niveauSportRunning" class="form-control @error('niveauSportRunning') is-invalid @enderror" name="niveauSportRunning">
+                                    <option value="1" selected>Je débute</option>
+                                    <option value="2">Je pratique ce sport regulièrement</option>
+                                    <option value="3">Je pratique très bien ce sport</option>
+                                </select>
+                                @error('niveauSportRunning')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="sportFitness" class="col-md-4 col-form-label text-md-right">{{ __('Sport') }}</label>
+
+                            <div class="col-md-6">
+                                <select id="sportFitness" class="form-control @error('sportFitness') is-invalid @enderror" name="sportFitness">
+                                    <option value="4" selected>Fitness</option>
+                                </select>
+                                @error('sportFitness')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <label for="niveauSportFitness" class="col-md-4 col-form-label text-md-right">{{ __('Niveau') }}</label>
+                            <div class="col-md-6">
+                                <select id="niveauSportFitness" class="form-control @error('niveauSportFitness') is-invalid @enderror" name="niveauSportFitness">
+                                    <option value="1" selected>Je débute</option>
+                                    <option value="2">Je pratique ce sport regulièrement</option>
+                                    <option value="3">Je pratique très bien ce sport</option>
+                                </select>
+                                @error('niveauSportFitness')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+
+
+
 
 
 

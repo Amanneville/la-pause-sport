@@ -1,9 +1,9 @@
 <?php
 
-use App\Role;
+use App\Model\Role;
 use Illuminate\Database\Seeder;
 
-class RoleTableSeeder extends Seeder
+class RolesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,9 +13,9 @@ class RoleTableSeeder extends Seeder
     public function run()
     {
         Role::insert([
-            ['name' => 'administrateur'],
-            ['name' => 'coach'],
-            ['name' => 'eleve']
+            ['statut' => 'administrateur'],
+            ['statut' => 'coach'],
+            ['statut' => 'membre']
         ]);
     }
 }

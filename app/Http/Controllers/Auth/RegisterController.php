@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Model\User;
+use App\Model\Sport;
+use App\Model\LevelSportUser;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -55,10 +57,8 @@ class RegisterController extends Controller
             'age' => ['required', 'int', 'max:150'],
             'adresse' => ['required', 'string', 'max:255'],
             'code_postal' => ['required', 'string'],
-            'niveauRunning' => ['string', 'max:255'],
-            'niveauMusculation' => ['string', 'max:255'],
-            'niveauYoga' => ['string', 'max:255'],
-            'niveauFitness' => ['string', 'max:255'],
+            'sportYoga' => ['required', 'string', 'max:255'],
+            'niveauSportYoga' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -78,12 +78,16 @@ class RegisterController extends Controller
             'age' => $data['age'],
             'adresse' => $data['adresse'],
             'code_postal' => $data['code_postal'],
-            'niveauRunning' => $data['niveauRunning'],
-            'niveauMusculation' => $data['niveauMusculation'],
-            'niveauYoga' => $data['niveauYoga'],
-            'niveauFitness' => $data['niveauFitness'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+        ]);
+
+    }
+    protected function create2(array $data)
+    {
+        return LevelSportUser::create([
+            'sportYoga' => $data['id_sport'],
+            'niveauSportYoga' => $data['user_current_level'],
         ]);
     }
 }

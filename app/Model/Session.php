@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,6 +19,13 @@ class Session extends Model
         'nb_max_participants',
         'prix',
         'note',
-        'chat_id',
+        'chat_id'
     ];
+
+    public function sport()
+    {
+        return $this->belongsTo(Sport::class);
+    }
 }
+
+
