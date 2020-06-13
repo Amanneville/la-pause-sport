@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\LevelSportUser;
 use App\Session;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -22,7 +23,7 @@ class SessionController extends Controller
     public function AfficheSessionLvl()
 
     {
-        // Principe : Affiche les sessions relatives au sport et au niveau de l'utilisateur.
+        // Principe : Affiche les sessions, non commencées, relatives au sport et au niveau de l'utilisateur
 
         /*
          * 1 - je récupère l'id de l'utilisateur, son ou ses sport(s) et son niveau dans chacun de ses sports;
@@ -30,12 +31,14 @@ class SessionController extends Controller
          * 3 - Je renvoie les infos dans la vue
          */
 
-        $user = DB::table('users')
+        $users = DB::table('users')
             ->leftJoin('level_sport_users', 'users.id', '=', 'level_sport_users.id_user')
             ->where('id_user', '=', 45 )
+            ->leftJoin('sessions', 'sessions.id_sport', '=', 'level_sport_users.id_sport')
+            ->whereRaw('niveau = level_sport_users.user_current_level')
+            ->whereDate('date', '>=', Carbon::now() )
             ->get();
-        dd($user);
 
-
+        dd($users->all());
     }
 }
