@@ -8,6 +8,8 @@ class CreateSessionsTable extends Migration
 {
     /**
      * Run the migrations.
+     * Table destinée a enregistrer les informations nécéssaires à la création
+     * d'une session par les users ayant le rôle de coach.
      *
      * @return void
      */

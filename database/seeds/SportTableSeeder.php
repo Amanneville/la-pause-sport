@@ -1,6 +1,6 @@
 <?php
 
-use App\Sport;
+use App\Model\Sport;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 
@@ -20,7 +20,7 @@ class SportTableSeeder extends Seeder
             [ 'name' => 'musculation'],
             [ 'name' => 'makarena'],
             [ 'name' => 'zumba'],
-            [ 'name' => 'batchata'],
+            [ 'name' => 'karate'],
         ]);
     }
 }

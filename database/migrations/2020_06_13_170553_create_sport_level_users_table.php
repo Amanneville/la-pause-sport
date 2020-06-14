@@ -8,16 +8,16 @@ class CreateSportLevelUsersTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * Table destinée à créer une association : id_user/id_sport/niveau actuel dans le sport.
      * @return void
      */
     public function up()
     {
-        Schema::create('level_sport_user', function (Blueprint $table) {
+        Schema::create('level_sport_users', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_user')->constrained('users');
             $table->foreignId('id_sport')->constrained('sports');
-            $table->integer('user_current_level');
+            $table->integer('user_current_level')->nullable();
             $table->timestamps();
         });
     }
