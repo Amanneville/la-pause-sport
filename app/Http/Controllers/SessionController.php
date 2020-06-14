@@ -8,17 +8,17 @@ use App\SessionUser;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class SessionController extends Controller
 {
+
     public function index()
     {
-        // Afficher toutes les sessions de tous les sports
+        // Afficher formulaire de création de session
 
-        $sessions = Session::all();
-
-        return view('session-list.index')->with('sessions', $sessions);
+        return view('create-session.index');
     }
 
     public function AfficheSessionLvl()
@@ -31,10 +31,13 @@ class SessionController extends Controller
          * 2 - je récupère uniquement les sessions qui le concerne;
          * 3 - Je renvoie les infos dans la vue
          */
+        $user = Auth::user();
+
+        //dd($user->getAuthIdentifier());
 
         $users = DB::table('users')
             ->leftJoin('level_sport_users', 'users.id', '=', 'level_sport_users.id_user')
-            ->where('id_user', '=', 45 )
+            ->where('id_user', '=', $user->id )
             ->leftJoin('sessions', 'sessions.id_sport', '=', 'level_sport_users.id_sport')
             ->whereRaw('niveau = level_sport_users.user_current_level')
             ->whereDate('date', '>=', Carbon::now() )
@@ -42,11 +45,44 @@ class SessionController extends Controller
             ->where('sessions.nb_max_participants', '<', '15')
             ->get();
 
-        dd($users);
+       // dd($users);
 
       // $sessions = SessionUser::all();
        // dd($sessions->where('session_id', '=', 69)->count());
 
+    }
+
+    public function createsession()
+    {
+        // Afficher formulaire de création de session
+
+        return view('create-session.index');
+    }
+    public function create(Request $request){
+
+            $values = $request->all();
+          //  dd($values);
+        $author = Auth::user();
+
+              Session::create([
+
+                'id_auteur'             => $author->id,
+                'id_sport'              => $values['sport'],
+                'heure_debut'           => $values['heure_debut'],
+                'heure_fin'             => $values['heure_fin'],
+                'date'                  => $values['date'],
+                'adresse'               => $values['adresse'],
+                'ville'                 => $values['ville'],
+                'code_postal'           => $values['code_postal'],
+                'niveau'                => $values['niveau'],
+                'nb_max_participants'   => $values['nb_max_participants'],
+                'prix'                  => $values['prix'],
+
+            ]);
+
+            return;
 
     }
+
+
 }

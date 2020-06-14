@@ -8,6 +8,6 @@ use Faker\Generator as Faker;
 $factory->define(SessionUser::class, function (Faker $faker) {
     return [
         'user_id' => $faker->unique()->numberBetween(1,45),
-        'session_id' => $faker->numberBetween(69,70),
+        'session_id' => $faker->numberBetween(1,45),
     ];
 });

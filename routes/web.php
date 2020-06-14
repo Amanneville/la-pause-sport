@@ -21,8 +21,12 @@ Route::get('/sessions', 'SessionController@AfficheSessionLvl');
 
 Route::get('/user', 'SessionController@AfficheSessionLvl');
 
+Route::get('/creer', 'SessionController@index');
+Route::post('/creer', 'SessionController@create');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 
 

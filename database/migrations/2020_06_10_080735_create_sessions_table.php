@@ -28,8 +28,8 @@ class CreateSessionsTable extends Migration
             $table->integer('niveau');
             $table->integer('nb_max_participants');
             $table->integer('prix');
-            $table->integer('note');
-            $table->integer('chat_id');
+            $table->integer('note')->nullable();
+            $table->integer('chat_id')->nullable();
             $table->timestamps();
 
         });

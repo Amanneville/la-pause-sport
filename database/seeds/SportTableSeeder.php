@@ -15,12 +15,10 @@ class SportTableSeeder extends Seeder
     public function run()
     {
         $sport = Sport::insert([
+            [ 'name' => 'musculation'],
             [ 'name' => 'yoga'],
             [ 'name' => 'running'],
-            [ 'name' => 'musculation'],
-            [ 'name' => 'makarena'],
-            [ 'name' => 'zumba'],
-            [ 'name' => 'karate'],
+            [ 'name' => 'fitness'],
         ]);
     }
 }
