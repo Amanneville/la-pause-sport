@@ -83,7 +83,8 @@ class RegisterController extends Controller
         ]);
 
     }
-    protected function create2(array $data)
+
+    public function create2(array $data)
     {
         return LevelSportUser::create([
             'sportYoga' => $data['id_sport'],

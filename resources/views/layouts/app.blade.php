@@ -11,13 +11,23 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/boostrap.js') }}" defer></script>
+    <script src="{{ asset('js/jquery-2.2.3.js') }}" defer></script>
+    <script src="{{ asset('js/materialize.js') }}" defer></script>
+    <script src="{{ asset('js/mdb.js') }}" defer></script>
+    <script src="{{ asset('js/tether.js') }}" defer></script>
+    <script src="{{ asset('js/wow.min.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('sass/mdb.scss') }}" rel="stylesheet">
 
 </head>
 <body>
@@ -35,9 +45,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="ml-5 mr-3"><a href="{{ url('/home') }}">Acceuil</a></li>
-                        <li class="mr-5"><a href="{{ url('/session-list') }}">Les Sessions de Sport</a></li>
-                        <li class="mr-5"><a href="{{ url('/creationSession') }}">+ Ajouter une session</a></li>
+                        <li class="ml-5 mr-3"><a class="blacklink" href="{{ url('/home') }}">Acceuil</a></li>
+                        <li class="mr-5"><a class="blacklink" href="{{ url('/session-list') }}">Les Sessions de Sport</a></li>
+                        <li class="mr-5"><a class="blacklink" href="{{ url('/creationSession') }}">+ Ajouter une session</a></li>
 
                     </ul>
 
@@ -59,9 +69,13 @@
                             @endif
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                   {{ Auth::user()->name }} <span class="caret"></span>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px;">
+                                    <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:32px; height:32px; position:absolute; top:-7px; left:10px; border-radius:50%">
+                                    {{ Auth::user()->lastname }} <span class="caret"></span>
+                                    {{ Auth::user()->firstname }} <span class="caret"></span>
                                 </a>
+                                <img class="animate__animated animate__hinge" src="/uploads/basquettes.png" style="width:50px; height:50px; position:absolute; top: 2px; left:200px;">
 
                                 <ul class="dropdown-menu">
                                     <li><a href="{{ url('/profile') }}"><i class="fa fa-btn fa-user"></i>Profile</a></li>

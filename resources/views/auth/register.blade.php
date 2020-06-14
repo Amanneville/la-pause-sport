@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="container-fluid text-center  bac1">
-<div class="container">
+<section class="container-fluid text-center  back4">
+    <div class="container-fluid" style="width:auto; height:1100px">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card animate__animated animate__backInDown" style="width:850px; position: relative; top: 50px">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">

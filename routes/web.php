@@ -13,20 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('layouts/master');
-//});
+
 Route::get('/', function () {
-    return view('layouts.master');
+    return view('home');
 });
 
 Auth::routes();
 
+
+// Debugage deconnexion
+Route::get('logout', 'Auth\LoginController@logout', function () {
+    return view('login');
+});
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 // Création d'une session
 Route::get('/session', 'SessionController@index')->name('creationSession');
@@ -41,9 +43,6 @@ Route::get('/role', 'RoleController@index');
 Route::get('/registerCoach', 'Auth\RegisterController@registerCoach')->name('registerCoach');;
 
 
-
-
-
 // Image Profil route controleur
 Route::middleware ('auth', 'verified')->group (function (){
     Route::resource ('image',
@@ -56,13 +55,3 @@ Route::middleware ('auth', 'verified')->group (function (){
 
 Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
-
-
-// Profil Controleur   a verifier a bientot suprimer
-
-Route::middleware ('auth', 'verified')->group (function () {
-    Route::resource ('profile', 'ProfileController', [
-        'only' => ['edit', 'update', 'destroy', 'show'],
-        'parameters' => ['profile' => 'user']
-    ]);
-});
