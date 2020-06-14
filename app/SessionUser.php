@@ -9,7 +9,8 @@ class SessionUser extends Model
 
     public $timestamps = false;
 
-    public function sessions(){
+    public function sessions()
+    {
 
     }
 }

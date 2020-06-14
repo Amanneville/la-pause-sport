@@ -21,7 +21,8 @@ Route::get('/sessions', 'SessionController@AfficheSessionLvl');
 
 Route::get('/user', 'SessionController@AfficheSessionLvl');
 
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+

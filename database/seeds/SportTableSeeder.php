@@ -20,7 +20,7 @@ class SportTableSeeder extends Seeder
             [ 'name' => 'musculation'],
             [ 'name' => 'makarena'],
             [ 'name' => 'zumba'],
-            [ 'name' => 'batchata'],
+            [ 'name' => 'karate'],
         ]);
     }
 }
