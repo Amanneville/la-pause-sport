@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="container-fluid text-center  back1">
-<div class="container-fluid" style="width:1920px; height:1280px">
+<div class="container-fluid" >
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card animate__animated animate__backInDown" style="width:850px;">
@@ -18,6 +18,11 @@
 
 
                 <div class="main_portfolio_content center wow fadeInUp">
+
+                    <input id="queryLoc" type="text" value="33000"/>
+                    <input type="button" value="APPEL API METEO" onclick="buttonClickGET()"/>
+                    <p id="zone_meteo">temp</p>
+
                     <div class="main_mix_menu m-y-2">
                         <ul class="text-uppercase">
                             <li class="filter" data-filter="all">Tout</li>
@@ -116,4 +121,6 @@
     </div>
 </div>
 </section>
+<script src="{{ asset('js/meteo.js') }}" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery.min.js" defer></script>
 @endsection

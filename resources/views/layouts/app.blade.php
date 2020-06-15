@@ -11,12 +11,15 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/boostrap.js') }}" defer></script>
-    <script src="{{ asset('js/jquery-2.2.3.js') }}" defer></script>
-    <script src="{{ asset('js/materialize.js') }}" defer></script>
-    <script src="{{ asset('js/mdb.js') }}" defer></script>
-    <script src="{{ asset('js/tether.js') }}" defer></script>
-    <script src="{{ asset('js/wow.min.js') }}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery.min.js" defer></script>
+
+    <script src="{{ asset('js/meteo.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/boostrap.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/jquery-2.2.3.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/materialize.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/mdb.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/tether.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/wow.min.js') }}" type="text/javascript"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
