@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/midtest', 'SessionController@AfficheSessionLvl' )->middleware(['auth', 'isCoach']);
 
 Route::get('/sessions', 'SessionController@AfficheSessionLvl');
 
@@ -27,6 +28,12 @@ Route::post('/creer', 'SessionController@create');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Tchat : get affiche le form & post récup les infos
+Route::get('/message', 'MessageController@index');
+Route::get('/message-live', 'MessageController@getChat');
+
+Route::post('/message', 'MessageController@store');
 
 
 
