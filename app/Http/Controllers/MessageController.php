@@ -16,15 +16,27 @@ class MessageController extends Controller
     {
 
 
-         $messages = Message::all()
-             ->sortByDesc('created_at')
-             ->where('session_id', '=', '2');
+        $user = Auth::user();
+        //dd($user);
 
-        //$user = Auth::user();
+//        $messages = Message::all()
+//            ->sortByDesc('created_at')
+//            ->where('session_id', '=', '2');
+
+         $messages = DB::table('messages')
+             ->where('session_id', '=', '2')
+             ->leftJoin('users', 'users.id', '=', 'messages.from_id' )->get();
+
+//             ->where('session_id', '=', '2');
+
+        dd($messages->created_at);
+
         //dd($user->firstname);
 
-        return view('Message.index')->with('messages', $messages);
-            //->with('user', $user);
+        return view('message.index')->with('messages', $messages)
+            ->with('user', $user);
+
+
 
     }
 
@@ -35,7 +47,7 @@ class MessageController extends Controller
         $values = $request->all();
 
         $message = new Message();
-        $message->from = $values['from'];
+        $message->from_id = $values['from_id'];
         $message->to = $values['to'];
         $message->is_read = $values['is_read'];
         $message->message = $values['message'];

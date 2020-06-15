@@ -14,7 +14,7 @@ $factory->define(Message::class, function (Faker $faker) {
 //    } while ($from === $to);
 
     return [
-        'from' => rand(1, 30),
+        'from_id' => rand(32, 40),
         'to' => rand(1, 30),
         'message' => $faker-> sentence,
         'is_read' => rand(0, 1),
