@@ -34,7 +34,7 @@ class SessionController extends Controller
         $user = Auth::user();
 
         //dd($user->getAuthIdentifier());
-
+/*
         $users = DB::table('users')
             ->leftJoin('level_sport_users', 'users.id', '=', 'level_sport_users.id_user')
             ->where('id_user', '=', $user->id )
@@ -44,8 +44,8 @@ class SessionController extends Controller
             ->leftJoin('session_users', 'session_users.session_id', '=', 'sessions.id')
             ->where('sessions.nb_max_participants', '<', '15')
             ->get();
-
-       // dd($users);
+*/
+ // dd('TOTO A 29 ans');
 
       // $sessions = SessionUser::all();
        // dd($sessions->where('session_id', '=', 69)->count());
