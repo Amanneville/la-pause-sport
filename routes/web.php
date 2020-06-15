@@ -1,5 +1,6 @@
 <?php
 
+use App\Model\Message;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -14,13 +15,37 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+//
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
+Auth::routes();
+
+//Partie enregistrement et connexion Coach
+
+Route::get('auth/loginCoach', 'Auth\AuthControllerCoach@getLoginCoach');
+Route::post('auth/loginCoach', 'Auth\AuthControllerCoach@postLoginCoach');
+Route::get('auth/logoutCoach', 'Auth\AuthControllerCoach@getLogoutCoach');
+Route::get('auth/registerCoach', 'Auth\AuthControllerCoach@getRegisterCoach');
+Route::post('auth/registerCoach', 'Auth\AuthControllerCoach@postRegisterCoach');
+
+
+
+// Debugage deconnexion
+Route::get('logout', 'Auth\LoginController@logout', function () {
+    return view('login');
+});
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
 // Création d'une session
-Route::get('/session', 'SessionController@index');
+Route::get('/session', 'SessionController@index')->name('creationSession');
 //Liste des sessions existantes
 Route::get('/session-list', 'SessionListController@index');
 
@@ -28,14 +53,19 @@ Route::get('/session-list', 'SessionListController@index');
 // Accés ADMIN
 Route::get('/role', 'RoleController@index');
 
-Auth::routes();
+// Accés Coach
+Route::get('/registerCoach', 'Auth\RegisterController@registerCoach')->name('registerCoach');;
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+// Image Profil route controleur
+Route::middleware ('auth', 'verified')->group (function (){
+    Route::resource ('image',
+        'ImageController', [
+            'only'=>['create', 'store', 'destroy', 'update']
+        ]);
+});
 
 // Tchat : get affiche le form & post récup les infos
 Route::get('/message', 'MessageController@index');
+
 Route::post('/message', 'MessageController@store');

@@ -8,6 +8,8 @@ class CreateSessionsTable extends Migration
 {
     /**
      * Run the migrations.
+     * Table destinée a enregistrer les informations nécéssaires à la création
+     * d'une session par les users ayant le rôle de coach.
      *
      * @return void
      */
@@ -15,23 +17,21 @@ class CreateSessionsTable extends Migration
     {
         Schema::create('sessions', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_auteur')->nullable();
-            $table->foreignId('id_sport')->nullable()->constrained('sports')
-                    ->onDelete('cascade')
-                    ->onUpdate('cascade');
-            $table->time('heure_debut')->nullable();
-            $table->time('heure_fin')->nullable();
-            $table->date('date')->nullable();
-            $table->string('adresse')->nullable();
-            $table->string('code_postal')->nullable();
-            $table->string('ville')->nullable();
-            $table->integer('niveau')->nullable();
-            $table->integer('nb_max_participants')->nullable();
-            $table->integer('prix')->nullable();
-            $table->integer('note')->nullable();
-            $table->integer('chat_id')->nullable();
-
+            $table->unsignedBigInteger('id_auteur')->nullable();
+            $table->foreignId('id_sport')->nullable()->constrained('sports')->onUpdate('cascade')->onDelete('cascade');
+            $table->time('heure_debut');
+            $table->time('heure_fin');
+            $table->date('date');
+            $table->string('adresse');
+            $table->string('ville');
+            $table->string('code_postal');
+            $table->integer('niveau');
+            $table->integer('nb_max_participants');
+            $table->integer('prix');
+            $table->integer('note');
+            $table->integer('chat_id');
             $table->timestamps();
+
         });
     }
 

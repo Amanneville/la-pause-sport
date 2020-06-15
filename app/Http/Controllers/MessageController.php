@@ -4,22 +4,31 @@ namespace App\Http\Controllers;
 
 
 use App\Model\Message;
+use App\Model\User;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class MessageController extends Controller
 {
     public function index()
     {
+
+
          $messages = Message::all()
              ->sortByDesc('created_at')
              ->where('session_id', '=', '2');
 
-//        $message = DB::table('messages');
+        //$user = Auth::user();
+        //dd($user->firstname);
+
         return view('Message.index')->with('messages', $messages);
+            //->with('user', $user);
 
     }
+
+
 
     public function store(Request $request)
     {
@@ -33,5 +42,6 @@ class MessageController extends Controller
         $message->session_id = $values['session_id'];
         $message->save();
 
+        return back();
     }
 }

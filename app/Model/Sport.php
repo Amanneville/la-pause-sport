@@ -1,10 +1,13 @@
 <?php
 
-namespace App\model;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Sport extends Model
 {
-    protected $fillable = ['name'];
+    public function users()
+    {
+        return $this->belongsToMany('App\Model\User')->using('App\Model\LevelSportUser');
+    }
 }

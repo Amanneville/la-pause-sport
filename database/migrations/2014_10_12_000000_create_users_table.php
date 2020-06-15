@@ -20,12 +20,10 @@ class CreateUsersTable extends Migration
             $table->integer('age');
             $table->string('adresse');
             $table->string('code_postal');
-            $table->string('avatar');
+            $table->string('avatar')->default('default.jpg');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('ip_address');
-
             $table->rememberToken();
             $table->timestamps();
         });
