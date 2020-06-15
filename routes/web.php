@@ -39,9 +39,3 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Tchat : get affiche le form & post récup les infos
 Route::get('/message', 'MessageController@index');
 Route::post('/message', 'MessageController@store');
-
-
-
-
-
-

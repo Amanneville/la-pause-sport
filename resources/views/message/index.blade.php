@@ -1,79 +1,33 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tchat Session</title>
+@extends('layouts.master')
+@section('content')
+    @if(!empty($successMessage))
+        <p>{{ $successMessage }}</p>
+    @endif
 
-    {{--  BOOTSTRAP  --}}
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <form action="" method="post">
+        @csrf
 
-<style>
-    #chatBox {
-        text-align:left;
-        /*margin:0 auto;*/
-        /*margin-bottom:25px;*/
-        padding:10px;
-        background:#fff;
-        height:270px;
-        width:430px;
-        border:1px solid #ACD8F0;
-        overflow:auto; }
+        <label for="from">Nom</label>
+        <input type="text" name="from" placeholder="from">
 
-</style>
+        <label for="to">Destinataire</label>
+        <input type="text" name="to" placeholder="to">
 
+        <label for="is_read">Lu/Non lu</label>
+        <input type="number" name="is_read" placeholder="is_read">
 
+        <label for="session_id">N° Session</label>
+        <input type="number" name="session_id" placeholder="session_id">
 
-<body>
+        <label for="message">Message</label>
+        <textarea name="message" cols="20" rows="5">Votre message...</textarea>
 
-<h3>Tchat Session Sport</h3>
-<div class="container-fluid">
-
-    <div class="row" id="menu">
-        <div class="col-md-6">
-            <p>Bienvenue NOM USER</p>
-            <p class="logout"><a id="Quiter le chat" href="#">Exit Chat</a></p>
-        </div>
-    </div>
-
-    <div id="chatBox"></div>
-
-    <form name="message" action="" method="post">
-
-<div class="col-md-6">
-    <input name="from" type="text" id="from" size="63" placeholder="user"/>
-</div>
-        <div class="col-md-6">
-            <input name="to" type="text" id="to" size="63" placeholder="destinataire"/>
-        </div>
-
-    <div class="col-md-6">
-        <input name="message" type="text" id="msgUser" size="63" placeholder="votre message ici"/>
-    </div>
-
-
-        <div class="col-md-6">
-            <input name="is_read" type="text" id="is_read" size="63"/>
-        </div>
-
-        <div class="col-md-6">
-            <input name="session_id" type="text" id="session_id" size="63"/>
-        </div>
-
-<div>
-    <input name="message" type="submit"  id="message" value="Envoyer" />
-</div>
-
-
+        <button>Envoyer</button>
     </form>
 
-</div>
 
-<br>
-<h3>Table des messages de la Session N°2 - ordre récents->anciens</h3>
+    <br>
+    <h3>Table des messages de la Session N°2 - ordre récents->anciens</h3>
     <table>
         <thead>
         <tr class="table table-dark">
@@ -87,7 +41,7 @@
 
         </tr>
         </thead>
- @foreach($messages as $message)
+        @foreach($messages as $message)
             <tr>
                 <td>{{ $message->session_id }}</td>
                 <td>{{ $message->id }}</td>
@@ -97,19 +51,10 @@
                 <td>{{ $message->is_read }}</td>
                 <td>{{ $message->created_at }}</td>
             </tr>
-    @endforeach
+        @endforeach
     </table>
+@endsection
 
 
-{{-- AJAX--}}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript">
-    // Appel document
-    $(document).ready(function(){
-
-    });
-</script>
 
 
-</body>
-</html>
