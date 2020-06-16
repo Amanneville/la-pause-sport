@@ -5,14 +5,26 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Model\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class SessionController extends Controller
+class SessionsController extends Controller
 {
     public function index()
     {
-        $sessions = Session::user()->get();
+       $user = Auth::user();
 
-        dd($sessions);
+        return view('users.sessions.index')->with('user', $user);
 
+    }
+
+    // Méthode pour afficher une session d'un utilisateur
+    public function show($id)
+    {
+        // Mécanique avec validateur
+
+        // Récupère la session
+        $session = Session::where('id', $id)->first();
+
+        return view('users.sessions.show')->with('session',$session);
     }
 }

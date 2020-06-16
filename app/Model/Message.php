@@ -7,4 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Message extends Model
 {
     protected $fillable = ['from_id', 'to', 'message', 'is_read', 'session_id'];
+
+    // récupère l'auteur du message
+    public function from()
+    {
+        return $this->belongsTo(User::class, 'from_id', 'id');
+    }
 }

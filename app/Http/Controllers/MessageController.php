@@ -19,13 +19,13 @@ class MessageController extends Controller
         $user = Auth::user();
         //dd($user);
 
-//        $messages = Message::all()
-//            ->sortByDesc('created_at')
-//            ->where('session_id', '=', '2');
+        $messages = Message::all()
+            ->sortByDesc('created_at')
+            ->where('session_id', '=', '2');
 
-         $messages = DB::table('messages')
-             ->where('session_id', '=', '2')
-             ->leftJoin('users', 'users.id', '=', 'messages.from_id' )->get();
+//         $messages = DB::table('messages')
+//             ->where('session_id', '=', '2')
+//             ->leftJoin('users', 'users.id', '=', 'messages.from_id' )->get();
 
 //             ->where('session_id', '=', '2');
 

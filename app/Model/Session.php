@@ -26,6 +26,25 @@ class Session extends Model
     {
         return $this->belongsTo(Sport::class);
     }
+
+    // Retourne tous les utilisateurs sauf le coach
+    public function users(){
+        return $this->belongsToMany(User::class);
+    }
+
+    // Retourn le coach
+    public function coach()
+    {
+        return $this->belongsTo(User::class,   'id_auteur', 'id');
+    }
+
+    // Retourne tous les messages de la session
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class)->orderByDesc('created_at');
+    }
+
 }
 
 

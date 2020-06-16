@@ -31,15 +31,15 @@
 
 
 
-{{--        <div id="chatBox">--}}
-{{--            @foreach($messages as $message)--}}
-{{--                <ul>--}}
-{{--                    <li>{{ $message->from .' à écrit :'. $message->message }}</li>--}}
+        <div id="chatBox">
+            @foreach($messages as $message)
+                <ul>
+                    <li>{{ $message->from .' à écrit :'. $message->message }}</li>
 {{--                    <li>{{  $message->created_at }}</li>--}}
-{{--                    --}}{{--            $user->firstname--}}
-{{--                </ul>--}}
-{{--            @endforeach--}}
-{{--        </div>--}}
+                                $user->firstname
+                </ul>
+            @endforeach
+        </div>
 
 
 

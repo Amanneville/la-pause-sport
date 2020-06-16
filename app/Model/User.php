@@ -45,4 +45,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Sport')->using('App\LevelSportUser');
     }
+
+    public function sessions()
+    {
+        return $this->belongsToMany(Session::class);
+    }
 }
