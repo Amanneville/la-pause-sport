@@ -24,31 +24,7 @@ class SessionController extends Controller
     public function AfficheSessionLvl()
 
     {
-        // Principe : Affiche les sessions, non commencées, relatives au sport et au niveau de l'utilisateur
 
-        /*
-         * 1 - je récupère l'id de l'utilisateur, son ou ses sport(s) et son niveau dans chacun de ses sports;
-         * 2 - je récupère uniquement les sessions qui le concerne;
-         * 3 - Je renvoie les infos dans la vue
-         */
-        $user = Auth::user();
-
-        //dd($user->getAuthIdentifier());
-/*
-        $users = DB::table('users')
-            ->leftJoin('level_sport_users', 'users.id', '=', 'level_sport_users.id_user')
-            ->where('id_user', '=', $user->id )
-            ->leftJoin('sessions', 'sessions.id_sport', '=', 'level_sport_users.id_sport')
-            ->whereRaw('niveau = level_sport_users.user_current_level')
-            ->whereDate('date', '>=', Carbon::now() )
-            ->leftJoin('session_users', 'session_users.session_id', '=', 'sessions.id')
-            ->where('sessions.nb_max_participants', '<', '15')
-            ->get();
-*/
- // dd('TOTO A 29 ans');
-
-      // $sessions = SessionUser::all();
-       // dd($sessions->where('session_id', '=', 69)->count());
 
     }
 
