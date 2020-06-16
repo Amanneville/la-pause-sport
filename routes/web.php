@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Cesar
 
 Route::get('/', ['middleware' => 'auth', function () {
     return view('home');
@@ -36,8 +37,6 @@ Auth::routes();
 Route::get('admin_area', ['middleware' => 'admin', function () {
     //
 }]);
-
-
 
 // Debugage deconnexion
 Route::get('logout', 'Auth\LoginController@logout', function () {
@@ -73,3 +72,50 @@ Route::middleware ('auth', 'verified')->group (function (){
 
 Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
+
+
+
+          //Paul
+Route::get('/midtest', 'SessionController@AfficheSessionLvl' )->middleware(['auth', 'isCoach']);
+
+Route::get('/sessions', 'SessionController@AfficheSessionLvl');
+
+Route::get('/user', 'SessionController@AfficheSessionLvl');
+
+Route::get('/creer', 'SessionController@index');
+Route::post('/creer', 'SessionController@create');
+
+
+Route::get('/message', 'MessageController@index');
+Route::get('/message-live', 'MessageController@getChat');
+
+Route::post('/message', 'MessageController@store');
+
+  //aurel
+
+// Création d'une session
+Route::get('/session', 'SessionController@index')->name('creationSession');
+//Liste des sessions existantes
+Route::get('/session-list', 'SessionListController@index');
+// Mes sessions, je n'autorise que les users connectés
+Route::get('/mes-sessions', 'User\SessionsController@index')->middleware('auth');
+Route::get('/mes-sessions/{id}', 'User\SessionsController@show')->middleware('auth');
+// Accés ADMIN
+Route::get('/role', 'RoleController@index');
+
+// Accés Coach
+Route::get('/registerCoach', 'Auth\RegisterController@registerCoach')->name('registerCoach');;
+
+
+// Image Profil route controleur
+Route::middleware ('auth', 'verified')->group (function (){
+    Route::resource ('image',
+        'ImageController', [
+            'only'=>['create', 'store', 'destroy', 'update']
+        ]);
+});
+
+// Tchat : get affiche le form & post récup les infos
+Route::get('/message', 'MessageController@index');
+
+Route::post('/message', 'MessageController@store');

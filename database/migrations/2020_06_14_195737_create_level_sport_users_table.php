@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMessagesTable extends Migration
+class CreateLevelSportUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,11 @@ class CreateMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('messages', function (Blueprint $table) {
+        Schema::create('level_sport_users', function (Blueprint $table) {
             $table->id();
-
-            $table->foreignId('from_id')->constrained('users');
-            $table->bigInteger('to');
-            $table->text('message');
-            $table->tinyInteger('is_read');
-            $table->foreignId('session_id')->nullable()->constrained();
-
+            $table->foreignId('id_user')->constrained('users');
+            $table->foreignId('id_sport')->constrained('sports');
+            $table->integer('user_current_level')->nullable();
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ class CreateMessagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('messages');
+        Schema::dropIfExists('level_sport_users');
     }
 }

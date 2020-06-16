@@ -37,13 +37,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
     public function roles()
     {
-        return $this->hasMany('App\Role')->using('App\RoleUser');
+        return $this->belongsToMany('App\Role')->using('App\RoleUser');
     }
-    public function level_sport()
+
+    public function sessions()
     {
-        return $this->hasMany('App\Sport')->using('App\LevelSportUser');
+        return $this->belongsToMany('App\Session')->using('App\RoleUser');
+    }
+
+    public function levels()
+    {
+        return $this->hasOne('App\LevelSportUser');
     }
 
 }

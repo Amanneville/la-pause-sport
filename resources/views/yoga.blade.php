@@ -20,12 +20,16 @@
                         <div class="center fadeInUp">
 
 
+                            <<input type="hidden" id="code_postal_user" value="{{ Auth::user()->code_postal }}"/>
                             <input type="button" value="APPEL API METEO" onclick="buttonClickGET()"/>
-                            <p id="zone_meteo">Temperature d'aujourd'hui dans votre ville est de:</p>
+                            <p id="zone_meteo" class="mb-5">Temperature d'aujourd'hui dans votre ville est de: </p>
 
 
-                            <p>Calendrier</p>
-                            <div id='calendar'></div>
+
+                            <div class="col-md-8 ml-5 mr-2  mb-5 text-center">
+                                <p>Calendrier</p>
+                                <div id='calendar'></div>
+                            </div>
 
 
 
