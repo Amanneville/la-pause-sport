@@ -26,6 +26,11 @@ class Session extends Model
     {
         return $this->belongsTo(Sport::class);
     }
+
+    public function sessionuserlevel()
+    {
+        return $this->hasMany(SportUser::class);
+    }
 }
 
 

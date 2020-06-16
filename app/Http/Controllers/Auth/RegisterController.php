@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
-use App\LevelSportUser;
+use App\SportUser;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -68,7 +68,7 @@ class RegisterController extends Controller
      *
      * @param  array  $data
      * @return \App\User
-     * @return \App\LevelSportUser
+     * @return \App\SportUser
      */
     protected function create(array $data)
     {
@@ -82,7 +82,7 @@ class RegisterController extends Controller
             'password'      => Hash::make($data['password']),
         ]);
 
-            LevelSportUser::create([
+            SportUser::create([
 
                     'id_user'            => $user->id,
                     'id_sport'           => $data['sportYoga'],
@@ -90,24 +90,26 @@ class RegisterController extends Controller
 
         ]);
 
-            LevelSportUser::create([
+            SportUser::create([
 
                     'id_user'               => $user->id,
                     'id_sport'              => $data['sportMusculation'],
                     'user_current_level'    => $data['niveauSportMusculation'],
         ]);
-            LevelSportUser::create([
+            SportUser::create([
 
                     'id_user'               => $user->id,
                     'id_sport'              => $data['sportRunning'],
                     'user_current_level'    => $data['niveauSportRunning'],
             ]);
 
-            LevelSportUser::create([
+            SportUser::create([
                     'id_user'               => $user->id,
                     'id_sport'              => $data['sportFitness'],
                     'user_current_level'    => $data['niveauSportFitness'],
                 ]);
+
+
 
             return $user;
     }

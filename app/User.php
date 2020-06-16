@@ -42,14 +42,18 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Role')->using('App\RoleUser');
     }
 
-    public function sessions()
+   public function sessions()
     {
-       return $this->belongsToMany('App\Session')->using('App\RoleUser');
+       return $this->belongsToMany('App\Session')->using('App\SessionUser');
     }
 
+    public function sports()
+    {
+        return $this->belongsToMany('App\Sport', 'level_sport_user', 'user_id', 'sport_id')->withPivot('level_id');
+    }
     public function levels()
     {
-        return $this->hasOne('App\LevelSportUser');
+        return $this->belongsToMany('App\Level', 'level_sport_user', 'user_id', 'level_id')->withPivot('sport_id');
     }
 
 }
