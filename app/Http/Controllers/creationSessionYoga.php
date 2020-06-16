@@ -64,33 +64,8 @@ class creationSessionYoga extends Controller
 
         ]);
 
-        LevelSportUser::create([
-
-            'id_user'               => $user->id,
-            'id_sport'              => $data['sportMusculation'],
-            'user_current_level'    => $data['niveauSportMusculation'],
-        ]);
-        LevelSportUser::create([
-
-            'id_user'               => $user->id,
-            'id_sport'              => $data['sportRunning'],
-            'user_current_level'    => $data['niveauSportRunning'],
-        ]);
-
-        LevelSportUser::create([
-            'id_user'               => $user->id,
-            'id_sport'              => $data['sportFitness'],
-            'user_current_level'    => $data['niveauSportFitness'],
-        ]);
-
-        RoleUser::create([
-            'user_id'               => $user->id,
-            'role_id'              => $data['role'],
-        ]);
-
         return $user;
     }
 
-}
 
 }
