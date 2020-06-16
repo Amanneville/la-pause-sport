@@ -42,6 +42,7 @@ class MessageController extends Controller
 
 
 
+
     public function store(Request $request)
     {
         $values = $request->all();
