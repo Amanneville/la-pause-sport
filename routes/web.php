@@ -37,14 +37,6 @@ Route::get('admin_area', ['middleware' => 'admin', function () {
     //
 }]);
 
-//Partie enregistrement et connexion Coach
-
-Route::get('auth/loginCoach', 'Auth\AuthControllerCoach@getLoginCoach');
-Route::post('auth/loginCoach', 'Auth\AuthControllerCoach@postLoginCoach');
-Route::get('auth/logoutCoach', 'Auth\AuthControllerCoach@getLogoutCoach');
-Route::get('auth/registerCoach', 'Auth\AuthControllerCoach@getRegisterCoach');
-Route::post('auth/registerCoach', 'Auth\AuthControllerCoach@postRegisterCoach');
-
 
 
 // Debugage deconnexion

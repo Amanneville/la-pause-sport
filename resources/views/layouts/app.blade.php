@@ -26,14 +26,14 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
-    <link href="{{ asset('sass/mdb.scss') }}" rel="stylesheet">
+
     <!-- fullcalendar -->
 
-    <link href='fullcalendar/core/main.css' rel='stylesheet' />
-    <link href='fullcalendar/daygrid/main.css' rel='stylesheet' />
+    <link href='{{asset('css/fullcalendar/core/main.css')}}' rel='stylesheet' />
+    <link href='{{asset('css/fullcalendar/daygrid/main.css')}}' rel='stylesheet' />
 
-    <script src='fullcalendar/core/main.js'></script>
-    <script src='fullcalendar/daygrid/main.js'></script>
+    <script src='{{asset('js/fullcalendar/core/main.js')}}'></script>
+    <script src='{{asset('js/fullcalendar/daygrid/main.js')}}'></script>
     <script>
 
         document.addEventListener('DOMContentLoaded', function() {

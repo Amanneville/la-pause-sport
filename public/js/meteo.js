@@ -1,18 +1,18 @@
 var callBackSucess = function(data) {
     console.log("donnes api", data)
-    alert ("Meteo temp : " + data.main.temps);
 
-    var element = document.getElementByID("zone_meteo");
-    element.innerHTML = "La temperature aujourd'hui est de " + data.main.temp;
+    var element = document.getElementById("zone_meteo");
+    element.insertAdjacentHTML('beforeend', '<b>' + data.main.temp.toFixed(2) + 'C°</b>');
 
 }
 
 function buttonClickGET(){
-    var codePostalUser = document.getElementById(code_postal_user).value;
+    var codePostalUser = document.getElementById("code_postal_user").value;
 
-    var url = "http://api.openweathermap.org/data/2.5/weather?zip="+codePostalUser+",fr&appid=f0ee7cd8f45c9cdcafd9dffea5bb05d3&units=metric"
+    var url = "https://api.openweathermap.org/data/2.5/weather?zip="+codePostalUser+",fr&appid=f0ee7cd8f45c9cdcafd9dffea5bb05d3&units=metric"
 
     $.get(url, callBackSucess).done(function() {
+
         //alert ("second sucess" );
     })
         .fail(function() {

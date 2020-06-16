@@ -19,9 +19,9 @@
 
                 <div class="center fadeInUp">
 
-                    <input type=hidden id=code_postal_user value={{ Auth::user()->code_postal }}/>
+                    <input type="hidden" id="code_postal_user" value="{{ Auth::user()->code_postal }}"/>
                     <input type="button" value="APPEL API METEO" onclick="buttonClickGET()"/>
-                    <p id="zone_meteo">Temperature d'aujourd'hui dans votre ville est de:</p>
+                    <p id="zone_meteo">Temperature d'aujourd'hui dans votre ville est de: </p>
 
 
                     <p>Calendrier</p>
@@ -44,7 +44,7 @@
 
                         <div class="card col-md-3  ml-2 mr-2 mb-2" style="width: 18rem;">
                             <div class="center">
-                                <img class="card-img-top" src="https://lh3.googleusercontent.com/proxy/_uBTGeSIXQzYbsqH6fuCpszc0_RhzzV-BdgYOqL3ZARZvb41saicFz5MPk-O_fj4RFVXRZKW0M_jKYktuBRlnTW3GmhK53gwupZzSjixiw" alt="">
+                                <img class="card-img-top" src="https://www.ecole-tunon.com/sites/default/files/session-yoga.jpg" alt="">
                                 <div class="card-body">
                                     <h5 class="card-title">Session de Yoga</h5>
                                     <p class="card-text">Seance de yoga en plein air...</p>
@@ -69,7 +69,7 @@
 
                         <div class="card col-md-3 ml-2 mr-2 mb-2" style="width: 18rem;">
                             <div class="single_mixi_portfolio center">
-                                <img class="card-img-top" src="https://www.chutmonsecret.com/wp-content/uploads/2016/05/FullSizeRender.jpg" alt="Card image cap">
+                                <img class="card-img-top" src="https://www.ecole-tunon.com/sites/default/files/session-yoga.jpg" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Session de Yoga</h5>
                                     <p class="card-text">Venez vous detendre toute l'apès midi...</p>
@@ -90,7 +90,7 @@
 
                         <div class="card col-md-3 ml-2 mr-2 mb-2" style="width: 18rem;">
                             <div class="single_mixi_portfolio center">
-                                <img class="card-img-top" src="https://lh3.googleusercontent.com/proxy/_uBTGeSIXQzYbsqH6fuCpszc0_RhzzV-BdgYOqL3ZARZvb41saicFz5MPk-O_fj4RFVXRZKW0M_jKYktuBRlnTW3GmhK53gwupZzSjixiw" alt="">
+                                <img class="card-img-top" src="https://www.ecole-tunon.com/sites/default/files/session-yoga.jpg" alt="">
                                 <div class="card-body">
                                     <h5 class="card-title">Session de Yoga</h5>
                                     <p class="card-text">Seance de yoga en plein air...</p>
