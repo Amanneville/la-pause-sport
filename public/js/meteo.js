@@ -8,9 +8,9 @@ var callBackSucess = function(data) {
 }
 
 function buttonClickGET(){
-    var queryloc = document.getElementById("queryLoc").value;
+    var codePostalUser = document.getElementById(code_postal_user).value;
 
-    var url = "http://api.openweathermap.org/data/2.5/weather?zip=33000,fr&appid=f0ee7cd8f45c9cdcafd9dffea5bb05d3&units=metric"
+    var url = "http://api.openweathermap.org/data/2.5/weather?zip="+codePostalUser+",fr&appid=f0ee7cd8f45c9cdcafd9dffea5bb05d3&units=metric"
 
     $.get(url, callBackSucess).done(function() {
         //alert ("second sucess" );

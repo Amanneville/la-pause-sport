@@ -16,10 +16,6 @@
     <script src="{{ asset('js/meteo.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/boostrap.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/jquery-2.2.3.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/materialize.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/mdb.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/tether.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/wow.min.js') }}" type="text/javascript"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -31,6 +27,28 @@
 
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('sass/mdb.scss') }}" rel="stylesheet">
+    <!-- fullcalendar -->
+
+    <link href='fullcalendar/core/main.css' rel='stylesheet' />
+    <link href='fullcalendar/daygrid/main.css' rel='stylesheet' />
+
+    <script src='fullcalendar/core/main.js'></script>
+    <script src='fullcalendar/daygrid/main.js'></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: [ 'dayGrid' ]
+            });
+
+            calendar.render();
+        });
+
+    </script>
+
+
 
 </head>
 <body>
@@ -48,9 +66,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="ml-5 mr-3"><a class="blacklink" href="{{ url('/home') }}">Acceuil</a></li>
-                        <li class="mr-5"><a class="blacklink" href="{{ url('/session-list') }}">Les Sessions de Sport</a></li>
-                        <li class="mr-5"><a class="blacklink" href="{{ url('/creationSession') }}">+ Ajouter une session</a></li>
+                        <li class="mr-5 ml-5"><a class="blacklink" href="{{ url('/home') }}">Acceuil</a></li>
+                        <li class="mr-3 ml-5"><a class="greenlink" href="{{ url('/musculation') }}">Musculation</a></li>
+                        <li class="mr-3"><a class="greenlink" href="{{ url('/yoga') }}">Yoga</a></li>
+                        <li class="mr-3"><a class="greenlink" href="{{ url('/running') }}">Running</a></li>
+                        <li class="mr-3"><a class="greenlink" href="{{ url('/fitness') }}">Fitness</a></li>
 
                     </ul>
 

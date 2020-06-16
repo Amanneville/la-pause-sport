@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1 animate__animated animate__fadeInDown">
                 <img src="/uploads/avatars/{{ $user->avatar }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
-                <h2>{{ $user->name }}'s Profile</h2>
+                <h2>{{ $user->name }} modification photo de profil</h2>
                 <form enctype="multipart/form-data" action="/profile" method="POST">
                     <label>Mettre à jour votre image de profil</label>
                     <input type="file" name="avatar">

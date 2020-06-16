@@ -14,11 +14,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
+Route::get('/', ['middleware' => 'auth', function () {
     return view('home');
-});
+}]);
+Route::get('/musculation', ['middleware' => 'auth', function () {
+    return view('musculation');
+}]);
+Route::get('/yoga', ['middleware' => 'auth', function () {
+    return view('yoga');
+}]);
+Route::get('/running', ['middleware' => 'auth', function () {
+    return view('running');
+}]);
+Route::get('/fitness', ['middleware' => 'auth', function () {
+    return view('fitness');
+}]);
 
 Auth::routes();
+
+//Is Admin
+Route::get('admin_area', ['middleware' => 'admin', function () {
+    //
+}]);
 
 //Partie enregistrement et connexion Coach
 

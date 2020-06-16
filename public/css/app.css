@@ -90,11 +90,43 @@ section {
     min-width:100%;
     height: auto;
 }
+.backgroundhomemusculation {
+    background-image: url("../assets/images/musculationhome.jpg");
+    background-repeat: no-repeat;
+    min-width:100%;
+    height: auto;
+}
+.backgroundhomeyoga {
+    background-image: url("../assets/images/yogahome.jpg");
+    background-repeat: no-repeat;
+    min-width:100%;
+    height: auto;
+}
+.backgroundhomerunning {
+    background-image: url("../assets/images/runninghome.jpg");
+    background-repeat: no-repeat;
+    min-width:100%;
+    height: auto;
+}
+.backgroundhomefitness {
+    background-image: url("../assets/images/fitnesshome.jpg");
+    background-repeat: no-repeat;
+    min-width:100%;
+    height: auto;
+}
 
 /* changement des hyperlien */
 
 .blacklink {
     text-decoration: none;
+    color: black;
+}
+.greenlink {
+    text-decoration: none;
+    color: green;
+}
+.black {
+
     color: black;
 }
 /*=====================================================================
