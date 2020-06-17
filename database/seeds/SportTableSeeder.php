@@ -1,6 +1,6 @@
 <?php
 
-use App\Sport;
+use App\Model\Sport;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 

@@ -1,14 +1,14 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Session extends Model
 {
     protected $fillable = [
-        'id_auteur',
-        'id_sport',
+        'auteur_id',
+        'sport_id',
         'heure_debut',
         'heure_fin',
         'date',

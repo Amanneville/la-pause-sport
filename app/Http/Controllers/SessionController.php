@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\SportUser;
-use App\Session;
-use App\SessionUser;
-use App\User;
+use App\Model\LevelSportUser;
+use App\Model\Session;
+use App\Model\SessionUser;
+use App\Model\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,10 +16,29 @@ class SessionController extends Controller
 
     public function index()
     {
-        // Afficher formulaire de création de session
+        // Afficher toutes les sessions futures
 
-        return view('create-session.index');
+       $sessions = Session::all();
+        //dd($sessions->where('date', '>=', Carbon::now() ));
+        return view('all-sessions.index')->with('sessions', $sessions);
+
+        // Afficher toutes les sessions de musculation
+        //$sessions = Session::all();
+        //dd($sessions->where('date', '>=', Carbon::now() )->where('id_sport', '=', '1'));
+
+        // Afficher toutes les sessions de yoga
+        //$sessions = Session::all();
+        //dd($sessions->where('date', '>=', Carbon::now() )->where('id_sport', '=', '2'));
+
+        // Afficher toutes les sessions de running
+        //$sessions = Session::all();
+        //dd($sessions->where('date', '>=', Carbon::now() )->where('id_sport', '=', '3'));
+
+        // Afficher toutes les sessions de fitness
+        //$sessions = Session::all();
+        //dd($sessions->where('date', '>=', Carbon::now() )->where('id_sport', '=', '4'));
     }
+
 
     public function AfficheSessionLvl()
 
@@ -63,15 +82,6 @@ class SessionController extends Controller
             // $sessions = SessionUser::all();
             // dd($sessions->where('session_id', '=', 69)->count());
 
-           // $sessions = DB::table('sessions')
-             //   ->where('niveau', '=', $userlvl)
-             //   ->whereDate('date', '>=', Carbon::now() )
-             //   ->get();
-
-
-                //dd($sessions);
-
-
         }
 
     }
@@ -90,15 +100,15 @@ class SessionController extends Controller
 
               Session::create([
 
-                'id_auteur'             => $author->id,
-                'id_sport'              => $values['sport'],
+                'auteur_id'             => $author->id,
+                'sport_id'              => $values['sport'],
                 'heure_debut'           => $values['heure_debut'],
                 'heure_fin'             => $values['heure_fin'],
                 'date'                  => $values['date'],
                 'adresse'               => $values['adresse'],
                 'ville'                 => $values['ville'],
                 'code_postal'           => $values['code_postal'],
-                'niveau'                => $values['niveau'],
+                'niveau'                => $values['level_id'],
                 'nb_max_participants'   => $values['nb_max_participants'],
                 'prix'                  => $values['prix'],
 
