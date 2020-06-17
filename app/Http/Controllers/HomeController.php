@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Session;
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,12 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-$session = Session::all();
 
-$users = User::find(19)->levels;
-
-
-return view('home')->with('users', $users);
+    return view('home');
 
     }
 }
