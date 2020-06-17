@@ -10,4 +10,9 @@ class Sport extends Model
     {
         return $this->belongsToMany('App\Model\User')->using('App\Model\LevelSportUser');
     }
+
+    public function sessions()
+    {
+        return $this->hasMany(Session::class);
+    }
 }

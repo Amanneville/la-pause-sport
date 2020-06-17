@@ -43,6 +43,13 @@ Route::get('/session-list', 'SessionListController@index');
 // Mes sessions, je n'autorise que les users connectés
 Route::get('/mes-sessions', 'User\SessionsController@index')->middleware('auth');
 Route::get('/mes-sessions/{id}', 'User\SessionsController@show')->middleware('auth');
+
+// Page de la session de l'user
+Route::get('/show', 'MessageController@index');
+//post récup les infos du tchat
+Route::post('/mes-sessions/{id}', 'MessageController@store');
+
+
 // Accés ADMIN
 Route::get('/role', 'RoleController@index');
 
@@ -58,7 +65,4 @@ Route::middleware ('auth', 'verified')->group (function (){
         ]);
 });
 
-// Tchat : get affiche le form & post récup les infos
-Route::get('/message', 'MessageController@index');
 
-Route::post('/message', 'MessageController@store');

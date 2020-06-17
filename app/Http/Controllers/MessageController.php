@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Model\Message;
 use App\Model\User;
+use App\Model\Session;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,32 +30,29 @@ class MessageController extends Controller
 
 //             ->where('session_id', '=', '2');
 
-        dd($messages->created_at);
+        //dd($messages->created_at);
 
         //dd($user->firstname);
 
         return view('message.index')->with('messages', $messages)
             ->with('user', $user);
 
-
-
     }
-
-
 
 
     public function store(Request $request)
     {
+
         $values = $request->all();
 
         $message = new Message();
-        $message->from_id = $values['from_id'];
-        $message->to = $values['to'];
-        $message->is_read = $values['is_read'];
+        $message->from_id = Auth::id();
+
         $message->message = $values['message'];
-        $message->session_id = $values['session_id'];
+        $message->session_id = $values['session'];
         $message->save();
 
+        //dd($values);
         return back();
     }
 }

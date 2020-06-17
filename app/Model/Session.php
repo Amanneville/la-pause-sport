@@ -38,12 +38,20 @@ class Session extends Model
         return $this->belongsTo(User::class,   'id_auteur', 'id');
     }
 
-    // Retourne tous les messages de la session
+    // Retourne le nom du sport
+    public function sports()
+    {
+        return $this->belongsTo(Sport::class,   'id_sport', 'id');
+    }
 
+
+    // Retourne tous les messages de la session
     public function messages()
     {
         return $this->hasMany(Message::class)->orderByDesc('created_at');
     }
+
+
 
 }
 

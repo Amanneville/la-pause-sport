@@ -1,8 +1,11 @@
 <?php
 
+use App\Model\Session;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
+use App\Model\User;
 
 class CreateMessagesTable extends Migration
 {
@@ -15,13 +18,9 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
-
-            $table->foreignId('from_id')->constrained('users');
-            $table->bigInteger('to');
+            $table->foreignId('from_id')->default(Auth::id())->constrained('users');
             $table->text('message');
-            $table->tinyInteger('is_read');
-            $table->foreignId('session_id')->nullable()->constrained();
-
+            $table->foreignId('session_id')->constrained('sessions');
             $table->timestamps();
         });
     }
