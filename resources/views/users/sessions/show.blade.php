@@ -32,27 +32,30 @@
 
         </div>
 
-        <div class="col-md-6">
+        <div>
             <h3>Discutez entre participants :</h3>
             {{--    Messages //session->messages--}}
-            <form action="" method="post" id="formMessage">
-                @csrf
-                <div>
-                    <label for="message"></label>
-                    <textarea name="message" cols="50" rows="1" required placeholder="votre message..."></textarea>
-                </div>
-                <div>{{--récup le numéro de la session--}}
-                    <label for="session"></label>
-                    <input type="hidden" name="session" id="session" value="{{$session->id}}"/>
-                </div>
-                <div class="col-md-4">
-                    <button>Envoyer</button>
-                </div>
-            </form>
+           <div class="container">
+               <div class="row">
 
+                   <form action="" method="post" id="formMessage">
+                       @csrf
+                       <div class="col-md-6">
+                           <label for="message"></label>
+                           <textarea name="message" cols="50" rows="1" required placeholder="votre message..."></textarea>
+                           <button>Envoyer</button>
+                       </div>
 
-            <div class="col-md-6" class="box" id="here">
+                       <div class="col-md-6">{{--récup le numéro de la session--}}
+                           <label for="session"></label>
+                           <input type="hidden" name="session" id="session" value="{{$session->id}}"/>
+                       </div>
+                   </form>
 
+               </div>
+           </div>
+
+            <div class="col-md-6" id="here">
                 @foreach($session->messages as $message)
                     <p><b>{{ $message->from->firstname }} a écrit :</b><br> {{ $message->message }}</p>
                 @endforeach
