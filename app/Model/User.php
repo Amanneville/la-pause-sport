@@ -44,7 +44,7 @@ class User extends Authenticatable
 
    public function sessions()
     {
-       return $this->belongsToMany('App\Model\Session')->using('App\Model\SessionUser');
+        return $this->belongsToMany(Session::class);
     }
 
     public function sports()

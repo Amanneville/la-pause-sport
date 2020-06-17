@@ -37,19 +37,6 @@
 
                                 @foreach($user->sessions as $session)
 
-                                    // ajouter une nouvelle session
-
-                                    <div class="card col-md-3 mix cat4 cat1 ml-2 mr-2 mb-2" style="width: 18rem;">
-                                        <div class="center">
-                                            <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/OOjs_UI_icon_add.svg/1200px-OOjs_UI_icon_add.svg.png" alt="Card image cap">
-                                            <div class="card-body">
-                                                <h5 class="card-title">crée une nouvelle session</h5>
-                                                <p class="card-text">+</p>
-                                                <a href="{{ url('/session') }}" class="btn btn-primary">ajouter</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                     //afficher toute les sessions
 
                                     <div class="card col-md-3 ml-2 mr-2 mb-2" style="width: 18rem;">
@@ -70,14 +57,29 @@
                                                 <p class="card-text">Prix de la session : {{ $session->prix }}</p>
                                                 <p class="card-text">Note attribuée : {{ $session->note }}</p>
                                                 <p class="card-text">Réf. Tchat : {{ $session->chat_id }}</p>
-                                                <a href="{{ url('/mes-sessions/'}}).{{ $session->id }}" class="btn btn-primary">Je participe</a>
+                                                <a href="#" class="btn btn-primary">Je participe</a>
                                             </div>
                                         </div>
                                     </div>
                                 @endforeach
 
 
-                                <div class="card col-md-3 ml-2 mr-2" style="width: 18rem;">
+                                    // ajouter une nouvelle session
+
+                                    <div class="card col-md-3 mix cat4 cat1 ml-2 mr-2 mb-2" style="width: 18rem;">
+                                        <div class="center">
+                                            <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/OOjs_UI_icon_add.svg/1200px-OOjs_UI_icon_add.svg.png" alt="Card image cap">
+                                            <div class="card-body">
+                                                <h5 class="card-title">crée une nouvelle session</h5>
+                                                <p class="card-text">+</p>
+                                                <a href="{{ url('/session') }}" class="btn btn-primary">ajouter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="card col-md-3 ml-2 mr-2" style="width: 18rem;">
                                     <div class="center">
                                         <img class="card-img-top" src="https://images.lanouvellerepublique.fr/image/upload/t_1020w/f_auto/58c2d623479a4556008b544b.jpg" alt="Card image cap">
                                         <div class="card-body">

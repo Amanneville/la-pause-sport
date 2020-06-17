@@ -17,9 +17,7 @@ class CreateMessagesTable extends Migration
             $table->id();
 
             $table->foreignId('from_id')->constrained('users');
-            $table->bigInteger('to');
             $table->text('message');
-            $table->tinyInteger('is_read');
             $table->foreignId('session_id')->nullable()->constrained();
 
             $table->timestamps();

@@ -8,6 +8,6 @@ class Sport extends Model
 {
     public function users()
     {
-        return $this->belongsToMany('App\Model\User')->using('App\ModelSportUser');
+        return $this->belongsToMany('App\Model\User')->using('App\Model\SportUser');
     }
 }
