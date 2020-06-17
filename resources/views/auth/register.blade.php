@@ -3,13 +3,15 @@
 @section('content')
 <section class="container-fluid text-center  back4">
     <div class="container-fluid" style="width:auto; height:1100px">
-    <div class="row justify-content-center">
+      <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card animate__animated animate__backInDown" style="width:850px; position: relative; top: 50px">
-                <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+
+                <div class="card-header">{{ __('Register') }}
+
+                  <div class="card-body">
+                    <form enctype="multipart/form-data" method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -244,10 +246,25 @@
                             <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Membre ou Coach?') }}</label>
                             <div class="col-md-6">
                                 <select id="role" class="form-control @error('role') is-invalid @enderror" name="role">
-                                    <option value="0" selected>Je veux juste pratiquer du sport</option>
-                                    <option value="1">Je veux pratiquer du sport et coacher</option>
+                                    <option value="3" selected>Je veux juste pratiquer du sport</option>
+                                    <option value="2">Je veux pratiquer du sport et coacher</option>
 
                                 </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mt-5">
+
+                            <label for="avatar" class="col-md-4 col-form-label text-md-right">{{ __('Votre photo de profil') }}</label>
+                            <div class="col-md-6">
+                                <img src="/uploads/avatars/default.jpg" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
+                                <input type="file" id="avatar" class="form-control @error('avatar') is-invalid @enderror" name="avatar">
+
+
+
+
+
+
                             </div>
                         </div>
 
@@ -257,7 +274,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                             @enderror
-                        </div>
+
 
 
                         <div class="form-group row mb-3">
@@ -265,13 +282,20 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+
                             </div>
                         </div>
+
                     </form>
-                </div>
+                    </div>
+
+                    </div>
+
             </div>
         </div>
+      </div>
     </div>
-</div>
+
+
 </section>
 @endsection

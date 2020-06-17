@@ -26,16 +26,20 @@ class SessionsSportController extends Controller
      */
     public function musculationindex()
     {
+
+
         $session = Session::all();
 
-        return view('sessionsmusculation');
+        dd($session);
+
+        return view('musculation.index')->with('session', $session);
 
     }
     public function yogaindex()
     {
         $session = Session::all();
 
-        return view('sessionsyoga');
+        return view('yoga.index');
 
     }
     public function runningindex()

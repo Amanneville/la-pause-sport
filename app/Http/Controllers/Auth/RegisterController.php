@@ -74,6 +74,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        //dd($data);
+
         $user = User::create([
             'firstname'     => $data['firstname'],
             'lastname'      => $data['lastname'],
@@ -86,29 +88,29 @@ class RegisterController extends Controller
 
         LevelSportUser::create([
 
-            'id_user'            => $user->id,
-            'id_sport'           => $data['sportYoga'],
-            'user_current_level' => $data['niveauSportYoga'],
+            'user_id'            => $user->id,
+            'sport_id'           => $data['sportYoga'],
+            'level_id' => $data['niveauSportYoga'],
 
         ]);
 
         LevelSportUser::create([
 
-            'id_user'               => $user->id,
-            'id_sport'              => $data['sportMusculation'],
-            'user_current_level'    => $data['niveauSportMusculation'],
+            'user_id'               => $user->id,
+            'sport_id'              => $data['sportMusculation'],
+            'level_id'    => $data['niveauSportMusculation'],
         ]);
         LevelSportUser::create([
 
-            'id_user'               => $user->id,
-            'id_sport'              => $data['sportRunning'],
-            'user_current_level'    => $data['niveauSportRunning'],
+            'user_id'               => $user->id,
+            'sport_id'              => $data['sportRunning'],
+            'level_id'    => $data['niveauSportRunning'],
         ]);
 
         LevelSportUser::create([
-            'id_user'               => $user->id,
-            'id_sport'              => $data['sportFitness'],
-            'user_current_level'    => $data['niveauSportFitness'],
+            'user_id'               => $user->id,
+            'sport_id'              => $data['sportFitness'],
+            'level_id'    => $data['niveauSportFitness'],
         ]);
 
         RoleUser::create([

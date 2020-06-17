@@ -23,20 +23,20 @@ Auth::routes();
 
 
 // Les page de session + affichage des sessions avec chacun add session meteo + calendar
-Route::get('/sessionfitness', 'SessionSportController@fitnessindex')->name('sessionsfitness');
-Route::get('/sessionfitness', 'SessionListController@index');
+Route::get('/sessionsfitness', 'SessionSportController@fitnessindex')->name('sessionsfitness');
+Route::get('/sessionsfitness', 'SessionListController@index');
 
 
-Route::get('/sessionmusculation', 'SessionSportController@musculationindex')->name('sessionsmusculation');
-Route::get('/sessionmusculation', 'SessionListController@index');
+Route::get('/sessionsmusculation', 'SessionSportController@musculationindex')->name('sessionsmusculation');
+Route::get('/sessionsmusculation', 'SessionListController@index');
 
 
-Route::get('/sessionrunning', 'SessionSportController@runningindex')->name('sessionsrunning');
-Route::get('/sessionrunning', 'SessionListController@index');
+Route::get('/sessionsrunning', 'SessionSportController@runningindex')->name('sessionsrunning');
+Route::get('/sessionsrunning', 'SessionListController@index');
 
 
-Route::get('/sessionyoga', 'SessionSportController@yogaindex')->name('sessionsyoga');
-Route::get('/sessionyoga', 'SessionListController@index');
+Route::get('/sessionsyoga', 'SessionSportController@yogaindex')->name('sessionsyoga');
+Route::get('/sessionsyoga', 'SessionListController@index');
 
 // affichage page accueil avec toute les session
 
