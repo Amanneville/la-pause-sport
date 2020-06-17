@@ -30,3 +30,10 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+// Mixitube
+jQuery('#mixcontent').mixItUp({
+    animation: {
+        animateResizeContainer: false,
+        effects: 'fade rotateX(-45deg) translateY(-10%)'
+    }
+});
