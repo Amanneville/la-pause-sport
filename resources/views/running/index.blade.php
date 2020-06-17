@@ -35,7 +35,7 @@
 
                             <div class="row justify-content-center">
 
-                                @foreach($user->sessions as $session)
+                                @foreach($sessions as $session)
 
                                     //afficher toute les sessions
 
