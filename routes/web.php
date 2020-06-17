@@ -19,8 +19,8 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-Route::get('/', function () {
-    return view('home');
+    Route::get('/', function () {
+        return view('home');
 });
 
 Auth::routes();
@@ -40,14 +40,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/session', 'SessionController@index')->name('creationSession');
 //Liste des sessions existantes
 Route::get('/session-list', 'SessionListController@index');
+
 // Mes sessions, je n'autorise que les users connectés
 Route::get('/mes-sessions', 'User\SessionsController@index')->middleware('auth');
 Route::get('/mes-sessions/{id}', 'User\SessionsController@show')->middleware('auth');
-
-// Page de la session de l'user
-Route::get('/show', 'MessageController@index');
 //post récup les infos du tchat
-Route::post('/mes-sessions/{id}', 'MessageController@store');
+Route::post('/mes-sessions/{id}', 'User\SessionsController@store');
 
 
 // Accés ADMIN

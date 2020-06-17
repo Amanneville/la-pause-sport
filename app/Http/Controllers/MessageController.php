@@ -34,7 +34,7 @@ class MessageController extends Controller
 
         //dd($user->firstname);
 
-        return view('message.index')->with('messages', $messages)
+        return view('users.index')->with('messages', $messages)
             ->with('user', $user);
 
     }
