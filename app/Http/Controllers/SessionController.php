@@ -36,8 +36,8 @@ class SessionController extends Controller
 
         $session = Session::create([
 
-                'id_auteur'             => $author->id,
-                'id_sport'              => $values['sport'],
+                'auteur_id'             => $author->id,
+                'sport_id'              => $values['sport'],
                 'heure_debut'           => $values['heure_debut'],
                 'heure_fin'             => $values['heure_fin'],
                 'date'                  => $values['date'],

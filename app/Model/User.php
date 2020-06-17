@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -39,21 +39,21 @@ class User extends Authenticatable
 
     public function roles()
     {
-        return $this->belongsToMany('App\Role')->using('App\RoleUser');
+        return $this->belongsToMany('App\Model\Role')->using('App\Model\RoleUser');
     }
 
    public function sessions()
     {
-       return $this->belongsToMany('App\Session')->using('App\SessionUser');
+       return $this->belongsToMany('App\Model\Session')->using('App\Model\SessionUser');
     }
 
     public function sports()
     {
-        return $this->belongsToMany('App\Sport', 'level_sport_user', 'user_id', 'sport_id')->withPivot('level_id');
+        return $this->belongsToMany('App\Model\Sport', 'level_sport_user', 'user_id', 'sport_id')->withPivot('level_id');
     }
     public function levels()
     {
-        return $this->belongsToMany('App\Level', 'level_sport_user', 'user_id', 'level_id')->withPivot('sport_id');
+        return $this->belongsToMany('App\Model\Level', 'level_sport_user', 'user_id', 'level_id')->withPivot('sport_id');
     }
 
 }
