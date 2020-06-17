@@ -7,13 +7,15 @@ use App\Model\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class SessionsSportController extends Controller
+class SessionSportController extends Controller
 {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
+
+
     public function __construct()
     {
         //  $this->middleware('auth');
@@ -28,9 +30,8 @@ class SessionsSportController extends Controller
     {
 
 
-        $session = Session::all();
 
-        dd($session);
+        $session = Session::all();
 
         return view('musculation.index')->with('session', $session);
 
@@ -39,21 +40,21 @@ class SessionsSportController extends Controller
     {
         $session = Session::all();
 
-        return view('yoga.index');
+        return view('yoga.index')->with('session', $session);
 
     }
     public function runningindex()
     {
         $session = Session::all();
 
-        return view('sessionsrunning');
+        return view('running.index')->with('session', $session);
 
     }
     public function fitnessindex()
     {
         $session = Session::all();
 
-        return view('sessionsfitness');
+        return view('fitness.index')->with('session', $session);
 
     }
 }

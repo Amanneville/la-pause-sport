@@ -69,10 +69,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="mr-5 ml-5"><a class="blacklink" href="{{ url('/home') }}">Acceuil</a></li>
-                        <li class="mr-3 ml-5"><a class="greenlink" href="{{ url('/sessionsmusculation') }}">Musculation</a></li>
-                        <li class="mr-3"><a class="greenlink" href="{{ url('/sessionsyoga') }}">Yoga</a></li>
-                        <li class="mr-3"><a class="greenlink" href="{{ url('/sessionsrunning') }}">Running</a></li>
-                        <li class="mr-3"><a class="greenlink" href="{{ url('/sessionsfitness') }}">Fitness</a></li>
+                        <li class="mr-3 ml-5"><a class="greenlink" href="{{ url('/musculation') }}">Musculation</a></li>
+                        <li class="mr-3"><a class="greenlink" href="{{ url('/yoga') }}">Yoga</a></li>
+                        <li class="mr-3"><a class="greenlink" href="{{ url('/running') }}">Running</a></li>
+                        <li class="mr-3"><a class="greenlink" href="{{ url('/fitness') }}">Fitness</a></li>
 
                     </ul>
 
