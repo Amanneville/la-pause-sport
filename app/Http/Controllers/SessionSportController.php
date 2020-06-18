@@ -31,30 +31,53 @@ class SessionSportController extends Controller
 
 
 
+<<<<<<< HEAD
         $session = Session::all();
 
         return view('musculation.index')->with('session', $session);
+=======
+        $sessions = Session::all();
+
+        return view('musculation.index')->with('sessions', $sessions);
+>>>>>>> c1e07ef163405df5d85486b0e4474acde9f3e51f
 
     }
     public function yogaindex()
     {
+<<<<<<< HEAD
         $session = Session::all();
 
         return view('yoga.index')->with('session', $session);
+=======
+        $sessions = Session::all();
+        return view('yoga.index')->with('sessions', $sessions);
+>>>>>>> c1e07ef163405df5d85486b0e4474acde9f3e51f
 
     }
     public function runningindex()
     {
+<<<<<<< HEAD
         $session = Session::all();
 
         return view('running.index')->with('session', $session);
+=======
+        $sessions = Session::all();
+
+        return view('running.index')->with('sessions', $sessions);
+>>>>>>> c1e07ef163405df5d85486b0e4474acde9f3e51f
 
     }
     public function fitnessindex()
     {
+<<<<<<< HEAD
         $session = Session::all();
 
         return view('fitness.index')->with('session', $session);
+=======
+        $sessions = Session::all();
+
+        return view('fitness.index')->with('sessions', $sessions);
+>>>>>>> c1e07ef163405df5d85486b0e4474acde9f3e51f
 
     }
 }

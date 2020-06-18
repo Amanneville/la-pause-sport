@@ -72,8 +72,12 @@
                                                 <p class="card-text">Prix de la session : {{ $session->prix }}</p>
                                                 <p class="card-text">Note attribuée : {{ $session->note }}</p>
                                                 <p class="card-text">Réf. Tchat : {{ $session->chat_id }}</p>
+<<<<<<< HEAD
                                                 <a href="{{ url('/mes-sessions/'}}).{{ $session->id }}" class="btn btn-primary">Je participe</a>
                                             </div>
+=======
+                                                <a href="{{ url('/mes-sessions/'. $session->id) }}" class="btn btn-primary">Je participe</a>                                            </div>
+>>>>>>> c1e07ef163405df5d85486b0e4474acde9f3e51f
                                         </div>
                                     </div>
                                 @endforeach

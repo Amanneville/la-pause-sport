@@ -35,7 +35,11 @@
 
                             <div class="row justify-content-center">
 
+<<<<<<< HEAD
                                 @foreach($user->sessions as $session)
+=======
+                                @foreach($sessions as $session)
+>>>>>>> c1e07ef163405df5d85486b0e4474acde9f3e51f
 
                                     // ajouter une nouvelle session
 
@@ -70,7 +74,11 @@
                                                 <p class="card-text">Prix de la session : {{ $session->prix }}</p>
                                                 <p class="card-text">Note attribuée : {{ $session->note }}</p>
                                                 <p class="card-text">Réf. Tchat : {{ $session->chat_id }}</p>
+<<<<<<< HEAD
                                                 <a href="{{ url('/mes-sessions/'}}).{{ $session->id }}" class="btn btn-primary">Je participe</a>
+=======
+                                                <a href="{{ url('/mes-sessions/'. $session->id) }}" class="btn btn-primary">Je participe</a>
+>>>>>>> c1e07ef163405df5d85486b0e4474acde9f3e51f
                                             </div>
                                         </div>
                                     </div>

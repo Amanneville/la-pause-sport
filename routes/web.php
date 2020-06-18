@@ -83,8 +83,14 @@ Route::post('profile', 'UserController@update_avatar');
 
 // Création d'une session
 Route::get('/session', 'SessionController@index')->name('creationSession');
+<<<<<<< HEAD
 Route::get('/session', 'SessionController@index')->name('creationSession');
 Route::post('/session', 'SessionController@create')->name('creationSession');
+=======
+
+Route::get('/session', 'CreateSessionController@index');
+Route::post('/session', 'CreateSessionController@store');
+>>>>>>> c1e07ef163405df5d85486b0e4474acde9f3e51f
 
 //Liste des sessions existantes
 Route::get('/session-list', 'SessionListController@index');
