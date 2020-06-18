@@ -13,13 +13,8 @@ class SessionsController extends Controller
 {
     public function index()
     {
-
         $user = Auth::user();
-
-
-
         return view('users.sessions.index')->with('user', $user);
-
     }
 
     // Méthode pour afficher une session d'un utilisateur
