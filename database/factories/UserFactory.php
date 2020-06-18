@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Model\User;
+use App\User;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
@@ -18,6 +18,7 @@ use Illuminate\Support\Str;
 */
 
 // php artisan tinker
+// Attention : importer la classe
 // @documentation : https://github.com/fzaninotto/Faker
 // @link : https://www.youtube.com/watch?v=TxfFw6AyVnc
 //                  nb de personnes à créer.
@@ -25,23 +26,12 @@ use Illuminate\Support\Str;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-        'exp3' => $faker->numberBetween(2,40),
-
         'firstname' => $faker->name,
         'lastname' => $faker->lastName,
         'age' => $faker->numberBetween(18,70),
-        'adresse' => $faker->address, // changer en string
-        'code_postal' => $faker->postcode,
-        'sport1' => $faker->numberBetween(1,4),
-        'niveau1' => $faker->numberBetween(1,4),
-        'exp1' =>  $faker->numberBetween(2,99),
-        'sport2'=> $faker->numberBetween(1,4),
-        'niveau2' =>$faker->numberBetween(1,3),
-        'exp2' =>  $faker->numberBetween(200,400),
-        'sport3'=> $faker->numberBetween(1,4),
-        'niveau3' =>$faker->numberBetween (1,4),
-
-        'reputation_coach' => $faker->numberBetween(10,50),
+        'adresse' => $faker->address,
+        'code_postal' => $faker->postcode, // changer en string
+        'avatar' => $faker->ipv4,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'ip_address' => $faker->ipv4,

@@ -8,7 +8,7 @@ class CreateSportsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * Table destinée à recenser les sports disponibles
      * @return void
      */
     public function up()

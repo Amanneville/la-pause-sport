@@ -3,7 +3,7 @@
 use App\Model\Role;
 use Illuminate\Database\Seeder;
 
-class RolesTableSeeder extends Seeder
+class RoleTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class RolesTableSeeder extends Seeder
         Role::insert([
             ['name' => 'administrateur'],
             ['name' => 'coach'],
-            ['name' => 'membre']
+            ['name' => 'eleve']
         ]);
     }
 }

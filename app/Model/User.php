@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'firstname', 'lastname', 'age', 'adresse', 'code_postal', 'avatar', 'email','password'
     ];
 
     /**
@@ -36,4 +36,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function roles()
+    {
+        return $this->belongsToMany('App\Model\Role')->using('App\Model\RoleUser');
+    }
+
+   public function sessions()
+    {
+        return $this->belongsToMany(Session::class);
+    }
+
+    public function sports()
+    {
+        return $this->belongsToMany('App\Model\Sport', 'level_sport_user', 'user_id', 'sport_id')->withPivot('level_id');
+    }
+    public function levels()
+    {
+        return $this->belongsToMany('App\Model\Level', 'level_sport_user', 'user_id', 'level_id')->withPivot('sport_id');
+    }
+
 }

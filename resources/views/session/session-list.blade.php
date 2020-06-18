@@ -1,3 +1,4 @@
+
 @extends('layouts.master')
 @section('content')
 
@@ -25,9 +26,9 @@
         @foreach($sessions as $session)
             <tr>
                 <td>{{ $session->id }}</td>
-                <td>{{ $session->id_auteur }}</td>
-{{--                id_sport = name voir récupération du nom dans le SessionListController--}}
-{{--                <td>{{ $session-> id_sport}}</td>--}}
+                <td>{{ $session->auteur_id }}</td>
+                {{--                id_sport = name voir récupération du nom dans le SessionListController--}}
+                {{--                <td>{{ $session-> id_sport}}</td>--}}
                 <td>{{ $session->name }}</td>
                 <td>{{ $session->heure_debut }}</td>
                 <td>{{ $session->heure_fin }}</td>
