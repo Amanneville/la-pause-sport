@@ -3,16 +3,10 @@
     <div class="container pt-5">
         <form action="" method="post">
             @csrf
-<<<<<<< HEAD
-            <label for="sport" class="col-md-5">{{ __('sport') }}</label>
-            <div class="col-md-6"> {{-- ATTENTION C EST UN EXEMPLE LES SPORTS SONT RENSEIGNES ALEATOIREMENT--}}
-                <select id="sport" class="form-control" name="sport">
-=======
 
             <label for="sport" class="col-md-5">{{ __('sport') }}</label>
             <div class="col-md-6"> {{-- ATTENTION C EST UN EXEMPLE LES SPORTS SONT RENSEIGNES ALEATOIREMENT--}}
                 <select id="sport" class="form-control" name="sport_id">
->>>>>>> c1e07ef163405df5d85486b0e4474acde9f3e51f
                     <option value="1" selected>Musculation</option>
                     <option value="2">Yoga</option>
                     <option value="3">Running</option>
@@ -20,49 +14,12 @@
                 </select>
                 <div class="form-group col-md-6 pt-5">
                     <label for="date">Entrez la date de la séance :</label>
-<<<<<<< HEAD
-                    <input type="date" class="form-control" id="date" name="date">
-                </div>
-                <div class="form-group col-md-6 pt-5">
-                    <label for="heure">Entrez l'heure de début de la séance :</label>
-                    <input type="time" class="form-control" id="heure" name="heure_debut">
-                </div>
-                <div class="form-group col-md-6 pt-5">
-                    <label for="heure">Entrez l'heure de fin de de la séance :</label>
-                    <input type="time" class="form-control" id="heure" name="heure_fin">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="adresse">Entrez l'adresse de la séance :</label>
-                    <input type="text" class="form-control" id="adresse" name="adresse">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="nb_max_participants">Entrez le nombre maximum de participants</label>
-                    <input type="number" class="form-control" id="nb_max_participants" name="nb_max_participants">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="ville">Entrez la ville de la séance</label>
-                    <input type="text" class="form-control" id="ville" name="ville">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="prix">Prix de la séance</label>
-                    <input type="prix" class="form-control" id="prix" name="prix">
-                </div>
-            </div>
-            <div class="form-row">
-            <label for="sport" class="col-md-5">Entrez le niveau de la séance</label>
-            <div class="col-md-6">
-                <select id="niveau" class="form-control" name="niveau">
-=======
                     <input type="date" class="form-control" id="date" name="date" class="{{$errors->has('date') ? 'has-error' : '' }}">
                     @if($errors->has('date'))
                         <span class="help-block">
                             <strong>{{$errors->first('date')}}</strong>
                         </span>
-                        @endif
+                    @endif
                 </div>
 
                 <div class="form-group col-md-6 pt-5">
@@ -132,35 +89,22 @@
             </div>
 
             <div class="form-row">
-            <label for="sport" class="col-md-5">Entrez le niveau de la séance</label>
-            <div class="col-md-6">
-                <select id="niveau" class="form-control" name="niveau" class="{{$errors->has('niveau') ? 'has-error' : '' }}">
->>>>>>> c1e07ef163405df5d85486b0e4474acde9f3e51f
-                    <option value="1">Débutant</option>
-                    <option value="2">Intermédiaire</option>
-                    <option value="3">Avancé</option>
-                </select>
-<<<<<<< HEAD
-=======
-                @if($errors->has('niveau'))
-                    <span class="help-block">
+                <label for="sport" class="col-md-5">Entrez le niveau de la séance</label>
+                <div class="col-md-6">
+                    <select id="niveau" class="form-control" name="niveau" class="{{$errors->has('niveau') ? 'has-error' : '' }}">
+                        <option value="1">Débutant</option>
+                        <option value="2">Intermédiaire</option>
+                        <option value="3">Avancé</option>
+                    </select>
+                    @if($errors->has('niveau'))
+                        <span class="help-block">
                             <strong>{{$errors->first('niveau')}}</strong>
                         </span>
-                @endif
->>>>>>> c1e07ef163405df5d85486b0e4474acde9f3e51f
-            </div>
+                    @endif
+                </div>
 
                 <div class="form-group col-md-2">
                     <label for="code_postal">Code postal</label>
-<<<<<<< HEAD
-                    <input type="text" class="form-control" id="code_postal" name="code_postal">
-                </div>
-
-            </div>
-
-            <div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
-=======
                     <input type="text" class="form-control" id="code_postal" name="code_postal" class="{{$errors->has('code_postal') ? 'has-error' : '' }}">
                     @if($errors->has('code_postal'))
                         <span class="help-block">
@@ -171,8 +115,7 @@
             </div>
 
             <div>
-            <button type="submit" class="btn btn-primary">Valider la séance</button>
->>>>>>> c1e07ef163405df5d85486b0e4474acde9f3e51f
+                <button type="submit" class="btn btn-primary">Valider la séance</button>
             </div>
         </form>
     </div>
