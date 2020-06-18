@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Model\User;
 use App\Model\LevelSportUser;
+use App\Model\RoleUser;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -69,9 +70,12 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Model\User
      * @return \App\Model\LevelSportUser
+     * * @return \App\Model\RoleUser
      */
     protected function create(array $data)
     {
+        //dd($data);
+
         $user = User::create([
             'firstname'     => $data['firstname'],
             'lastname'      => $data['lastname'],
@@ -84,29 +88,34 @@ class RegisterController extends Controller
 
         LevelSportUser::create([
 
-            'id_user'            => $user->id,
-            'id_sport'           => $data['sportYoga'],
-            'user_current_level' => $data['niveauSportYoga'],
+            'user_id'            => $user->id,
+            'sport_id'           => $data['sportYoga'],
+            'level_id' => $data['niveauSportYoga'],
 
         ]);
 
         LevelSportUser::create([
 
-            'id_user'               => $user->id,
-            'id_sport'              => $data['sportMusculation'],
-            'user_current_level'    => $data['niveauSportMusculation'],
+            'user_id'               => $user->id,
+            'sport_id'              => $data['sportMusculation'],
+            'level_id'    => $data['niveauSportMusculation'],
         ]);
         LevelSportUser::create([
 
-            'id_user'               => $user->id,
-            'id_sport'              => $data['sportRunning'],
-            'user_current_level'    => $data['niveauSportRunning'],
+            'user_id'               => $user->id,
+            'sport_id'              => $data['sportRunning'],
+            'level_id'    => $data['niveauSportRunning'],
         ]);
 
         LevelSportUser::create([
-            'id_user'               => $user->id,
-            'id_sport'              => $data['sportFitness'],
-            'user_current_level'    => $data['niveauSportFitness'],
+            'user_id'               => $user->id,
+            'sport_id'              => $data['sportFitness'],
+            'level_id'    => $data['niveauSportFitness'],
+        ]);
+
+        RoleUser::create([
+            'user_id'               => $user->id,
+            'role_id'              => $data['role'],
         ]);
 
         return $user;

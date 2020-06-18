@@ -3,10 +3,7 @@
 use App\Model\Role;
 use Illuminate\Database\Seeder;
 
-
-
 class RoleTableSeeder extends Seeder
-
 {
     /**
      * Run the database seeds.
@@ -19,7 +16,6 @@ class RoleTableSeeder extends Seeder
             ['name' => 'administrateur'],
             ['name' => 'coach'],
             ['name' => 'eleve']
-
         ]);
     }
 }

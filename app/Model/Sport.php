@@ -8,11 +8,6 @@ class Sport extends Model
 {
     public function users()
     {
-        return $this->belongsToMany('App\Model\User')->using('App\Model\LevelSportUser');
-    }
-
-    public function sessions()
-    {
-        return $this->hasMany(Session::class);
+        return $this->belongsToMany('App\Model\User')->using('App\Model\SportUser');
     }
 }

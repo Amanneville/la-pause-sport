@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Session extends Model
 {
     protected $fillable = [
-        'id_auteur',
-        'id_sport',
+        'auteur_id',
+        'sport_id',
         'heure_debut',
         'heure_fin',
         'date',
@@ -35,13 +35,13 @@ class Session extends Model
     // Retourn le coach
     public function coach()
     {
-        return $this->belongsTo(User::class,   'id_auteur', 'id');
+        return $this->belongsTo(User::class,   'auteur_id', 'id');
     }
 
     // Retourne le nom du sport
     public function sports()
     {
-        return $this->belongsTo(Sport::class,   'id_sport', 'id');
+        return $this->belongsTo(Sport::class,   'sport_id', 'id');
     }
 
 
@@ -54,5 +54,3 @@ class Session extends Model
 
 
 }
-
-

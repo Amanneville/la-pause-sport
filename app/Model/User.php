@@ -39,15 +39,21 @@ class User extends Authenticatable
 
     public function roles()
     {
-        return $this->hasMany('App\Role')->using('App\RoleUser');
-    }
-    public function level_sport()
-    {
-        return $this->hasMany('App\Sport')->using('App\LevelSportUser');
+        return $this->belongsToMany('App\Model\Role')->using('App\Model\RoleUser');
     }
 
-    public function sessions()
+   public function sessions()
     {
         return $this->belongsToMany(Session::class);
     }
+
+    public function sports()
+    {
+        return $this->belongsToMany('App\Model\Sport', 'level_sport_user', 'user_id', 'sport_id')->withPivot('level_id');
+    }
+    public function levels()
+    {
+        return $this->belongsToMany('App\Model\Level', 'level_sport_user', 'user_id', 'level_id')->withPivot('sport_id');
+    }
+
 }
