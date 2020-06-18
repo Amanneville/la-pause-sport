@@ -36,7 +36,7 @@
                     <ul>
                         <li><b>Prénom : </b>{{ $user->firstname }} <b>Nom : </b> {{ $user->lastname }}</li>
                         <li><b>Adresse : </b>{{ $user->adresse }} ({{ $user->code_postal }})</li><br>
-                        <li><b>Votre adresse mail :</b>{{ $user->email }}</li><br>
+                        <li><b>Votre adresse mail : </b>{{ $user->email }}</li><br>
                         <li><b>Âge : </b>{{ $user->age }} ans.</li>
                     </ul>
 

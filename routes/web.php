@@ -15,15 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 // register / Login
 Auth::routes();
 //--------------------------------------------------------------------------
 // ACCUEIL : affichage page accueil avec toutes les sessions
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', ['middleware' => 'auth', function () {
-    return view('home');
-}]);
+Route::get('/', 'HomeController@index');
+//Route::get('/', ['middleware' => 'auth', function () {
+//    return view('home');
+//}]);
+
+
 //--------------------------------------------------------------------------
 
 // SESSIONS

@@ -68,7 +68,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="mr-5 ml-5"><a class="blacklink" href="{{ url('/home') }}">Acceuil</a></li>
+                        <li class="mr-5 ml-5"><a class="blacklink" href="{{ url('/home') }}">Accueil</a></li>
                         <li class="mr-3 ml-5"><a class="greenlink" href="{{ url('/musculation') }}">Musculation</a></li>
                         <li class="mr-3"><a class="greenlink" href="{{ url('/yoga') }}">Yoga</a></li>
                         <li class="mr-3"><a class="greenlink" href="{{ url('/running') }}">Running</a></li>

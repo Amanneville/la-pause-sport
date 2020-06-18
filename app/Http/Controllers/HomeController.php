@@ -26,9 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $session = Session::all();
+//        $session = Session::all();
 
         return view('home');
 
     }
+
+
+
 }

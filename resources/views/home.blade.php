@@ -19,9 +19,9 @@
 
                         <div class="center fadeInUp">
 
-                            <input type="hidden" id="code_postal_user" value="{{ Auth::user()->code_postal }}"/>
-                            <input type="button" value="APPEL API METEO" onclick="buttonClickGET()"/>
-                            <p id="zone_meteo" class="mb-5">Temperature d'aujourd'hui dans votre ville est de: </p>
+{{--                            <input type="hidden" id="code_postal_user" value="{{ Auth::user()->code_postal }}"/>--}}
+{{--                            <input type="button" value="APPEL API METEO" onclick="buttonClickGET()"/>--}}
+{{--                            <p id="zone_meteo" class="mb-5">Temperature d'aujourd'hui dans votre ville est de: </p>--}}
 
 
 
