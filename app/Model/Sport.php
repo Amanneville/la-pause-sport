@@ -10,4 +10,5 @@ class Sport extends Model
     {
         return $this->belongsToMany('App\Model\User')->using('App\Model\SportUser');
     }
+
 }

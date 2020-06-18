@@ -26,9 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $session = Session::all();
+        $sessions = Session::all();
 
-        return view('home');
+        return view('home')->with('sessions', $sessions);
 
     }
 }

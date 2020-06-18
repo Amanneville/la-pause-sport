@@ -100,10 +100,7 @@ Route::post('/mes-sessions/{id}', 'User\SessionsController@store');
 // Accés ADMIN
 Route::get('/role', 'RoleController@index');
 
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
 

@@ -49,7 +49,7 @@ class User extends Authenticatable
 
     public function sports()
     {
-        return $this->belongsToMany('App\Model\Sport', 'level_sport_user', 'user_id', 'sport_id')->withPivot('level_id');
+        return $this->belongsToMany(Sport::class, 'level_sport_user', 'user_id', 'sport_id')->withPivot('level_id');
     }
     public function levels()
     {

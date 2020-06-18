@@ -31,6 +31,8 @@ class SessionsController extends Controller
         // Récupère la session
         $session = Session::where('id', $id)->first();
 
+        //dd($session->users->count());
+
         return view('users.sessions.show')->with('session',$session);
     }
 
