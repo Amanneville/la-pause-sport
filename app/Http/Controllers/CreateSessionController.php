@@ -46,7 +46,7 @@ class CreateSessionController extends Controller
         $rules = [
             'sport_id'              => 'required|numeric',
             'date'                  => 'required|date|after_or_equal:date',
-            'heure_debut'           => 'required',
+            'heure_debut'           => 'required|after_or_equal:date',
             'heure_fin'             => 'required|after_or_equal:heure_debut',
             'adresse'               => 'required|string',
             'ville'                 => 'required|string',

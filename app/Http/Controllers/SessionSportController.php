@@ -32,19 +32,25 @@ class SessionSportController extends Controller
 
 
         $sessions = Session::all();
+        //$sessions->where('sport_id', '=', '1');
 
+      $sessions = $sessions->where('sport_id', '=', 1);
+        //dd($sessions->sports);
         return view('musculation.index')->with('sessions', $sessions);
 
     }
     public function yogaindex()
     {
         $sessions = Session::all();
+        $sessions = $sessions->where('sport_id', '=', 2);
+
         return view('yoga.index')->with('sessions', $sessions);
 
     }
     public function runningindex()
     {
         $sessions = Session::all();
+        $sessions = $sessions->where('sport_id', '=', 3);
 
         return view('running.index')->with('sessions', $sessions);
 
@@ -52,6 +58,7 @@ class SessionSportController extends Controller
     public function fitnessindex()
     {
         $sessions = Session::all();
+        $sessions = $sessions->where('sport_id', '=', 4);
 
         return view('fitness.index')->with('sessions', $sessions);
 
