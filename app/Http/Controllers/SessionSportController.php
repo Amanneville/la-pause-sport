@@ -31,7 +31,7 @@ class SessionSportController extends Controller
 
 
 
-        $sessions = Session::all();
+      $sessions = Session::all();
         //$sessions->where('sport_id', '=', '1');
 
       $sessions = $sessions->where('sport_id', '=', 1);

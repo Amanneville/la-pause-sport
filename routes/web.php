@@ -43,15 +43,14 @@ Route::post('/yoga', 'SessionListController@index');
 // affichage page accueil avec toute les session
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', ['middleware' => 'auth', function () {
-    return view('home');
-}]);
+
+Route::get('/', 'HomeController@index')->name('home');
 
 
 
 // Debugage deconnexion
 Route::get('logout', 'Auth\LoginController@logout', function () {
-    return view('login');
+    return view('home');
 });
 
 
@@ -79,6 +78,12 @@ Route::middleware ('auth', 'verified')->group (function (){
 
 Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
+
+Route::get('profileCoach', 'UserController@profileCoach');
+Route::post('profileCoach', 'UserController@update_avatar');
+
+Route::get('profileAdmin', 'UserController@profileAdmin');
+Route::post('profileAdmin', 'UserController@update_avatar');
 
 
 // Création d'une session
