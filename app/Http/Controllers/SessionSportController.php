@@ -35,8 +35,6 @@ class SessionSportController extends Controller
 
         $user = Auth::user();
 
-        $retailer = User::with('sports')->find($user->id)->dd();
-
         // Recherche de son niveau dans le sport
 
         $level = DB::table('level_sport_user')
