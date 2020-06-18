@@ -31,30 +31,29 @@ class SessionSportController extends Controller
 
 
 
-        $session = Session::all();
+        $sessions = Session::all();
 
-        return view('musculation.index')->with('session', $session);
+        return view('musculation.index')->with('sessions', $sessions);
 
     }
     public function yogaindex()
     {
-        $session = Session::all();
-
-        return view('yoga.index')->with('session', $session);
+        $sessions = Session::all();
+        return view('yoga.index')->with('sessions', $sessions);
 
     }
     public function runningindex()
     {
-        $session = Session::all();
+        $sessions = Session::all();
 
-        return view('running.index')->with('session', $session);
+        return view('running.index')->with('sessions', $sessions);
 
     }
     public function fitnessindex()
     {
-        $session = Session::all();
+        $sessions = Session::all();
 
-        return view('fitness.index')->with('session', $session);
+        return view('fitness.index')->with('sessions', $sessions);
 
     }
 }
