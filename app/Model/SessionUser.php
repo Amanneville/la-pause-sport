@@ -8,6 +8,7 @@ class SessionUser extends Model
 {
     protected $table = 'session_user';
 
+
     public $timestamps = false;
 
 
