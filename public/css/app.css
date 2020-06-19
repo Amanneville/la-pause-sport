@@ -10928,3 +10928,59 @@ a.text-dark:focus {
   }
 }
 
+
+/* LA PAUSE SPORT*/
+
+/*Fenêtre du tchat-messages*/
+#messages{
+    text-align:left;
+    padding:10px;
+    background:#fff;
+    height:400px;
+    max-width: 80%;
+    border:1px solid #ACD8F0;
+    overflow:auto;
+}
+.boxWrite{
+    max-width: 100%;
+    padding: 0;
+}
+.btnTchat{
+    display: inline-block;
+    background-color: #68AAE3;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px;
+    width: 80px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+button:hover {
+    background-color: #C8B4D0;
+}
+button:hover span {
+    padding-right: 25px;
+}
+button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+

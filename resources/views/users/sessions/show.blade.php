@@ -37,24 +37,21 @@
                 {{--    Messages //session->messages--}}
                 <form action="" method="post" id="formMessage">
                     @csrf
-                    <div>
+                    <div class="col-md-6 d-flex d-flex justify-content-start boxWrite">
                         <label for="message"></label>
-                        <textarea name="message" cols="50" rows="1" required placeholder="votre message..."></textarea>
+                        <textarea name="message" cols="50" rows="2" required placeholder="votre message..."></textarea>
+                        <button class="btnTchat">Envoyer</button>
                     </div>
                     <div>{{--récup le numéro de la session--}}
                         <label for="session"></label>
                         <input type="hidden" name="session" id="session" value="{{$session->id}}"/>
                     </div>
-                    <div class="col-md-4">
-                        <button>Envoyer</button>
-                    </div>
+
                 </form>
 
-
-                <div class="col-md-6" class="box" id="messages">
-
+                <div class="col-md-6 mt-2" id="messages">
                     @foreach($session->messages as $message)
-                        <p><b>{{ $message->from->firstname }} a écrit :</b><br> {{ $message->message }}</p>
+                        <p><b>{{ $message->from->firstname }} a écrit :</b> {{ $message->message }}</p>
                     @endforeach
 
                 </div>
@@ -100,7 +97,7 @@
                           let chat = document.querySelector('#messages');
                           for (let message of data) {
                               console.log(message);
-                              chat.insertAdjacentHTML('beforeend',  '<p><b>' + message.from.firstname + ' a écrit :</b><br>' + message.message + '</p>')
+                              chat.insertAdjacentHTML('beforeend',  '<p><b>' + message.from.firstname + ' a écrit : </b>' + message.message + '</p>')
                           }
                       });
               }, 2500);
