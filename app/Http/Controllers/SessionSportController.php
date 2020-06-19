@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\LevelSportUser;
 use App\Model\Session;
+use App\Model\Sport;
 use App\Model\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,11 +31,12 @@ class SessionSportController extends Controller
      */
     public function musculationindex()
     {
-        // indentification de l'utilisateur
-        $user = Auth::user();
 
 
-        $user = Auth::user();
+
+        $sessions = Session::where('sport_id', 1)->where('date' ,'>=', date('Y-m-d'))->get();
+
+        return view('musculation.index')->with('sessions', $sessions);
 
         // Recherche de son niveau dans le sport
 
@@ -56,9 +59,11 @@ class SessionSportController extends Controller
         return view('musculation.index')->with('sessions', $sessions);
 
     }
+
     public function yogaindex()
 
     {
+
 
         $user = Auth::user();
 
@@ -111,9 +116,11 @@ class SessionSportController extends Controller
 
         $UserLevel = $level->pluck('level_id');
 
+
         $UserSportLevel = $UserLevel[0];
         $sessions = Session::all();
-        $sessions = $sessions->where('sport_id', '=', 4)->where('niveau', '=', $UserSportLevel);
+        $sessions = $sessions->where('sport_id', '=', 4)
+                              ->where('niveau', '=', $UserSportLevel);
 
         return view('fitness.index')->with('sessions', $sessions);
 

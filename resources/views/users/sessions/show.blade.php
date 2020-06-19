@@ -26,7 +26,7 @@
                 {{--{{dd($session->users->lastname)}}--}}
                 @foreach($session->users as $user)
                     <ul>
-                        <li>{{ $user->firstname }}  {{ $user->lastname }} {{ $user->age }} ans </li>
+                        <li>{{ $user->firstname }}  {{ $user->lastname }} {{ $user->age }} ans</li>
                     </ul>
                 @endforeach
 
@@ -66,8 +66,8 @@
 
         <form action="{{ route('inscription.create') }}" method="get">
 
-                    <button class="btn-info"> inscription </button>
-                    <input type="hidden" name="session_id" value="{{ $session->id }}"/>
+            <button class="btn-info"> inscription</button>
+            <input type="hidden" name="session_id" value="{{ $session->id }}"/>
 
         </form>
 
@@ -82,6 +82,7 @@
         {{--var url = 'tchat/{{$session->id}}'--}}
         {{--$("#here").load("url #ici");--}}
         setInterval('load_messages()', 500)
+
         function load_messages() {
             $("#here").load(" #here")
         }

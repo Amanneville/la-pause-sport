@@ -61,7 +61,7 @@ Route::get('admin_area', ['middleware' => 'admin', function () {
 
 
 // Accés Coach
-Route::get('/registerCoach', 'Auth\RegisterController@registerCoach')->name('registerCoach');;
+//Route::get('/registerCoach', 'Auth\RegisterController@registerCoach')->name('registerCoach');;
 
 
 // Image Profil route controleur
@@ -103,7 +103,7 @@ Route::post('/mes-sessions/{id}', 'User\SessionsController@store');
 Route::resource('inscription', 'User\SessionsController')->middleware('auth');
 
 // Accés ADMIN
-Route::get('/role', 'RoleController@index');
+//Route::get('/role', 'RoleController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

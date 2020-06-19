@@ -2,20 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Role;
 use App\Model\RoleUser;
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Image;
 
 class UserController extends Controller
 {
-    //
+
+
+    //public function roles()
+    //    {
+    //        return $this->belongsToMany('App\Role')->using('App\RoleUser');
+    //    }
+
     public function profile()
     {
-
         $user = Auth::user();
+       // dd($user);
+
+             $role = Role::find(3);
+            // dd($role->users);
+            //dd($user->roles);
+
+      //  foreach ($role->users as $user){
+        //    dd($user->id);
+       // }
+
+            // foreach ($user->roles as $role){
+            //  dd($role->name);
+        //}
+
 
         $role_user = RoleUser::all();
 

@@ -36,6 +36,7 @@
 
                                     {{-- Afficher toutes les sessions de musculation--}}
                                         @foreach($sessions as $session)
+
                                             <div class="card col-md-4 mb-2" style="width: 18rem;">
                                                 <div class="center">
                                                     <img class="card-img-top" src="https://image.freepik.com/photos-gratuite/trail-running-homme-exercant-exterieur-pour-forme-physique_1421-45.jpg" alt="">
@@ -83,8 +84,8 @@
                                   @foreach($sessions as $session)
 
 
-                                    {{-- Afficher toutes les sessions de musculation--}}
-
+                                    {{-- Afficher toutes les sessions de musculation RAJOUTER UNE CONDITION POUR VERIFIER SI LUSER A UN SPORT--}}
+                                    @if($session->niveau === intval(Auth::user()->sport(1)->level_id))
                                       <div class="card col-md-4 mb-2" style="width: 18rem;">
                                         <div class="center">
                                             <img class="card-img-top" src="https://image.freepik.com/photos-gratuite/trail-running-homme-exercant-exterieur-pour-forme-physique_1421-45.jpg" alt="">
@@ -101,7 +102,7 @@
                                             </div>
                                         </div>
                                       </div>
-
+                                    @endif
                                   @endforeach
                                 </div>
 

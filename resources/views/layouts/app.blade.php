@@ -97,7 +97,6 @@
                                     {{ Auth::user()->lastname }} <span class="caret"></span>
                                     {{ Auth::user()->firstname }} <span class="caret"></span>
                                 </a>
-                                <img class="animate__animated animate__hinge" src="/uploads/basquettes.png" style="width:50px; height:50px; position:absolute; top: 2px; left:200px;">
 
                                 <ul class="dropdown-menu">
                                     <li><a href="{{ url('/profile') }}"><i class="fa fa-btn fa-user"></i>Profile</a></li>

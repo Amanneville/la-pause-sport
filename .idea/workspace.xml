@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="038f48b6-c9c2-4b8c-b06a-4fd4fda81592" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/profileAdmin.blade.php" afterDir="false" />
+    <list default="true" id="89992194-9b36-46f6-b96e-fcefa52b0552" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CreateSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CreateSessionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SessionSportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SessionSportController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/SessionUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/SessionUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/fitness/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/fitness/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Sport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Sport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/create-session/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/create-session/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/musculation/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/musculation/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/running/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/running/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/yoga/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/yoga/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/sessions/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/sessions/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/sessions/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/sessions/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,6 +156,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
+    <option name="sortByType" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -165,6 +182,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="447" y="159" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592498967045">
       <screen x="0" y="0" width="1536" height="778" />
@@ -182,16 +210,25 @@
       <screen x="0" y="0" width="1536" height="778" />
     </state>
     <state x="496" y="85" key="FileChooserDialogImpl/0.0.1536.778/-1920.0.1920.1080@0.0.1536.778" timestamp="1592484031813" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/musculation/index.blade.php</url>
-          <line>59</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="118" y="123" key="MergeDialog" timestamp="1592508692802">
+      <screen x="0" y="23" width="2048" height="1049" />
+    </state>
+    <state x="118" y="123" key="MergeDialog/0.23.2048.1049@0.23.2048.1049" timestamp="1592508692802" />
+    <state x="256" y="203" width="1361" height="701" key="MultipleFileMergeDialog" timestamp="1592508692837">
+      <screen x="0" y="23" width="2048" height="1049" />
+    </state>
+    <state x="256" y="203" width="1361" height="701" key="MultipleFileMergeDialog/0.23.2048.1049@0.23.2048.1049" timestamp="1592508692837" />
+    <state width="600" height="440" key="javadoc.popup" timestamp="1592563891905">
+      <screen x="0" y="23" width="2048" height="1049" />
+    </state>
+    <state width="600" height="440" key="javadoc.popup/0.23.2048.1049@0.23.2048.1049" timestamp="1592563891905" />
+    <state x="1155" y="258" key="run.anything.popup" timestamp="1592565920608">
+      <screen x="0" y="23" width="2048" height="1049" />
+    </state>
+    <state x="1155" y="258" key="run.anything.popup/0.23.2048.1049@0.23.2048.1049" timestamp="1592565920608" />
+    <state x="1155" y="268" width="670" height="676" key="search.everywhere.popup" timestamp="1592567030580">
+      <screen x="0" y="23" width="2048" height="1049" />
+    </state>
+    <state x="1155" y="268" width="670" height="676" key="search.everywhere.popup/0.23.2048.1049@0.23.2048.1049" timestamp="1592567030580" />
   </component>
 </project>
