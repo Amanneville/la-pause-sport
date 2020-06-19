@@ -14,7 +14,7 @@ class SessionsController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('users.sessions.index')->with('user', $user);
+        return view('users.session.index')->with('user', $user);
     }
 
     // Méthode pour afficher une session d'un utilisateur
@@ -25,7 +25,7 @@ class SessionsController extends Controller
 
         // Récupère la session
         $session = Session::where('id', $id)->first();
-        return view('users.sessions.show')->with('session',$session);
+        return view('users.session.show')->with('session',$session);
     }
 
     public function store(Request $request)

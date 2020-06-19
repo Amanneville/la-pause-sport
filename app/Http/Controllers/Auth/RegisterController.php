@@ -113,7 +113,7 @@ class RegisterController extends Controller
             'level_id' => $data['niveauSportFitness'],
         ]);
 
-        dd($data);
+
         RoleUser::create([
             'user_id' => $user->id,
             'role_id' => $data['role'],

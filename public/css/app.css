@@ -10983,4 +10983,8 @@ button:hover span:after {
     opacity: 1;
     right: 0;
 }
+.title_axe{
+    color: #3B0351;
+    font-weight: bold;
+}
 
