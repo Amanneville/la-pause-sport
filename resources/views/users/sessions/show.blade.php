@@ -26,7 +26,7 @@
                 {{--{{dd($session->users->lastname)}}--}}
                 @foreach($session->users as $user)
                     <ul>
-                        <li>{{ $user->firstname }}  {{ $user->lastname }} {{ $user->age }} ans </li>
+                        <li>{{ $user->firstname }}  {{ $user->lastname }} {{ $user->age }} ans</li>
                     </ul>
                 @endforeach
 
@@ -37,10 +37,9 @@
                 {{--    Messages //session->messages--}}
                 <form action="" method="post" id="formMessage">
                     @csrf
-                    <div class="col-md-6 d-flex d-flex justify-content-start boxWrite">
+                    <div>
                         <label for="message"></label>
-                        <textarea name="message" cols="50" rows="2" required placeholder="votre message..."></textarea>
-                        <button class="btnTchat">Envoyer</button>
+                        <textarea name="message" cols="50" rows="1" required placeholder="votre message..."></textarea>
                     </div>
                     <div>{{--récup le numéro de la session--}}
                         <label for="session"></label>
@@ -58,6 +57,17 @@
             </div>
 
         </div>
+
+        {{--INSERER UN BOUTON D'INSCRIPTION--}}
+
+        <form action="{{ route('inscription.create') }}" method="get">
+
+            <button class="btn-info"> inscription</button>
+            <input type="hidden" name="session_id" value="{{ $session->id }}"/>
+
+        </form>
+
+
     </div>
 
 @endsection

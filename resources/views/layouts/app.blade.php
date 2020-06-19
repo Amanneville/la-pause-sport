@@ -33,7 +33,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm ">
             <div class="container">
                 <img src="/uploads/femmesport.png" style="width:50px; height:50px; float:left; border-radius:50%;">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -75,10 +75,11 @@
                                     {{ Auth::user()->lastname }} <span class="caret"></span>
                                     {{ Auth::user()->firstname }} <span class="caret"></span>
                                 </a>
-                                <img class="animate__animated animate__hinge" src="/uploads/basquettes.png" style="width:50px; height:50px; position:absolute; top: 2px; left:200px;">
 
                                 <ul class="dropdown-menu">
                                     <li><a href="{{ url('/profile') }}"><i class="fa fa-btn fa-user"></i>Profile</a></li>
+                                    <li><a href="{{ url('/profileCoach') }}"><i class="fa fa-btn fa-user"></i>Profile Coach</a></li>
+                                    <li><a href="{{ url('/profileAdmin') }}"><i class="fa fa-btn fa-user"></i>Profile Admin</a></li>
                                     <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Se deconnecter</a></li>
                                 </ul>
 

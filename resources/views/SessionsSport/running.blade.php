@@ -60,7 +60,7 @@
                                             <div class="card-body">
                                                 <h5 class="card-title">N° Session : {{ $session->id }}</h5>
                                                 <h5 class="card-title">Sport : {{ $session->name }}</h5>
-                                                <h5 class="card-title">Coach : {{ $session->id_auteur }}</h5>
+                                                <h5 class="card-title">Coach : {{ $session->auteur_id }}</h5>
                                                 <h5 class="card-title">Date : {{ $session->date }}</h5>
                                                 <h5 class="card-title">Adresse : {{ $session->adresse }}</h5>
                                                 <p class="card-text">Code postal : {{ $session->code_postal }}</p>

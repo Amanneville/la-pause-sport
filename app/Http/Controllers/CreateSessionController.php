@@ -45,8 +45,8 @@ class CreateSessionController extends Controller
 
         $rules = [
             'sport_id'              => 'required|numeric',
-            'date'                  => 'required|date|after_or_equal:date',
-            'heure_debut'           => 'required',
+            'date'                  => 'required|date|date_format:Y-m-d|after_or_equal:today',
+            'heure_debut'           => 'required|after_or_equal:date',
             'heure_fin'             => 'required|after_or_equal:heure_debut',
             'adresse'               => 'required|string',
             'ville'                 => 'required|string',
@@ -60,7 +60,7 @@ class CreateSessionController extends Controller
         $validator = Validator::make($values, $rules, [
             'sport_id.required'             => 'un sport doit être choisi',
             'date.required'                 => 'une date doit doit être renseignée',
-            'date.after_or_equal:date'      => 'une date égale ou supérieure doit doit être renseignée',
+            'date.after_or_equal:today'      => 'une date égale ou supérieure doit doit être renseignée',
             'heure_debut.required'          => 'une heure de début doit être renseignée',
             'heure_fin.required'            => 'une heure de fin doit être renseignée',
             'heure_fin.after_or_equal'      => 'une heure de fin supérieure à l\'heure de début doit être renseignée',

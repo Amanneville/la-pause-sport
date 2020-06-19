@@ -15,20 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+
+
 // register / Login
 Auth::routes();
-//--------------------------------------------------------------------------
-// ACCUEIL : affichage page accueil avec toutes les sessions
-Route::get('/', 'HomeController@index');
-//Route::get('/', ['middleware' => 'auth', function () {
-//    return view('home');
-//}]);
 
 
-//--------------------------------------------------------------------------
 
-// SESSIONS
-// Les page de session + affichage des sessions avec chacun add session meteo + calendar
+// Les page de sessions + affichage des sessions avec chacun add session meteo + calendar
 Route::get('/fitness', 'SessionSportController@fitnessindex');
 Route::post('/fitness', 'SessionListController@index');
 
@@ -40,15 +36,22 @@ Route::post('/running', 'SessionListController@index');
 
 Route::get('/yoga', 'SessionSportController@yogaindex');
 Route::post('/yoga', 'SessionListController@index');
-//--------------------------------------------------------------------------
 
-// DECONNEXION : débugg déconnexion
+
+// affichage page accueil avec toutes les sessions
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'HomeController@index')->name('home');
+
+
+
+// Debugage deconnexion
 Route::get('logout', 'Auth\LoginController@logout', function () {
-    return view('login');
+    return view('home');
 });
-//--------------------------------------------------------------------------
 
-// ADMINISTRATEUR
+
 //Is Admin
 Route::get('admin_area', ['middleware' => 'admin', function () {
     //
@@ -62,28 +65,39 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // COACH
 // Accés Coach
-Route::get('/registerCoach', 'Auth\RegisterController@registerCoach')->name('registerCoach');
+//Route::get('/registerCoach', 'Auth\RegisterController@registerCoach')->name('registerCoach');;
 
-// Création d'une session
-Route::get('/session', 'SessionController@index')->name('creationSession');
-Route::get('/session', 'CreateSessionController@index');
-Route::post('/session', 'CreateSessionController@store');
-//--------------------------------------------------------------------------
 
 // ELEVES = USER
 // Image Profil route controleur
 Route::middleware ('auth', 'verified')->group (function (){
     Route::resource ('image',
-        'ImageController', [
-            'only'=>['create', 'store', 'destroy', 'update']
+    'ImageController', [
+        'only'=>['create', 'store', 'destroy', 'update']
         ]);
 });
 
 // Route vers la gestion de profil
+
 Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
 
 // USER TCHAT
+Route::get('profileCoach', 'UserController@profileCoach');
+Route::post('profileCoach', 'UserController@update_avatar');
+
+Route::get('profileAdmin', 'UserController@profileAdmin');
+Route::post('profileAdmin', 'UserController@update_avatar');
+
+
+// Création d'une session
+Route::get('/session', 'SessionController@index')->name('creationSession');
+
+Route::get('/session', 'CreateSessionController@index');
+Route::post('/session', 'CreateSessionController@store');
+
+//Liste des sessions existantes
+Route::get('/session-list', 'SessionListController@index');
 // Mes sessions, je n'autorise que les users connectés
 // get : affiche la page profil user avec SES sessions
 Route::get('/mes-sessions', 'User\SessionsController@index')->middleware('auth');
@@ -94,4 +108,14 @@ Route::post('/mes-sessions/{id}', 'User\SessionsController@store');
 // Récupérer tous les messages
 Route::post('/getMessages/{id}', 'User\SessionsController@chat');
 //--------------------------------------------------------------------------
+
+//inscription dans une session
+Route::resource('inscription', 'User\SessionsController')->middleware('auth');
+
+// Accés ADMIN
+//Route::get('/role', 'RoleController@index');
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
 

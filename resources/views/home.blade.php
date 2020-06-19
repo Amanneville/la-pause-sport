@@ -1,142 +1,115 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="container-fluid text-center  back1">
+    <section class=" container-fluid text-center  back1">
         <div class="container-fluid" >
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card animate__animated animate__backInDown" style="width:850px;">
-                        <div class="card-header">Les sessions</div>
+                        <div class="card-header">Les sessions de musculation à côté de chez vous</div>
 
-                        <div class="card-body " >
-                            @if (session('status'))
-                                <div class="alert alert-success" role="alert">
-                                    {{ session('status') }}
+
+                        {{-- Si personne non membre affiche --}}
+                        @guest
+                            <div class="center fadeInUp">
+
+                                <br>
+                                <p id="zone_meteo" class="mb-5">Connectez vous pour profité de toutes les fonctionnalités</p>
+
+                                <div class="container">
+                                    <div class="row">
+
+
+                                        {{-- ajouter une nouvelle session --}}
+
+                                        <div class="card col-md-4 mb-2" style="width: 18rem;">
+                                            <div class="center">
+                                                <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/OOjs_UI_icon_add.svg/1200px-OOjs_UI_icon_add.svg.png" alt="Card image cap">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">crée une nouvelle session</h5>
+                                                    <p class="card-text">+</p>
+                                                    <a href="#" class="btn btn-danger">Accès seulement aux membres</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        {{-- Afficher toutes les sessions de musculation--}}
+                                        @foreach($sessions ?? '' as $session)
+                                            <div class="card col-md-4 mb-2" style="width: 18rem;">
+                                                <div class="center">
+                                                    <img class="card-img-top" src="https://image.freepik.com/photos-gratuite/trail-running-homme-exercant-exterieur-pour-forme-physique_1421-45.jpg" alt="">
+                                                    <div class="card-body">
+                                                        <h2 class="card-text">Session</h2>
+                                                        <h4 class="card-text">{{ $session->ville }}</h4>
+                                                        <p class="card-text">Niveau requis : {{ $session->niveau }}</p>
+                                                        <p class="card-title">Date : {{ $session->date }}</p>
+                                                        <p class="card-text">Nombre de participants : {{ $session->nb_max_participants }}</p>
+                                                        <p class="card-text">Prix de la session : {{ $session->prix }}€</p>
+                                                        <p class="card-text">informations uniquement aux membres</p>
+                                                        <a href="#" class="btn btn-success">informations session</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+
                                 </div>
-                            @endif
-                        </div>
-
-
-                        <div class="center fadeInUp">
-
-{{--                            <input type="hidden" id="code_postal_user" value="{{ Auth::user()->code_postal }}"/>--}}
-{{--                            <input type="button" value="APPEL API METEO" onclick="buttonClickGET()"/>--}}
-{{--                            <p id="zone_meteo" class="mb-5">Temperature d'aujourd'hui dans votre ville est de: </p>--}}
-
-
-
-                            <div class="col-md-8 ml-5 mr-2  mb-5 text-center">
-                                <p>Calendrier</p>
-                                <div id='calendar'></div>
                             </div>
 
+                        @else
+                            <div class="center fadeInUp">
 
 
-                            <div class="row justify-content-center">
+                                <input type="hidden" id="code_postal_user" value="{{ Auth::user()->code_postal }}"/>
+                                <input type="button" value="APPEL API METEO" onclick="buttonClickGET()"/>
+                                <p id="zone_meteo" class="mb-5">Temperature d'aujourd'hui dans votre ville est de: </p>
 
-                                <div class="card col-md-3 mix cat4 cat1 ml-2 mr-2 mb-2" style="width: 18rem;">
-                                    <div class="center">
-                                        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/OOjs_UI_icon_add.svg/1200px-OOjs_UI_icon_add.svg.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">crée une nouvelle session</h5>
-                                            <p class="card-text">+</p>
-                                            <a href="{{ url('/session') }}" class="btn btn-primary">ajouter</a>
+                                <div class="container">
+
+                                    <div class="row">
+
+                                        <div class="card col-md-4 mb-2" style="width: 18rem;">
+                                            <div class="center">
+                                                <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/OOjs_UI_icon_add.svg/1200px-OOjs_UI_icon_add.svg.png" alt="Card image cap">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">crée une nouvelle session</h5>
+                                                    <p class="card-text">+</p>
+                                                    <a href="{{ url('/session') }}" class="btn btn-success">ajouter</a>
+                                                </div>
+                                            </div>
                                         </div>
+
+                                        @foreach($sessions ?? '' as $session)
+
+
+                                            {{-- Afficher toutes les sessions de musculation--}}
+
+                                            <div class="card col-md-4 mb-2" style="width: 18rem;">
+                                                <div class="center">
+                                                    <img class="card-img-top" src="https://image.freepik.com/photos-gratuite/trail-running-homme-exercant-exterieur-pour-forme-physique_1421-45.jpg" alt="">
+                                                    <div class="card-body">
+                                                        <h2 class="card-text">Session Musculation</h2>
+                                                        <h4 class="card-text">{{ $session->ville }}</h4>
+                                                        <p class="card-text">Niveau requis : {{ $session->niveau }}</p>
+                                                        <p class="card-title">Date : {{ $session->date }}</p>
+                                                        <p class="card-text">Heure début : {{ $session->heure_debut }}</p>
+                                                        <p class="card-text">Heure fin : {{ $session->heure_fin }}</p>
+                                                        <p class="card-text">Nombre de participants : {{ $session->nb_max_participants }}</p>
+                                                        <p class="card-text">Prix de la session : {{ $session->prix }}€</p>
+                                                        <a href="{{ url('/mes-sessions/'. $session->id) }}" class="btn btn-success">Informations session</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        @endforeach
                                     </div>
+
                                 </div>
-                                <div class="card col-md-3 ml-2 mr-2 mb-2" style="width: 18rem;">
-                                    <div class="center">
-                                        <img class="card-img-top" src="https://image.freepik.com/photos-gratuite/trail-running-homme-exercant-exterieur-pour-forme-physique_1421-45.jpg" alt="">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Session de Running</h5>
-                                            <p class="card-text">Seance de running dans un parc</p>
-                                            <a href="#" class="btn btn-primary">Je Participe</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card col-md-3 mix cat4 cat1 ml-2 mr-2 mb-2" style="width: 18rem;">
-                                    <div class="center">
-                                        <img class="card-img-top" src="https://previews.123rf.com/images/warrengoldswain/warrengoldswain1304/warrengoldswain130400146/19141270-trail-running-marathon-athl%C3%A8te-ext%C3%A9rieur-lever-du-soleil-couple-formation-pour-le-fitness-et-mode-de-vie.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Session de Running</h5>
-                                            <p class="card-text">Voici une session de running en plein air à bordeaux...</p>
-                                            <a href="#" class="btn btn-primary">Je Participe</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card col-md-3 ml-2 mr-2 mb-2" style="width: 18rem;">
-                                    <div class="center">
-                                        <img class="card-img-top" src="https://image.freepik.com/photos-gratuite/trail-running-homme-exercant-exterieur-pour-forme-physique_1421-45.jpg" alt="">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Session de Running</h5>
-                                            <p class="card-text">Seance de running dans un parc</p>
-                                            <a href="#" class="btn btn-primary">Je Participe</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card col-md-3 mix cat4 cat1 ml-2 mr-2 mb-2" style="width: 18rem;">
-                                    <div class="center">
-                                        <img class="card-img-top" src="https://previews.123rf.com/images/warrengoldswain/warrengoldswain1304/warrengoldswain130400146/19141270-trail-running-marathon-athl%C3%A8te-ext%C3%A9rieur-lever-du-soleil-couple-formation-pour-le-fitness-et-mode-de-vie.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Session de Running</h5>
-                                            <p class="card-text">Voici une session de running en plein air à bordeaux...</p>
-                                            <a href="#" class="btn btn-primary">Je Participe</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card col-md-3 ml-2 mr-2 mb-2" style="width: 18rem;">
-                                    <div class="center">
-                                        <img class="card-img-top" src="https://image.freepik.com/photos-gratuite/trail-running-homme-exercant-exterieur-pour-forme-physique_1421-45.jpg" alt="">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Session de Running</h5>
-                                            <p class="card-text">Seance de running dans un parc</p>
-                                            <a href="#" class="btn btn-primary">Je Participe</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card col-md-3 mix cat4 cat1 ml-2 mr-2 mb-2" style="width: 18rem;">
-                                    <div class="center">
-                                        <img class="card-img-top" src="https://previews.123rf.com/images/warrengoldswain/warrengoldswain1304/warrengoldswain130400146/19141270-trail-running-marathon-athl%C3%A8te-ext%C3%A9rieur-lever-du-soleil-couple-formation-pour-le-fitness-et-mode-de-vie.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Session de Running</h5>
-                                            <p class="card-text">Voici une session de running en plein air à bordeaux...</p>
-                                            <a href="#" class="btn btn-primary">Je Participe</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card col-md-3 ml-2 mr-2 mb-2" style="width: 18rem;">
-                                    <div class="center">
-                                        <img class="card-img-top" src="https://image.freepik.com/photos-gratuite/trail-running-homme-exercant-exterieur-pour-forme-physique_1421-45.jpg" alt="">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Session de Running</h5>
-                                            <p class="card-text">Seance de running dans un parc</p>
-                                            <a href="#" class="btn btn-primary">Je Participe</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card col-md-3 mix cat4 cat1 ml-2 mr-2 mb-2" style="width: 18rem;">
-                                    <div class="center">
-                                        <img class="card-img-top" src="https://previews.123rf.com/images/warrengoldswain/warrengoldswain1304/warrengoldswain130400146/19141270-trail-running-marathon-athl%C3%A8te-ext%C3%A9rieur-lever-du-soleil-couple-formation-pour-le-fitness-et-mode-de-vie.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Session de Running</h5>
-                                            <p class="card-text">Voici une session de running en plein air à bordeaux...</p>
-                                            <a href="#" class="btn btn-primary">Je Participe</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-
-
                             </div>
-                        </div>
+
+                        @endguest
+
                     </div>
                 </div>
             </div>
