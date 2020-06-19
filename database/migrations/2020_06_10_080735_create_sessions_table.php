@@ -31,7 +31,6 @@ class CreateSessionsTable extends Migration
             $table->integer('note')->nullable();
             $table->integer('chat_id')->nullable();
             $table->timestamps();
-
         });
     }
 
