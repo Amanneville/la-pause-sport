@@ -8,6 +8,8 @@ class CreateSessionsTable extends Migration
 {
     /**
      * Run the migrations.
+     * Table destinée a enregistrer les informations nécéssaires à la création
+     * d'une session par les users ayant le rôle de coach.
      *
      * @return void
      */
@@ -15,8 +17,8 @@ class CreateSessionsTable extends Migration
     {
         Schema::create('sessions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_auteur')->nullable();
-            $table->foreignId('id_sport')->nullable()->constrained('sports')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('auteur_id')->nullable();
+            $table->foreignId('sport_id')->nullable()->constrained('sports')->onUpdate('cascade')->onDelete('cascade');
             $table->time('heure_debut');
             $table->time('heure_fin');
             $table->date('date');
@@ -26,8 +28,8 @@ class CreateSessionsTable extends Migration
             $table->integer('niveau');
             $table->integer('nb_max_participants');
             $table->integer('prix');
-            $table->integer('note');
-            $table->integer('chat_id');
+            $table->integer('note')->nullable();
+            $table->integer('chat_id')->nullable();
             $table->timestamps();
 
         });

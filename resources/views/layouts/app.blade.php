@@ -11,12 +11,12 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/boostrap.js') }}" defer></script>
-    <script src="{{ asset('js/jquery-2.2.3.js') }}" defer></script>
-    <script src="{{ asset('js/materialize.js') }}" defer></script>
-    <script src="{{ asset('js/mdb.js') }}" defer></script>
-    <script src="{{ asset('js/tether.js') }}" defer></script>
-    <script src="{{ asset('js/wow.min.js') }}" defer></script>
+
+    <script src="{{ asset('js/meteo.js') }}" type="text/javascript" defer></script>
+    <script src="{{ asset('js/bootstrap.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/bootstrap.bundle.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/popover.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/jquery-2.2.3.js') }}" type="text/javascript"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -27,12 +27,44 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
-    <link href="{{ asset('sass/mdb.scss') }}" rel="stylesheet">
+
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+
+
+    <!-- fullcalendar -->
+
+    <link href='{{asset('css/fullcalendar/core/main.css')}}' rel='stylesheet' />
+    <link href='{{asset('css/fullcalendar/daygrid/main.css')}}' rel='stylesheet' />
+
+    <script src='{{asset('js/fullcalendar/core/main.js')}}'></script>
+    <script src='{{asset('js/fullcalendar/daygrid/main.js')}}'></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: [ 'dayGrid' ]
+            });
+
+            calendar.render();
+        });
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+            $('[data-toggle="popover"]').popover()
+            $(function () {
+                $('a').tooltip()
+            })
+        })
+
+    </script>
+
+
 
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm ">
             <div class="container">
                 <img src="/uploads/femmesport.png" style="width:50px; height:50px; float:left; border-radius:50%;">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -45,9 +77,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="ml-5 mr-3"><a class="blacklink" href="{{ url('/home') }}">Acceuil</a></li>
-                        <li class="mr-5"><a class="blacklink" href="{{ url('/session-list') }}">Les Sessions de Sport</a></li>
-                        <li class="mr-5"><a class="blacklink" href="{{ url('/creationSession') }}">+ Ajouter une session</a></li>
+                        <li class="mr-5 ml-5"><a class="blacklink" href="{{ url('/home') }}">Acceuil</a></li>
+                        <li class="mr-3 ml-5"><a class="greenlink" href="{{ url('/musculation') }}">Musculation</a></li>
+                        <li class="mr-3"><a class="greenlink" href="{{ url('/yoga') }}">Yoga</a></li>
+                        <li class="mr-3"><a class="greenlink" href="{{ url('/running') }}">Running</a></li>
+                        <li class="mr-3"><a class="greenlink" href="{{ url('/fitness') }}">Fitness</a></li>
 
                     </ul>
 
@@ -62,9 +96,6 @@
                                 <li class="nav-item ">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
                                 </li>
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="{{ route('registerCoach') }}">{{ __('Inscription Coach') }}</a>
-                                </li>
 
                             @endif
                         @else
@@ -75,10 +106,11 @@
                                     {{ Auth::user()->lastname }} <span class="caret"></span>
                                     {{ Auth::user()->firstname }} <span class="caret"></span>
                                 </a>
-                                <img class="animate__animated animate__hinge" src="/uploads/basquettes.png" style="width:50px; height:50px; position:absolute; top: 2px; left:200px;">
 
                                 <ul class="dropdown-menu">
                                     <li><a href="{{ url('/profile') }}"><i class="fa fa-btn fa-user"></i>Profile</a></li>
+                                    <li><a href="{{ url('/profileCoach') }}"><i class="fa fa-btn fa-user"></i>Profile Coach</a></li>
+                                    <li><a href="{{ url('/profileAdmin') }}"><i class="fa fa-btn fa-user"></i>Profile Admin</a></li>
                                     <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Se deconnecter</a></li>
                                 </ul>
 
@@ -110,9 +142,11 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>
+
+
 </body>
 </html>

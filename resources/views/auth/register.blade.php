@@ -2,20 +2,22 @@
 
 @section('content')
 <section class="container-fluid text-center  back4">
-    <div class="container-fluid" style="width:auto; height:1100px">
-    <div class="row justify-content-center">
+    <div class="container" style="width:auto; height:1100px">
+      <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card animate__animated animate__backInDown" style="width:850px; position: relative; top: 50px">
-                <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+
+                <div class="card-header">{{ __('Register') }}
+
+                  <div class="card-body">
+                    <form enctype="multipart/form-data" method="POST" action="{{ route('register') }}">
                         @csrf
+                        <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstname" class="col-md-6 col-form-label text-md-right">{{ __('Prenom') }}</label>
 
-                        <div class="form-group row">
-                            <label for="firstname" class="col-md-4 col-form-label text-md-right">{{ __('Prenom') }}</label>
-
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <input id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="firstname" autofocus>
 
                                 @error('firstname')
@@ -25,10 +27,10 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Nom') }}</label>
+                        <div class="form-group">
+                            <label for="lastname" class="col-md-6 col-form-label text-md-right">{{ __('Nom') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
 
                                 @error('lastname')
@@ -37,6 +39,7 @@
                                     </span>
                                 @enderror
                             </div>
+                        </div>
                         </div>
 
                         <div class="form-group row">
@@ -122,9 +125,9 @@
 
 
 
-
-                        <div class="form-group row">
-                            <label for="sportMusculation" class="col-md-4 col-form-label text-md-right">{{ __('Sport') }}</label>
+                        <div class="form-row">
+                          <div class="form-group ">
+                            <label for="sportMusculation" class="col-md-4 col-form-label text-md-right"></label>
 
                             <div class="col-md-6">
                                 <select id="sportMusculation" class="form-control @error('sportMusculation') is-invalid @enderror" name="sportMusculation">
@@ -137,7 +140,7 @@
                                 @enderror
                             </div>
 
-                            <label for="niveauSportMusculation" class="col-md-4 col-form-label text-md-right">{{ __('Niveau') }}</label>
+                            <label for="niveauSportMusculation" class="col-md-4 col-form-label text-md-right"></label>
                             <div class="col-md-6">
                                 <select id="niveauSportMusculation" class="form-control @error('niveauSportMusculation') is-invalid @enderror" name="niveauSportMusculation">
                                     <option value="1" selected>Je débute</option>
@@ -152,8 +155,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="sportYoga" class="col-md-4 col-form-label text-md-right">{{ __('Sport') }}</label>
+                          <div class="form-group ">
+                            <label for="sportYoga" class="col-md-4 col-form-label text-md-right"></label>
 
                             <div class="col-md-6">
                                 <select id="sportYoga" class="form-control @error('sportYoga') is-invalid @enderror" name="sportYoga">
@@ -166,7 +169,7 @@
                                 @enderror
                             </div>
 
-                            <label for="niveauSportYoga" class="col-md-4 col-form-label text-md-right">{{ __('Niveau') }}</label>
+                            <label for="niveauSportYoga" class="col-md-4 col-form-label text-md-right"></label>
                             <div class="col-md-6">
                                 <select id="niveauSportYoga" class="form-control @error('niveauSportYoga') is-invalid @enderror" name="niveauSportYoga">
                                     <option value="1" selected>Je débute</option>
@@ -180,9 +183,10 @@
                                 @enderror
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="sportRunning" class="col-md-4 col-form-label text-md-right">{{ __('Sport') }}</label>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group ">
+                            <label for="sportRunning" class="col-md-4 col-form-label text-md-right"></label>
 
                             <div class="col-md-6">
                                 <select id="sportRunning" class="form-control @error('sportRunning') is-invalid @enderror" name="sportRunning">
@@ -195,7 +199,7 @@
                                 @enderror
                             </div>
 
-                            <label for="niveauSportRunning" class="col-md-4 col-form-label text-md-right">{{ __('Niveau') }}</label>
+                            <label for="niveauSportRunning" class="col-md-4 col-form-label text-md-right"></label>
                             <div class="col-md-6">
                                 <select id="niveauSportRunning" class="form-control @error('niveauSportRunning') is-invalid @enderror" name="niveauSportRunning">
                                     <option value="1" selected>Je débute</option>
@@ -210,8 +214,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="sportFitness" class="col-md-4 col-form-label text-md-right">{{ __('Sport') }}</label>
+                          <div class="form-group ">
+                            <label for="sportFitness" class="col-md-4 col-form-label text-md-right"></label>
 
                             <div class="col-md-6">
                                 <select id="sportFitness" class="form-control @error('sportFitness') is-invalid @enderror" name="sportFitness">
@@ -224,7 +228,7 @@
                                 @enderror
                             </div>
 
-                            <label for="niveauSportFitness" class="col-md-4 col-form-label text-md-right">{{ __('Niveau') }}</label>
+                            <label for="niveauSportFitness" class="col-md-4 col-form-label text-md-right"></label>
                             <div class="col-md-6">
                                 <select id="niveauSportFitness" class="form-control @error('niveauSportFitness') is-invalid @enderror" name="niveauSportFitness">
                                     <option value="1" selected>Je débute</option>
@@ -238,27 +242,49 @@
                                 @enderror
                             </div>
                         </div>
+                        </div>
+
+
+                        <div class="form-group row mt-5">
+
+                            <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Membre ou Coach?') }}</label>
+                            <div class="col-md-6">
+                                <select id="role" class="form-control @error('role') is-invalid @enderror" name="role">
+                                    <option value="3" selected>Je veux juste pratiquer du sport</option>
+                                    <option value="2">Je veux pratiquer du sport et coacher</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+
+                            @error('role')
+                            <span class="invalid-feedback " role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
 
 
 
-
-
-
-
-
-
-                        <div class="form-group row mb-0">
+                        <div class="form-group row mb-3">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+
                             </div>
                         </div>
+
                     </form>
+                    </div>
+
                 </div>
+
             </div>
         </div>
+      </div>
     </div>
-</div>
+
+
 </section>
 @endsection

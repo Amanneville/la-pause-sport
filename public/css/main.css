@@ -1,0 +1,52 @@
+.back1 {
+    background-image: url("../assets/images/homeback.jpg");
+    background-size: cover;
+}
+.back2 {
+    background-image: url("../assets/images/inscriptioncoachback.jpg");
+    background-size: cover;
+}
+.back3 {
+    background-image: url("../assets/images/creationsession.jpg");
+    background-size: cover;
+}
+.back4 {
+    background-image: url("../assets/images/sessionback.jpg");
+    background-size: cover;
+}
+.back5 {
+    background-image: url("../assets/images/creationsession.jpg");
+    background-size: cover;
+}
+.backgroundhomemusculation {
+    background-image: url("../assets/images/musculationhome.jpg");
+    background-size: cover;
+}
+.backgroundhomeyoga {
+    background-image: url("../assets/images/yogahome.jpg");
+    background-size: cover;
+}
+.backgroundhomerunning {
+    background-image: url("../assets/images/runninghome.jpg");
+    background-size: cover;
+}
+.backgroundhomefitness {
+    background-image: url("../assets/images/fitnesshome.jpg");
+    background-size: cover;
+}
+
+/* changement des hyperlien */
+
+.blacklink {
+    text-decoration: none;
+    color: black;
+}
+.greenlink {
+    text-decoration: none;
+    color: green;
+}
+.black {
+
+    color: black;
+}
+/*==
