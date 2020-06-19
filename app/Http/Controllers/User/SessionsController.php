@@ -49,6 +49,24 @@ class SessionsController extends Controller
         return back();
     }
 
+    public function create(Request $request) // inscription dans une session d'un membre
+
+    {
+        //Je récupère l'id user
+        $user = Auth::user();
+        // Je récupère l'id de la session
+        $values = $request->all();
+
+
+        // J'instancie la classe SessionUser qui servira à créer une nouvelle asssociation (user/session)
+        $inscription = new SessionUser();
+        $inscription->user_id = $user->id;
+        $inscription->session_id = $values['session_id'];
+
+        // J'enregistre en BDD
+        $inscription->save();
+
+    }
 
 
 }

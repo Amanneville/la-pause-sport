@@ -24,23 +24,21 @@ Auth::routes();
 
 
 
-// Les page de session + affichage des sessions avec chacun add session meteo + calendar
+// Les page de sessions + affichage des sessions avec chacun add session meteo + calendar
 Route::get('/fitness', 'SessionSportController@fitnessindex');
 Route::post('/fitness', 'SessionListController@index');
-
 
 Route::get('/musculation', 'SessionSportController@musculationindex');
 Route::post('/musculation', 'SessionListController@index');
 
-
 Route::get('/running', 'SessionSportController@runningindex');
 Route::post('/running', 'SessionListController@index');
-
 
 Route::get('/yoga', 'SessionSportController@yogaindex');
 Route::post('/yoga', 'SessionListController@index');
 
-// affichage page accueil avec toute les session
+
+// affichage page accueil avec toutes les sessions
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -101,6 +99,8 @@ Route::get('/mes-sessions/{id}', 'User\SessionsController@show')->middleware('au
 //post récup les infos du tchat
 Route::post('/mes-sessions/{id}', 'User\SessionsController@store');
 
+//inscription dans une session
+Route::resource('inscription', 'User\SessionsController')->middleware('auth');
 
 // Accés ADMIN
 Route::get('/role', 'RoleController@index');

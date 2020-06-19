@@ -61,6 +61,17 @@
             </div>
 
         </div>
+
+        {{--INSERER UN BOUTON D'INSCRIPTION--}}
+
+        <form action="{{ route('inscription.create') }}" method="get">
+
+                    <button class="btn-info"> inscription </button>
+                    <input type="hidden" name="session_id" value="{{ $session->id }}"/>
+
+        </form>
+
+
     </div>
 
 
