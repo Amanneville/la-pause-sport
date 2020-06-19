@@ -40,7 +40,7 @@
                                                 <div class="center">
                                                     <img class="card-img-top" src="https://image.freepik.com/photos-gratuite/trail-running-homme-exercant-exterieur-pour-forme-physique_1421-45.jpg" alt="">
                                                     <div class="card-body">
-                                                        <h2 class="card-text">Session Musculation</h2>
+                                                        <h2 class="card-text">Session Running</h2>
                                                         <h4 class="card-text">{{ $session->ville }}</h4>
                                                         <p class="card-text">Niveau requis : {{ $session->niveau }}</p>
                                                         <p class="card-title">Date : {{ $session->date }}</p>
