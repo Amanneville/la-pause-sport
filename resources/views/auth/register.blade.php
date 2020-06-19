@@ -1,3 +1,6 @@
+{{--La pause sport--}}
+{{-- PAGE inscription users : coach & membre--}}
+
 @extends('layouts.app')
 @section('content')
 
@@ -6,7 +9,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card animate__animated animate__backInDown"
-                         style="width:850px; position: relative; top: 50px">
+                         style="width:100%; position: relative; top: 50px">
 
 {{--BOUTONS membre ou coach--}}
                         <div class="container">
@@ -15,9 +18,8 @@
                                     <h6><p class="title_axe">Vous souhaitez créer un compte ?</p></h6>
                                 </div>
                             </div>
-
                             <div class="row">
-                                <div class="col-md-12 mt-5 d-flex justify-content-center">
+                                <div class="col-md-12 d-flex align-items-center justify-content-center">
                                     <button id="registerMember" class="btn btn-primary m-5" type="button">Membre</button>
                                     <p>ou</p>
                                     <button id="registerCoach" class="btn btn-primary m-5" type="button">Coach</button>
@@ -166,7 +168,6 @@
                                 <div id="sports" class="text-center d-none">
                                     <br><p>Afin de vous proposez les évènements les mieux adaptés,</p>
                                     <p>merci d'indiquer votre niveau dans chacun des sports : </p><br>
-
 {{-- MUSCULATION--}}
                                     <div class="form-group row">
                                         <label for="sportMusculation"
@@ -304,7 +305,6 @@
                                         </div>
 
                                     </div>
-
                                 </div>
 
 {{-- BOUTON ENREGISTRER --}}
@@ -355,5 +355,4 @@
             });
         })();
     </script>
-
 @endsection
