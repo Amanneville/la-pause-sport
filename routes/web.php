@@ -56,7 +56,7 @@ Route::get('admin_area', ['middleware' => 'admin', function () {
 //Liste de TOUTES LES sessions existantes
 Route::get('/session-list', 'SessionListController@index');
 // Accés ADMIN
-Route::get('/role', 'RoleController@index');
+//Route::get('/role', 'RoleController@index');
 Route::get('/home', 'HomeController@index')->name('home');
 //--------------------------------------------------------------------------
 
@@ -89,7 +89,9 @@ Route::post('profile', 'UserController@update_avatar');
 Route::get('/mes-sessions', 'User\SessionsController@index')->middleware('auth');
 // PAGE infos d'UNE session à laquelle user est inscrit
 Route::get('/mes-sessions/{id}', 'User\SessionsController@show')->middleware('auth');
-//post récup les infos du tchat
+//post ajouter un message au chat
 Route::post('/mes-sessions/{id}', 'User\SessionsController@store');
+// Récupérer tous les messages
+Route::post('/getMessages/{id}', 'User\SessionsController@chat');
 //--------------------------------------------------------------------------
 

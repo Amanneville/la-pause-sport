@@ -25,7 +25,6 @@ class SessionsController extends Controller
 
         // Récupère la session
         $session = Session::where('id', $id)->first();
-
         return view('users.sessions.show')->with('session',$session);
     }
 
@@ -42,6 +41,10 @@ class SessionsController extends Controller
         return back();
     }
 
+    public function chat(Request $request){
+        $messages = Session::find($request->id)->messages()->with('from')->get();
+        return response()->json($messages);
+    }
 
 
 }

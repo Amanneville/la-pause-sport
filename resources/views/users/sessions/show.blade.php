@@ -51,7 +51,7 @@
                 </form>
 
 
-                <div class="col-md-6" class="box" id="here">
+                <div class="col-md-6" class="box" id="messages">
 
                     @foreach($session->messages as $message)
                         <p><b>{{ $message->from->firstname }} a écrit :</b><br> {{ $message->message }}</p>
@@ -63,17 +63,48 @@
         </div>
     </div>
 
-
-
+@endsection
+@section('scripts-footer')
     {{--Actualiser la box du tchat--}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        {{--var url = 'tchat/{{$session->id}}'--}}
-        {{--$("#here").load("url #ici");--}}
-        setInterval('load_messages()', 500)
-        function load_messages() {
-            $("#here").load(" #here")
-        }
-    </script>
+        (function(){
+           document.addEventListener('DOMContentLoaded', function(e){
+               let sessionId = {{$session->id}};
+               let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
+               let myInit = {
+                method : 'POST',
+                headers : {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json, text-plain, */*",
+                    "X-Requested-With": "XMLHttpRequest",
+                    "X-CSRF-TOKEN": token
+                }
+               };
+
+              setInterval(function(){
+                  fetch('/getMessages/'+sessionId, myInit)
+                      .then(function(response){
+                          if(response.ok){
+                              return response.json();
+                          }else{
+                              console.log('Erreur');
+                          }
+                      })
+                      .then(function(data){
+                          console.log(data);
+                          let messages = document.querySelectorAll('#messages p');
+                          for (let message of messages) {
+                              message.remove();
+                          }
+                          let chat = document.querySelector('#messages');
+                          for (let message of data) {
+                              console.log(message);
+                              chat.insertAdjacentHTML('beforeend',  '<p><b>' + message.from.firstname + ' a écrit :</b><br>' + message.message + '</p>')
+                          }
+                      });
+              }, 2500);
+           });
+        })()
+    </script>
 @endsection

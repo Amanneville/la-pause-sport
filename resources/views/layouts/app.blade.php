@@ -11,11 +11,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery.min.js" defer></script>
 
-    <script src="{{ asset('js/meteo.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/boostrap.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/jquery-2.2.3.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/meteo.js') }}" defer></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -29,27 +27,7 @@
 
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
-    <!-- fullcalendar -->
-
-    <link href='{{asset('css/fullcalendar/core/main.css')}}' rel='stylesheet' />
-    <link href='{{asset('css/fullcalendar/daygrid/main.css')}}' rel='stylesheet' />
-
-    <script src='{{asset('js/fullcalendar/core/main.js')}}'></script>
-    <script src='{{asset('js/fullcalendar/daygrid/main.js')}}'></script>
-    <script>
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                plugins: [ 'dayGrid' ]
-            });
-
-            calendar.render();
-        });
-
-    </script>
-
+    @yield('header-fullcalendar')
 
 
 </head>
@@ -136,5 +114,7 @@
             @yield('content')
         </main>
     </div>
+    @yield('footer-fullcalendar')
+    @yield('scripts-footer')
 </body>
 </html>
