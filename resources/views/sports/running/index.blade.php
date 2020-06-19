@@ -83,25 +83,25 @@
                                         @foreach($sessions as $session)
 
 
-                                            {{-- Afficher toutes les sessions de musculation--}}
-
-                                            <div class="card col-md-4 mb-2" style="width: 18rem;">
-                                                <div class="center">
-                                                    <img class="card-img-top" src="https://image.freepik.com/photos-gratuite/trail-running-homme-exercant-exterieur-pour-forme-physique_1421-45.jpg" alt="">
-                                                    <div class="card-body">
-                                                        <h2 class="card-text">Session Musculation</h2>
-                                                        <h4 class="card-text">{{ $session->ville }}</h4>
-                                                        <p class="card-text">Niveau requis : {{ $session->niveau }}</p>
-                                                        <p class="card-title">Date : {{ $session->date }}</p>
-                                                        <p class="card-text">Heure début : {{ $session->heure_debut }}</p>
-                                                        <p class="card-text">Heure fin : {{ $session->heure_fin }}</p>
-                                                        <p class="card-text">Nombre de participants : {{ $session->nb_max_participants }}</p>
-                                                        <p class="card-text">Prix de la session : {{ $session->prix }}€</p>
-                                                        <a href="{{ url('/mes-sessions/'. $session->id) }}" class="btn btn-success">Informations session</a>
+                                            {{-- Afficher toutes les sessions de Running RAJOUTER UNE CONDITION POUR VERIFIER SI LUSER A UN SPORT--}}
+                                            @if($session->niveau === intval(Auth::user()->sport(2)->level_id))
+                                                <div class="card col-md-4 mb-2" style="width: 18rem;">
+                                                    <div class="center">
+                                                        <img class="card-img-top" src="https://image.freepik.com/photos-gratuite/trail-running-homme-exercant-exterieur-pour-forme-physique_1421-45.jpg" alt="">
+                                                        <div class="card-body">
+                                                            <h2 class="card-text">Session Musculation</h2>
+                                                            <h4 class="card-text">{{ $session->ville }}</h4>
+                                                            <p class="card-text">Niveau requis : {{ $session->niveau }}</p>
+                                                            <p class="card-title">Date : {{ $session->date }}</p>
+                                                            <p class="card-text">Heure début : {{ $session->heure_debut }}</p>
+                                                            <p class="card-text">Heure fin : {{ $session->heure_fin }}</p>
+                                                            <p class="card-text">Nombre de participants : {{ $session->nb_max_participants }}</p>
+                                                            <p class="card-text">Prix de la session : {{ $session->prix }}€</p>
+                                                            <a href="{{ url('/mes-sessions/'. $session->id) }}" class="btn btn-success">Informations session</a>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-
+                                            @endif
                                         @endforeach
                                     </div>
 

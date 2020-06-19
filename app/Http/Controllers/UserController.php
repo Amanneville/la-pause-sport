@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Model\Role;
 use App\Model\RoleUser;
+use App\Model\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
@@ -21,29 +22,16 @@ class UserController extends Controller
 
     public function profile()
     {
-        $user = Auth::user();
-       // dd($user);
-
-             $role = Role::find(3);
-            // dd($role->users);
-            //dd($user->roles);
-
+      $user = Auth::user();
+           //  $role = Role::find(3);
       //  foreach ($role->users as $user){
-        //    dd($user->id);
        // }
-
             // foreach ($user->roles as $role){
-            //  dd($role->name);
         //}
-
-
-        $role_user = RoleUser::all();
-
-        $role_user = $role_user->where('role_user', '=', 3);
-
-            return view('profile', array('user' => Auth::user()));
-
+            $UserSessions = User::find($user->id);
+            return view('profil.index')->with('usersessions', $UserSessions)->with('user', $user);
     }
+
     public function profileCoach()
     {
 

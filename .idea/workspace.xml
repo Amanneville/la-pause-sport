@@ -20,18 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89992194-9b36-46f6-b96e-fcefa52b0552" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CreateSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CreateSessionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SessionSportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SessionSportController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Sport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Sport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/create-session/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/create-session/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/musculation/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/musculation/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/SessionsSport/fitness.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/SessionsSport/musculation.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/SessionsSport/running.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/SessionsSport/yoga.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/create-session/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/coach/create-session/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/fitness/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sports/fitness/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/message/chatBox.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/message/chatBox.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/message/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/message/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/musculation/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sports/musculation/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/membre/profil/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profileCoach.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/coach/profil/profileCoach.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/running/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sports/running/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/session/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/session/session-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/session-list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/users/sessions/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/sessions/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/sessions/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/sessions/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/yoga/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sports/yoga/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +160,6 @@
   <component name="ProjectId" id="1dV0N05fHf18H8hgPcb3To0ESRk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
-    <option name="foldersAlwaysOnTop" value="false" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
@@ -163,6 +170,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/users/coach" />
+      <recent name="$PROJECT_DIR$/resources/views/users/coach/profil" />
+      <recent name="$PROJECT_DIR$/resources/views/users/membre" />
+      <recent name="$PROJECT_DIR$/resources/views/users" />
+      <recent name="$PROJECT_DIR$/resources/views/sports" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -230,5 +246,9 @@
       <screen x="0" y="23" width="2048" height="1049" />
     </state>
     <state x="1155" y="268" width="670" height="676" key="search.everywhere.popup/0.23.2048.1049@0.23.2048.1049" timestamp="1592567030580" />
+    <state x="1108" y="414" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1592590625450">
+      <screen x="0" y="23" width="2048" height="1049" />
+    </state>
+    <state x="1108" y="414" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.23.2048.1049@0.23.2048.1049" timestamp="1592590625450" />
   </component>
 </project>

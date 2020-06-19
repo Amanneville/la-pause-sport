@@ -31,13 +31,10 @@ class SessionSportController extends Controller
      */
     public function musculationindex()
     {
-
-
-
         $sessions = Session::where('sport_id', 1)->where('date' ,'>=', date('Y-m-d'))->get();
 
         return view('musculation.index')->with('sessions', $sessions);
-
+/*
         // Recherche de son niveau dans le sport
 
         $level = DB::table('level_sport_user')
@@ -57,29 +54,14 @@ class SessionSportController extends Controller
         $sessions = $sessions->where('sport_id', '=', 1)->where('niveau', '=', $UserSportLevel);
 
         return view('musculation.index')->with('sessions', $sessions);
-
+*/
     }
 
     public function yogaindex()
 
     {
 
-
-        $user = Auth::user();
-
-        $level = DB::table('level_sport_user')
-            ->select('level_id')
-            ->where('user_id', '=', $user->id)
-            ->where('sport_id', '=', 2)
-            ->get();
-
-        $UserLevel = $level->pluck('level_id');
-
-        $UserSportLevel = $UserLevel[0];
-
-        $sessions = Session::all();
-
-        $sessions = $sessions->where('sport_id', '=', 2)->where('niveau', '=', $UserSportLevel);;
+        $sessions = Session::where('sport_id', 2)->where('date' ,'>=', date('Y-m-d'))->get();
 
         return view('yoga.index')->with('sessions', $sessions);
 
@@ -87,40 +69,15 @@ class SessionSportController extends Controller
 
     public function runningindex()
     {
-        $user = Auth::user();
 
-        $level = DB::table('level_sport_user')
-            ->select('level_id')
-            ->where('user_id', '=', $user->id)
-            ->where('sport_id', '=', 3)
-            ->get();
-
-        $UserLevel = $level->pluck('level_id');
-
-        $UserSportLevel = $UserLevel[0];
-        $sessions = Session::all();
-        $sessions = $sessions->where('sport_id', '=', 3)->where('niveau', '=', $UserSportLevel);
+        $sessions = Session::where('sport_id', 3)->where('date' ,'>=', date('Y-m-d'))->get();
 
         return view('running.index')->with('sessions', $sessions);
 
     }
     public function fitnessindex()
     {
-        $user = Auth::user();
-
-        $level = DB::table('level_sport_user')
-            ->select('level_id')
-            ->where('user_id', '=', $user->id)
-            ->where('sport_id', '=', 4)
-            ->get();
-
-        $UserLevel = $level->pluck('level_id');
-
-
-        $UserSportLevel = $UserLevel[0];
-        $sessions = Session::all();
-        $sessions = $sessions->where('sport_id', '=', 4)
-                              ->where('niveau', '=', $UserSportLevel);
+        $sessions = Session::where('sport_id', 4)->where('date' ,'>=', date('Y-m-d'))->get();
 
         return view('fitness.index')->with('sessions', $sessions);
 

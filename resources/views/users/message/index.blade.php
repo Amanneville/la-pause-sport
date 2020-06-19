@@ -1,4 +1,4 @@
-@extends('message.chatBox')
+@extends('users.message.chatBox')
 
 {{--    <!doctype html>--}}
 {{--<html lang="en">--}}

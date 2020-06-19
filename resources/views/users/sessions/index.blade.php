@@ -15,18 +15,18 @@
                 <div class="col-md-6"> {{--informations personnelles user--}}
                     <h5>* Vos informations :</h5><br>
                     <ul>
-                        <li><b>Prénom : </b>{{ $user->firstname }} <b>Nom : </b> {{ $user->lastname }}</li>
-                        <li><b>Adresse : </b>{{ $user->adresse }} ({{ $user->code_postal }})</li>
+                        <li><b>Prénom : </b>{{ $UserSessions->firstname }} <b>Nom : </b> {{ $UserSessions->lastname }}</li>
+                        <li><b>Adresse : </b>{{ $UserSessions->adresse }} ({{ $UserSessions->code_postal }})</li>
                         <br>
-                        <li><b>Votre adresse mail :</b>{{ $user->email }}</li>
+                        <li><b>Votre adresse mail :</b>{{ $UserSessions->email }}</li>
                         <br>
-                        <li><b>Âge : </b>{{ $user->age }} ans.</li>
+                        <li><b>Âge : </b>{{ $UserSessions->age }} ans.</li>
                     </ul>
 
-                    <div class="text-center"><img src="{{ $user->avatar }}" alt="" height="100px"></div>
+                    <div class="text-center"><img src="{{ $UserSessions->avatar }}" alt="" height="100px"></div>
                     <br>
                     <div class="text-center">
-                        <button>Modifier vos informations</button>
+                        <button>Modifier vos informations !</button>
                     </div>
                 </div>
 
@@ -34,8 +34,7 @@
                     <h5>* Vous êtes inscrit aux sessions suivantes :</h5>
                     <p><em>cliquez sur la date pour consulter les informations de la session et accéder au tchat !</em>
                     </p><br>
-
-                    @foreach($user->sessions as $session)
+                    @foreach($UserSessions->sessions as $session)
                         <ul>
                             <li><a href="/mes-sessions/{{$session->id}}">{{ $session->date }}</a></li>
                         </ul>
