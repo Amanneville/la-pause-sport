@@ -59,7 +59,9 @@ class Kernel extends HttpKernel
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'isAdmin' => \App\Http\Middleware\IsAdmin::class, // verifie que l'utilisateur a le rôle admin
         'isCoach' => \App\Http\Middleware\IsCoach::class, // verifie que l'utilisateur a le rôle coach
+        'isEleve' => \App\Http\Middleware\IsEleve::class, // verifie que l'utilisateur a le rôle eleve
         'password.confirm' => \Illuminate\Auth\Middleware\RequirePassword::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,

@@ -18,7 +18,7 @@ class CreateSessionController extends Controller
     {
         // Afficher formulaire de création de session
 
-        return view('create-session.index');
+        return view('users.coach.create-session.index');
     }
 
     /**
@@ -46,7 +46,7 @@ class CreateSessionController extends Controller
         $rules = [
             'sport_id'              => 'required|numeric',
             'date'                  => 'required|date|date_format:Y-m-d|after_or_equal:today',
-            'heure_debut'           => 'required|after_or_equal:date',
+            'heure_debut'           => 'required',
             'heure_fin'             => 'required|after_or_equal:heure_debut',
             'adresse'               => 'required|string',
             'ville'                 => 'required|string',
@@ -105,7 +105,7 @@ class CreateSessionController extends Controller
 
         ]);
 
-        return view('home');
+        return $session;
 
     }
 
@@ -151,6 +151,19 @@ class CreateSessionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = Auth::user();
+       // dd($user);
+        $sessionAuthor = Session::find($id)->auteur_id;
+       // dd($sessionAuthor);
+        $numeroSession = Session::find($id);
+        // dd($sessionAuthor);
+        if ($user->id === $sessionAuthor)
+
+        {
+            $sessionToDelete = Session::find($id);
+            $sessionToDelete->delete();
+        }
+            return view ('users.coach.profil.profileCoach')->with('user', $user)->with('numeroSession', $numeroSession);
     }
+
 }

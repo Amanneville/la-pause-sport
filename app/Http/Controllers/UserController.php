@@ -3,17 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Model\Role;
-use App\Model\RoleUser;
+use App\Model\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Image;
 
 class UserController extends Controller
 {
-
-
     //public function roles()
     //    {
     //        return $this->belongsToMany('App\Role')->using('App\RoleUser');
@@ -21,33 +18,22 @@ class UserController extends Controller
 
     public function profil()
     {
-        $user = Auth::user();
-        $role = Role::find(3);
-
-
-        $role_user = RoleUser::all();
-        $role_user = $role_user->where('role_user', '=', 3);
-
-        return view('profile', array('user' => Auth::user()));
-
+            $user = Auth::user();
+            $UserSessions = User::find($user->id);
+            return view('users.membre.profil.index')->with('usersessions', $UserSessions)->with('user', $user);
     }
+
     public function profilCoach()
     {
-        $user = Auth::user();
-        $role_user = Roleuser::all();
-        $role_user = $role_user->where('role_user', '=', 2);
-
-         return view('users.coach.profil.index', array('user' => Auth::user()));
+            $user = auth::user();
+            return view('users.coach.profil.profileCoach')->with('user', $user);
     }
+
     public function profilAdmin()
     {
-        $user = Auth::user();
-        $role_user = Roleuser::all();
-
-        $role_user = $role_user->where('role_user', '=', 1);
-
-        return view('profilAdmin', array('user' => Auth::user()));
-
+            $user = Auth::user();
+            $UserSessions = User::find($user->id);
+            return view('profileAdmin')->with('user', $user)->with('UserSessions', $UserSessions);
     }
 
     public function update_avatar(Request $request){

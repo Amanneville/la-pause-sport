@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSessionUserTable extends Migration
+class CreateEventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class CreateSessionUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('session_user', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('session_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->string('name');
+            $table->time('heure_debut');
+            $table->time('heure_fin');
+            $table->date('date');
+            $table->foreignId('session_id')->constrained();
+            $table->timestamps();
         });
     }
 
@@ -27,6 +31,6 @@ class CreateSessionUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('session_user');
+        Schema::dropIfExists('events');
     }
 }

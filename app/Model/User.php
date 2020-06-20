@@ -47,6 +47,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Session::class);
     }
 
+    public function session_users()
+    {
+        return $this->hasMany(SessionUser::class);
+    }
+
     public function sports()
     {
         return $this->belongsToMany(Sport::class, 'level_sport_user', 'user_id', 'sport_id')->withPivot('level_id');
@@ -55,6 +60,11 @@ class User extends Authenticatable
     public function sport($id)
     {
         return $this->hasMany(LevelSportUser::class)->where('sport_id', $id)->first();
+    }
+
+    public function levels()
+    {
+        return $this->belongsToMany('App\Model\Level', 'level_sport_user', 'user_id', 'level_id')->withPivot('sport_id');
     }
 
 

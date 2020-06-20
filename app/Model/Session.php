@@ -30,12 +30,18 @@ class Session extends Model
 
     public function sport()
     {
-        return $this->belongsTo(Sport::class);
+        return $this->belongsToMany(Sport::class);
     }
 
     // Retourne tous les utilisateurs sauf le coach
-    public function users(){
+    public function users()
+    {
         return $this->belongsToMany(User::class);
+    }
+
+    public function session_users()
+    {
+        return $this->hasMany(SessionUser::class);
     }
 
     // Retourn le coach
@@ -47,7 +53,7 @@ class Session extends Model
     // Retourne le nom du sport
     public function sports()
     {
-        return $this->belongsTo(Sport::class,   'sport_id', 'id');
+        return $this->belongsTo(Sport::class, 'sport_id', 'id');
     }
 
 

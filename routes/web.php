@@ -14,17 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// AUTH
+Auth::routes();
 
 // PAGE ACCUEIl
 Route::get('/', 'HomeController@index')->name('home');
-// Présentation des sessions sur page d'accueil     -> nécessaire dans hommeController ?? (sessionslist existe déjà)
 // Toutes les sessions, tous niveaux, tous sports + users non connectés
 Route::get('/home', 'HomeController@index')->name('home');
-
 //--------------------------------------------------------------------------
 
-// AUTH
-Auth::routes();
 // Debugg déconnexion
 Route::get('logout', 'Auth\LoginController@logout', function () {
     return view('home');
@@ -33,12 +31,10 @@ Route::get('logout', 'Auth\LoginController@logout', function () {
 //--------------------------------------------------------------------------
 
 // ADMIN
-//Is Admin
-Route::get('admin_area', ['middleware' => 'admin', function () {
- // A UTILISER
-}]);
+
 // Liste & gestion toutes les sessions existantes => view admin.sessions-list
-Route::get('/admin-sessions', 'SessionsListController@index');
+Route::get('/admin-sessions', 'AdminPanelController@index');
+// controller à créer
 // Liste & gestion de tous les users  Route::get('/index'), A CREER
 
 //--------------------------------------------------------------------------
@@ -54,8 +50,6 @@ Route::middleware ('auth', 'verified')->group (function (){
 
 
 // users MEMBRE
-
-// Route::get('profil', 'UserController@profil'); = menu pour profil membre ?
 
 // Modifier avatar => view users.avatar = incorporée dans view users.membre.profil.index
 Route::post('profil', 'UserController@update_avatar');
@@ -109,48 +103,25 @@ Route::get('/fitness', 'SessionSportController@fitnessindex');
 //--------------------------------------------------------------------------
 
 
-// ????
-
-Route::post('/fitness', 'SessionListController@index');
-
-Route::post('/running', 'SessionListController@index');
-
-Route::post('/yoga', 'SessionListController@index');
 
 
-
-
-
-
-
-
-
-// USER TCHAT
-
-
-Route::get('profileAdmin', 'UserController@profileAdmin');
-Route::post('profileAdmin', 'UserController@update_avatar');
-
-
-// Création d'une session
-Route::get('/session', 'SessionController@index')->name('creationSession');
-
+// Création d'une session coach
 Route::get('/session', 'CreateSessionController@index');
 Route::post('/session', 'CreateSessionController@store');
 
-//Liste des sessions existantes
-//Route::get('/session-list', 'SessionListController@index');
+// Supprimer une session coach
+Route::get('destroy-session/{id}', 'CreateSessionController@destroy');
+
+
 // Mes sessions, je n'autorise que les users connectés
-// get : affiche la page profil user avec SES sessions
+Route::get('/mes-sessions', 'User\SessionsController@index')->middleware('auth');
+Route::get('/mes-sessions/{id}', 'User\SessionsController@show')->middleware('auth');
 
+//post récup les infos du tchat
+Route::post('/mes-sessions/{id}', 'User\SessionsController@store');
 
-//--------------------------------------------------------------------------
-
-//inscription dans une session
+//inscription dans une session membre
 Route::resource('inscription', 'User\SessionsController')->middleware('auth');
-
-// Accés ADMIN
-//Route::get('/role', 'RoleController@index');
 
 
 
