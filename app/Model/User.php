@@ -47,6 +47,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Session::class);
     }
 
+    public function session_users()
+    {
+        return $this->hasMany(SessionUser::class);
+    }
+
     public function sports()
     {
         return $this->belongsToMany(Sport::class, 'level_sport_user', 'user_id', 'sport_id')->withPivot('level_id');

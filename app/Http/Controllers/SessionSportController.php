@@ -33,7 +33,7 @@ class SessionSportController extends Controller
     {
         $sessions = Session::where('sport_id', 1)->where('date' ,'>=', date('Y-m-d'))->get();
 
-        return view('musculation.index')->with('sessions', $sessions);
+        return view('sports.musculation.index')->with('sessions', $sessions);
 /*
         // Recherche de son niveau dans le sport
 
@@ -63,7 +63,7 @@ class SessionSportController extends Controller
 
         $sessions = Session::where('sport_id', 2)->where('date' ,'>=', date('Y-m-d'))->get();
 
-        return view('yoga.index')->with('sessions', $sessions);
+        return view('sports.yoga.index')->with('sessions', $sessions);
 
     }
 
@@ -72,14 +72,14 @@ class SessionSportController extends Controller
 
         $sessions = Session::where('sport_id', 3)->where('date' ,'>=', date('Y-m-d'))->get();
 
-        return view('running.index')->with('sessions', $sessions);
+        return view('sports.running.index')->with('sessions', $sessions);
 
     }
     public function fitnessindex()
     {
         $sessions = Session::where('sport_id', 4)->where('date' ,'>=', date('Y-m-d'))->get();
 
-        return view('fitness.index')->with('sessions', $sessions);
+        return view('sports.fitness.index')->with('sessions', $sessions);
 
     }
 }

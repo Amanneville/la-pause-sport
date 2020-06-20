@@ -80,7 +80,7 @@ Route::post('profile', 'UserController@update_avatar');
 Route::get('profileCoach', 'UserController@profileCoach');
 Route::post('profileCoach', 'UserController@update_avatar');
 
-Route::get('profileAdmin', 'UserController@profileAdmin');
+Route::get('/profileAdmin', 'UserController@profileAdmin')->middleware(['auth', 'isCoach'] );;
 Route::post('profileAdmin', 'UserController@update_avatar');
 
 
@@ -94,7 +94,7 @@ Route::post('/session', 'CreateSessionController@store');
 Route::get('/session-list', 'SessionListController@index');
 // Mes sessions, je n'autorise que les users connectés
 Route::get('/mes-sessions', 'User\SessionsController@index')->middleware('auth');
-Route::get('/mes-sessions/{id}', 'User\SessionsController@show')->middleware('auth');
+Route::get('/mes-sessions/{id}', 'User\SessionsController@show')->middleware(['auth', 'isEleve'] );
 
 //post récup les infos du tchat
 Route::post('/mes-sessions/{id}', 'User\SessionsController@store');
@@ -106,6 +106,12 @@ Route::resource('inscription', 'User\SessionsController')->middleware('auth');
 //Route::get('/role', 'RoleController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//fullcalender
+Route::get('/fullcalendareventmaster','FullCalendarEventMasterController@index');
+Route::post('/fullcalendareventmaster/create','FullCalendarEventMasterController@create');
+Route::post('/fullcalendareventmaster/update','FullCalendarEventMasterController@update');
+Route::post('/fullcalendareventmaster/delete','FullCalendarEventMasterController@destroy');
 
 
 

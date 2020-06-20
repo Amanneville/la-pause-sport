@@ -29,7 +29,7 @@ class UserController extends Controller
             // foreach ($user->roles as $role){
         //}
             $UserSessions = User::find($user->id);
-            return view('profil.index')->with('usersessions', $UserSessions)->with('user', $user);
+            return view('users.membre.profil.index')->with('usersessions', $UserSessions)->with('user', $user);
     }
 
     public function profileCoach()

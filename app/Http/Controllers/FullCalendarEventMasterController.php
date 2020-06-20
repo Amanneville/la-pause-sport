@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Session;
+use App\Model\SessionUser;
+use App\Model\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FullCalendarEventMasterController extends Controller
 {
@@ -13,7 +17,20 @@ class FullCalendarEventMasterController extends Controller
      */
     public function index()
     {
-        //
+
+        $user =  Auth::user()->roles->keyBy('id')->has(3);
+       // dd($user);
+
+        foreach ($user->sessions as $session)
+        {
+             $session->heure_debut;
+                $session->heure_fin;
+                $session->id;
+            return ('');
+        }
+
+
+
     }
 
     /**
