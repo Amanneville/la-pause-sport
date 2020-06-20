@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Model\Message;
 use App\Model\Session;
 use App\Model\SessionUser;
+use App\Model\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -15,9 +16,11 @@ class SessionsController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $userId = Auth::user();
+        $users = User::find($userId->id)->levels;
 
 
-        return view('users.membre.profil.index')->with('user', $user);
+        return view('users.membre.profil.index')->with('user', $user)->with('users', $users);
     }
 
     // Méthode pour afficher une session d'un utilisateur

@@ -19,19 +19,36 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89992194-9b36-46f6-b96e-fcefa52b0552" name="Default Changelist" comment="">
+    <list default="true" id="63e343e8-1219-45b1-b583-4f93a391d37b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../brouillon/.idea/brouillon.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../brouillon/resources/views/brouillon.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cours-php/.idea/cours-php.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cours-php/17_POO/.idea/php-poo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cours-php/immobilier/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cours-php/immobilier/.idea/immobilier.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cours-php/immobilier/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cours-php/immobilier/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cours-php/immobilier/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cours-php/immobilier/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../cours-wp-theme/.idea/cours-wp-theme.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/sports/fitness/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/users/coach/profil/brouillon.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../messagerie/laravel_chat-master/.idea/laravel_chat.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../nogueiras/.idea/nogueiras.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../noguerias/chat-p3x/.idea/chat-p3x.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projet-laravel/.idea/projet-laravel.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tp-crm/.idea/crm.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tp-crm/.idea/tp-crm.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CreateSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CreateSessionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SessionSportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SessionSportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Sport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Sport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/create-session/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/create-session/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/musculation/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/musculation/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/sessions/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/sessions/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/sessions/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/sessions/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FullCalendarEventMasterController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SessionsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SessionsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_19_164858_create_events_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_19_165544_create_event_user_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/coach/profil/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/coach/profil/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/membre/profil/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/membre/profil/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projet-laravel/app/Http/Controllers/FormulaireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../projet-laravel/app/Http/Controllers/FormulaireController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projet-laravel/resources/views/formulaire/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../projet-laravel/resources/views/formulaire/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +169,6 @@
   <component name="ProjectId" id="1dV0N05fHf18H8hgPcb3To0ESRk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
-    <option name="foldersAlwaysOnTop" value="false" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
@@ -192,6 +208,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="447" y="159" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592498967045">
@@ -202,10 +219,11 @@
       <screen x="0" y="0" width="1536" height="778" />
     </state>
     <state x="527" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1536.778/-1920.0.1920.1080@0.0.1536.778" timestamp="1592485816755" />
-    <state x="433" y="85" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592497264527">
-      <screen x="0" y="0" width="1536" height="778" />
+    <state x="451" y="94" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592688895622">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="433" y="85" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.778/-1920.0.1920.1080@0.0.1536.778" timestamp="1592497264527" />
+    <state x="451" y="94" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1592688895622" />
     <state x="496" y="85" key="FileChooserDialogImpl" timestamp="1592484031813">
       <screen x="0" y="0" width="1536" height="778" />
     </state>

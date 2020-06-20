@@ -1,6 +1,7 @@
+{{--La pause sport--}}
+{{--Page PROFIL COACH--}}
 
 @extends('layouts.app')
-
 @section('content')
 
     <div class="container animate__animated animate__fadeInDown back2 text-white">
@@ -52,6 +53,44 @@
                         </ul>
                     @endforeach
                 </div>
+
+
+                <div class="col-md-7"> {{--liste et liens des sessions--}}
+                    <h1>Vos sessions:</h1>
+                    <h5><em>cliquez sur la date pour consulter les informations de la session et accéder au tchat !</em></h5><br>
+
+                    @csrf
+                    <table>
+
+                        <tr>
+                            <th>#</th>
+                            <th>Date de la séance</th>
+                            <th>Sport</th>
+                            <th>heure de début</th>
+                            <th>heure de fin</th>
+                            <th>nombre de participants</th>
+                            <th>niveau séance</th>
+                            <th>Mettre à jour</th>
+                            <th>supprimer</th>
+                        </tr>
+
+                        @foreach($user->sessions as $session)
+                            <tr>
+                                <td>{{$session->id}}</td>
+                                <td>{{ $session->date }}</td>
+                                <td>{{ $session->sport_id }}</td>
+                                <td>{{ $session->heure_debut }}</td>
+                                <td>{{ $session->heure_fin }}</td>
+                                <td>{{ $session->nb_max_participants }}</td>
+                                <td>{{ $session->niveau }}</td>
+                                <td><a href="{{url ('destroy-session')}}/{{$session->id}}"  class="btn btn-info"></a></td>
+                                <td><a href="{{url ('destroy-session')}}/{{$session->id}}"  class="btn btn-danger"></a></td>
+                            </tr>
+                        @endforeach
+                    </table>
+                </div>
+
+
 
             </div>
         </div>
