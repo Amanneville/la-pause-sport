@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Model\Message;
@@ -8,13 +8,16 @@ use App\Model\Session;
 use App\Model\SessionUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class SessionsController extends Controller
 {
     public function index()
     {
         $user = Auth::user();
-        return view('users.session.index')->with('user', $user);
+
+
+        return view('users.membre.profil.index')->with('user', $user);
     }
 
     // Méthode pour afficher une session d'un utilisateur
@@ -45,14 +48,13 @@ class SessionsController extends Controller
         $messages = Session::find($request->id)->messages()->with('from')->get();
         return response()->json($messages);
     }
-    public function create(Request $request) // inscription dans une session d'un membre
 
+    public function create(Request $request) // inscription dans une session d'un membre
     {
         //Je récupère l'id user
         $user = Auth::user();
         // Je récupère l'id de la session
         $values = $request->all();
-
 
         // J'instancie la classe SessionUser qui servira à créer une nouvelle asssociation (user/session)
         $inscription = new SessionUser();
@@ -63,6 +65,5 @@ class SessionsController extends Controller
         $inscription->save();
 
     }
-
 
 }

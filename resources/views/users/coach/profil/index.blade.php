@@ -5,8 +5,9 @@
 
     <div class="container animate__animated animate__fadeInDown back2 text-white">
         <div class="row">
-            <div class="col-md-12">
-                <h3>Bienvenue sur votre espace personnel Coach</h3>
+            <div class="col-md-12 mt5">
+                <h3>Bienvenue {{ $user->firstname }} !</h3>
+                <h4>Vous êtes ici, dans votre espace personnel COACH</h4>
             </div>
         </div><br>
         <div class="row">

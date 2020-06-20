@@ -16,15 +16,15 @@ class LevelTableSeeder extends Seeder
     {
       DB::table('levels')->insert([
 
-            [   'name'          => 'debutant',
+            [   'name'          => 'Débutant',
                 'condition'     => 100,
                 'description'   => 'débute dans la pratique du sport'
             ],
-            [   'name'          => 'intermediaire',
+            [   'name'          => 'Intermediaire',
                 'condition'     => 200,
                 'description'   => 'aisance dans la pratique du sport'
             ],
-            [   'name'          => 'avancé',
+            [   'name'          => 'Avancé',
                 'condition'     => 300,
                 'description'   => 'maitrise la pratique de ce sport'
             ],

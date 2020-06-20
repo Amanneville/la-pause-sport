@@ -19,60 +19,38 @@ class UserController extends Controller
     //        return $this->belongsToMany('App\Role')->using('App\RoleUser');
     //    }
 
-    public function profile()
+    public function profil()
     {
         $user = Auth::user();
-       // dd($user);
-
-             $role = Role::find(3);
-            // dd($role->users);
-            //dd($user->roles);
-
-      //  foreach ($role->users as $user){
-        //    dd($user->id);
-       // }
-
-            // foreach ($user->roles as $role){
-            //  dd($role->name);
-        //}
+        $role = Role::find(3);
 
 
         $role_user = RoleUser::all();
-
         $role_user = $role_user->where('role_user', '=', 3);
 
-            return view('profile', array('user' => Auth::user()));
+        return view('profile', array('user' => Auth::user()));
 
     }
-    public function profileCoach()
+    public function profilCoach()
     {
-
-
         $user = Auth::user();
-
         $role_user = Roleuser::all();
-
         $role_user = $role_user->where('role_user', '=', 2);
 
-            return view('profileCoach', array('user' => Auth::user()));
+         return view('users.coach.profil.index', array('user' => Auth::user()));
     }
-    public function profileAdmin()
+    public function profilAdmin()
     {
-
-
         $user = Auth::user();
-
         $role_user = Roleuser::all();
-
 
         $role_user = $role_user->where('role_user', '=', 1);
 
-            return view('profileAdmin', array('user' => Auth::user()));
+        return view('profilAdmin', array('user' => Auth::user()));
 
     }
 
     public function update_avatar(Request $request){
-
         // Handle the user upload of avatar
         if($request->hasFile('avatar')){
             $avatar = $request->file('avatar');
@@ -83,8 +61,6 @@ class UserController extends Controller
             $user->avatar = $filename;
             $user->save();
         }
-
-        return view('profile', array('user' => Auth::user()) );
-
+        return view('users.membre.profil.index', array('user' => Auth::user()) );
     }
 }

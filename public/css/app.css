@@ -11024,6 +11024,10 @@ a.text-dark:focus {
 
 
 /* LA PAUSE SPORT*/
+/*
+violet : #9E73A9
+vert : #73A999
+*/
 
 /*Fenêtre du tchat-messages*/
 #messages{
@@ -11039,27 +11043,34 @@ a.text-dark:focus {
     max-width: 100%;
     padding: 0;
 }
-.btnTchat{
+.title_axe {
+    color: #3B0351;
+    font-weight: bold;
+}
+
+
+/* Bouton VIOLET */
+.btnViolet {
     display: inline-block;
-    background-color: #68AAE3;
+    background-color: #9E73A9;
     border-radius: 10px;
     border: 4px double #cccccc;
     color: #eeeeee;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     padding: 5px;
-    width: 80px;
+    width: 150px;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
 }
-button span {
+.btnViolet span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
-button span:after {
+.btnViolet span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -11067,20 +11078,63 @@ button span:after {
     right: -20px;
     transition: 0.5s;
 }
-button:hover {
-    background-color: #C8B4D0;
+.btnViolet:hover {
+    background-color: #73A999;
 }
-button:hover span {
+.btnViolet:hover span {
     padding-right: 25px;
 }
-button:hover span:after {
+.btnViolet:hover span:after {
     opacity: 1;
     right: 0;
 }
-.title_axe{
-    color: #3B0351;
-    font-weight: bold;
+
+
+ /*Bouton VERT*/
+/* Bouton VIOLET */
+.btnVert {
+    display: inline-block;
+    background-color: #73A999;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 14px;
+    padding: 5px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+.btnVert span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.btnVert span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.btnVert:hover {
+    background-color: #9E73A9;
+}
+.btnVert:hover span {
+    padding-right: 25px;
+}
+.btnVert:hover span:after {
+    opacity: 1;
+    right: 0;
 }
 
-/* Bouton inscription coach*/
+.nbInfo{
+    font-style: italic;
+    font-weight: bold;
+    color: #3B0351;
+}
+
 

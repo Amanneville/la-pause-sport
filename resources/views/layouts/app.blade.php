@@ -72,15 +72,15 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px;">
                                     <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:32px; height:32px; position:absolute; top:-7px; left:10px; border-radius:50%">
-                                    {{ Auth::user()->lastname }} <span class="caret"></span>
                                     {{ Auth::user()->firstname }} <span class="caret"></span>
+                                    {{ Auth::user()->lastname }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{ url('/profile') }}"><i class="fa fa-btn fa-user"></i>Profile</a></li>
-                                    <li><a href="{{ url('/profileCoach') }}"><i class="fa fa-btn fa-user"></i>Profile Coach</a></li>
-                                    <li><a href="{{ url('/profileAdmin') }}"><i class="fa fa-btn fa-user"></i>Profile Admin</a></li>
-                                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Se deconnecter</a></li>
+                                    <li><a href="{{ url('/profil') }}"><i class="fa fa-btn fa-user"></i>Profil</a></li>
+                                    <li><a href="{{ url('/profilCoach') }}"><i class="fa fa-btn fa-user"></i>Profil Coach</a></li>
+                                    <li><a href="{{ url('/profilAdmin') }}"><i class="fa fa-btn fa-user"></i>Profil Admin</a></li>
+                                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Se déconnecter</a></li>
                                 </ul>
 
                             </li>
@@ -111,7 +111,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-0">
             @yield('content')
         </main>
     </div>

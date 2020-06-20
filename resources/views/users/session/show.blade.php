@@ -40,7 +40,7 @@
                     <div class="d-flex justify-content-start">
                         <label for="message"></label>
                         <textarea name="message" cols="50" rows="1" required placeholder="votre message..."></textarea>
-                        <button class="btnTchat">Envoyer</button>
+                        <button class="btnViolet">Envoyer</button>
                     </div>
                     <div>{{--récup le numéro de la session--}}
                         <label for="session"></label>

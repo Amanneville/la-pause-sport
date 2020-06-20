@@ -1,5 +1,7 @@
+{{--ADMIN - La pause sport--}}
+{{--PAGE Liste et gestion toutes les sessions existantes--}}
 
-@extends('layouts.master')
+@extends('layouts.app')
 @section('content')
 
     <table>
@@ -27,8 +29,6 @@
             <tr>
                 <td>{{ $session->id }}</td>
                 <td>{{ $session->auteur_id }}</td>
-                {{--                id_sport = name voir récupération du nom dans le SessionListController--}}
-                {{--                <td>{{ $session-> id_sport}}</td>--}}
                 <td>{{ $session->name }}</td>
                 <td>{{ $session->heure_debut }}</td>
                 <td>{{ $session->heure_fin }}</td>
@@ -44,8 +44,6 @@
             </tr>
         @endforeach
 
-
         </tbody>
     </table>
-
 @endsection

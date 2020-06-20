@@ -14,15 +14,15 @@
 {{--BOUTONS membre ou coach--}}
                         <div class="container">
                             <div class="row text-center">
-                                <div class="col-md-12 mt-5 ">
+                                <div class="col-md-12 mt-5 mb-2">
                                     <h6><p class="title_axe">Vous souhaitez créer un compte ?</p></h6>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12 d-flex align-items-center justify-content-center">
-                                    <button id="registerMember" class="btn btn-primary m-5" type="button">Membre</button>
-                                    <p>ou</p>
-                                    <button id="registerCoach" class="btn btn-primary m-5" type="button">Coach</button>
+                                <div class="col-md-12 mb-5 d-flex align-items-center justify-content-center">
+                                    <button id="registerMember" class="btnViolet" type="button"><span>Membre</span></button>
+                                    <p class="mr-2 ml-2">ou</p>
+                                    <button id="registerCoach" class="btnVert" type="button"><span>Coach</span></button>
                                 </div>
                             </div>
                         </div>

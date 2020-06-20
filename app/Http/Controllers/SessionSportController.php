@@ -29,17 +29,22 @@ class SessionSportController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    public function index($id)
+    {
+        // Récupére toutes les sessions avec le nom su sport
+//        $sessions = DB::table('sessions')->leftJoin('sports', 'sessions.sport_id', '=', 'sports.id')->get();
+        $sessions = Session::where('id', $id)->first();
+        return view('sports.infos-session')->with('sessions', $sessions);
+    }
+
+//    MUSCULATION
     public function musculationindex()
     {
-
-
-
         $sessions = Session::where('sport_id', 1)->where('date' ,'>=', date('Y-m-d'))->get();
-
-        return view('musculation.index')->with('sessions', $sessions);
+        return view('sports.musculation.index')->with('sessions', $sessions);
 
         // Recherche de son niveau dans le sport
-
         $level = DB::table('level_sport_user')
         ->select('level_id')
         ->where('user_id', '=', $user->id)
@@ -47,7 +52,6 @@ class SessionSportController extends Controller
         ->get();
 
         $UserLevel = $level->pluck('level_id');
-
         $UserSportLevel = $UserLevel[0];
 
         // Appel BDD sur toutes les sessions
@@ -55,18 +59,16 @@ class SessionSportController extends Controller
 
         // tri des sessions en fonction du sport et du niveau de l'utilisateur
         $sessions = $sessions->where('sport_id', '=', 1)->where('niveau', '=', $UserSportLevel);
-
-        return view('musculation.index')->with('sessions', $sessions);
-
+        return view('sports.musculation.index')->with('sessions', $sessions);
     }
 
+//    YOGA
     public function yogaindex()
-
     {
+        $sessions = Session::where('sport_id', 2)->where('date' ,'>=', date('Y-m-d'))->get();
+        return view('sports.yoga.index')->with('sessions', $sessions);
 
-
-        $user = Auth::user();
-
+        // Recherche de son niveau dans le sport
         $level = DB::table('level_sport_user')
             ->select('level_id')
             ->where('user_id', '=', $user->id)
@@ -74,21 +76,22 @@ class SessionSportController extends Controller
             ->get();
 
         $UserLevel = $level->pluck('level_id');
-
         $UserSportLevel = $UserLevel[0];
 
+        // Appel BDD sur toutes les sessions
         $sessions = Session::all();
 
-        $sessions = $sessions->where('sport_id', '=', 2)->where('niveau', '=', $UserSportLevel);;
-
-        return view('yoga.index')->with('sessions', $sessions);
-
+        // tri des sessions en fonction du sport et du niveau de l'utilisateur
+        $sessions = $sessions->where('sport_id', '=', 2)->where('niveau', '=', $UserSportLevel);
+        return view('sports.yoga.index')->with('sessions', $sessions);
     }
 
     public function runningindex()
     {
-        $user = Auth::user();
+        $sessions = Session::where('sport_id', 3)->where('date' ,'>=', date('Y-m-d'))->get();
+        return view('sports.running.index')->with('sessions', $sessions);
 
+        // Recherche de son niveau dans le sport
         $level = DB::table('level_sport_user')
             ->select('level_id')
             ->where('user_id', '=', $user->id)
@@ -96,18 +99,23 @@ class SessionSportController extends Controller
             ->get();
 
         $UserLevel = $level->pluck('level_id');
-
         $UserSportLevel = $UserLevel[0];
+
+        // Appel BDD sur toutes les sessions
         $sessions = Session::all();
+
+        // tri des sessions en fonction du sport et du niveau de l'utilisateur
         $sessions = $sessions->where('sport_id', '=', 3)->where('niveau', '=', $UserSportLevel);
-
-        return view('running.index')->with('sessions', $sessions);
-
+        return view('sports.running.index')->with('sessions', $sessions);
     }
+
+//    FITNESS
     public function fitnessindex()
     {
-        $user = Auth::user();
+        $sessions = Session::where('sport_id', 4)->where('date' ,'>=', date('Y-m-d'))->get();
+        return view('sports.fitness.index')->with('sessions', $sessions);
 
+        // Recherche de son niveau dans le sport
         $level = DB::table('level_sport_user')
             ->select('level_id')
             ->where('user_id', '=', $user->id)
@@ -115,14 +123,14 @@ class SessionSportController extends Controller
             ->get();
 
         $UserLevel = $level->pluck('level_id');
-
-
         $UserSportLevel = $UserLevel[0];
+
+        // Appel BDD sur toutes les sessions
         $sessions = Session::all();
-        $sessions = $sessions->where('sport_id', '=', 4)
-                              ->where('niveau', '=', $UserSportLevel);
 
-        return view('fitness.index')->with('sessions', $sessions);
-
+        // tri des sessions en fonction du sport et du niveau de l'utilisateur
+        $sessions = $sessions->where('sport_id', '=', 4)->where('niveau', '=', $UserSportLevel);
+        return view('sports.fitness.index')->with('sessions', $sessions);
     }
+
 }
