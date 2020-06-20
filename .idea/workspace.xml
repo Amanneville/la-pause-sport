@@ -21,18 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="89992194-9b36-46f6-b96e-fcefa52b0552" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CreateSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CreateSessionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SessionSportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SessionSportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Sport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Sport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_10_082901_create_session_user_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_10_082901_create_session_user_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sports/musculation/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sports/musculation/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/coach/profil/profileCoach.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/coach/profil/profileCoach.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/membre/profil/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/membre/profil/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +178,7 @@
       <workItem from="1592494945600" duration="9777000" />
       <workItem from="1592668442699" duration="638000" />
       <workItem from="1592669094016" duration="35000" />
-      <workItem from="1592669188513" duration="7220000" />
+      <workItem from="1592669188513" duration="9176000" />
     </task>
     <servers />
   </component>
