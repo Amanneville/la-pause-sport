@@ -25,9 +25,6 @@
         <br>
         <br>
 
-
-
-
         <div class="container">
             <div class="row ">
 
@@ -50,7 +47,7 @@
                     <p><em>cliquez sur la date pour consulter les informations de la session et accéder au tchat !</em></p><br>
                     @foreach($user->sessions as $session)
                         <ul>
-                            <li><a href="/mes-sessions/{{$session->id}}">{{ $session->date }}</a></li>
+                            <li><a href="/mes-sessions/{{$session->id}}">{{ $session->date->format('d-m-Y') }}</a></li>
                         </ul>
                     @endforeach
                 </div>

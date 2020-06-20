@@ -16,4 +16,10 @@ class Sport extends Model
         return $this->belongsToMany(User::class,'level_sport_user' );
     }
 
+    public function sessions ()
+    {
+        return $this->belongsTo(Sport::class, 'sport_id');
+    }
+
+
 }

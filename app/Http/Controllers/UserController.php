@@ -22,12 +22,7 @@ class UserController extends Controller
 
     public function profile()
     {
-      $user = Auth::user();
-           //  $role = Role::find(3);
-      //  foreach ($role->users as $user){
-       // }
-            // foreach ($user->roles as $role){
-        //}
+            $user = Auth::user();
             $UserSessions = User::find($user->id);
             return view('users.membre.profil.index')->with('usersessions', $UserSessions)->with('user', $user);
     }
@@ -35,27 +30,18 @@ class UserController extends Controller
     public function profileCoach()
     {
 
+            $user = auth::user();
 
-        $user = Auth::user();
 
-        $role_user = Roleuser::all();
-
-        $role_user = $role_user->where('role_user', '=', 2);
-
-            return view('profileCoach', array('user' => Auth::user()));
+            return view('users.coach.profil.profileCoach')->with('user', $user);
     }
     public function profileAdmin()
     {
 
+            $user = Auth::user();
+            $UserSessions = User::find($user->id);
 
-        $user = Auth::user();
-
-        $role_user = Roleuser::all();
-
-
-        $role_user = $role_user->where('role_user', '=', 1);
-
-            return view('profileAdmin', array('user' => Auth::user()));
+            return view('profileAdmin')->with('user', $user)->with('UserSessions', $UserSessions);
 
     }
 

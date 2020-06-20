@@ -30,9 +30,9 @@ class SessionSportController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function musculationindex()
+
     {
         $sessions = Session::where('sport_id', 1)->where('date' ,'>=', date('Y-m-d'))->get();
-
         return view('sports.musculation.index')->with('sessions', $sessions);
 /*
         // Recherche de son niveau dans le sport

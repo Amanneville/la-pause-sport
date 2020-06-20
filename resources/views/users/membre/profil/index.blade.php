@@ -31,7 +31,7 @@
         <div class="container">
             <div class="row ">
 
-                <div class="col-md-6"> {{--informations personnelles user--}}
+                <div class="col-md-4"> {{--informations personnelles user--}}
                     <h1>Vos informations :</h1><br>
                     <ul>
                         <li><h2>Prénom : </h2>{{ $user->firstname }}</li>
@@ -45,15 +45,40 @@
                     <div class="text-center"><button>Modifier vos informations</button></div>
                 </div>
 
-                <div class="col-md-6"> {{--liste et liens des sessions--}}
+                <div class="col-md-8"> {{--liste et liens des sessions--}}
                     <h1>* Vous êtes inscrit aux sessions suivantes :</h1>
                     <h5><em>cliquez sur la date pour consulter les informations de la session et accéder au tchat !</em></h5><br>
+                    <form>
+                        @csrf
+                        <table>
 
-                    @foreach($user->sessions as $session)
-                        <ul>
-                            <li><a href="/mes-sessions/{{$session->id}}">{{ $session->date }}</a></li>
-                        </ul>
-                    @endforeach
+                            <tr>
+                                <th>#</th>
+                                <th>Date de la séance</th>
+                                <th>Sport</th>
+                                <th>heure de début</th>
+                                <th>heure de fin</th>
+                                <th>nombre de participants</th>
+                                <th>niveau séance</th>
+                                <th>Mettre à jour</th>
+                                <th>supprimer</th>
+                            </tr>
+
+                            @foreach($user->sessions as $session)
+                            <tr>
+                                <td>{{$session->id}}</td>
+                                <td>{{ $session->date }}</td>
+                                <td>{{ $session->sport_id }}</td>
+                                <td>{{ $session->heure_debut }}</td>
+                                <td>{{ $session->heure_fin }}</td>
+                                <td>{{ $session->nb_max_participants }}</td>
+                                <td>{{ $session->niveau }}</td>
+                                <td><button type="submit" class="btn btn-info"></button></td>
+                                <td><button type="submit" class="btn btn-danger"></button></td>
+                            </tr>
+                            @endforeach
+                            </table>
+                        </form>
                 </div>
 
             </div>

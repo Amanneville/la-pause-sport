@@ -10,7 +10,7 @@
 
 
                             {{-- Si personne non membre affiche --}}
-                            @guest
+                        @guest
                             <div class="center fadeInUp">
 
                                 <br>
@@ -57,8 +57,8 @@
 
                                 </div>
                             </div>
+                        @endguest
 
-                            @else
                             <div class="center fadeInUp">
 
 
@@ -109,7 +109,7 @@
                               </div>
                             </div>
 
-                            @endguest
+
 
                     </div>
                 </div>

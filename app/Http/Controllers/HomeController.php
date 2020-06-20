@@ -26,9 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $sessions = Session::all();
+        $user = auth::user();
+        $sessions =  Session::all();
 
         return view('home')->with('sessions', $sessions);
-
     }
 }

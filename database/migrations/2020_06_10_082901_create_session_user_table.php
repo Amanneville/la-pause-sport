@@ -15,8 +15,8 @@ class CreateSessionUserTable extends Migration
     {
         Schema::create('session_user', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('session_id')->constrained();
+            $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('session_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

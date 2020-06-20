@@ -90,6 +90,10 @@ Route::get('/session', 'SessionController@index')->name('creationSession');
 Route::get('/session', 'CreateSessionController@index');
 Route::post('/session', 'CreateSessionController@store');
 
+// Supprimer une session
+
+Route::get('destroy-session/{id}', 'CreateSessionController@destroy');
+
 //Liste des sessions existantes
 Route::get('/session-list', 'SessionListController@index');
 // Mes sessions, je n'autorise que les users connectés
