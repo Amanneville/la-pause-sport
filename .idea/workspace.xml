@@ -38,7 +38,13 @@
       <change afterPath="$PROJECT_DIR$/../tp-crm/.idea/crm.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../tp-crm/.idea/tp-crm.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminPanelController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SessionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sports/infos-session.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sports/infos-session.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/coach/profil/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/coach/profil/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../projet-laravel/app/Http/Controllers/FormulaireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../projet-laravel/app/Http/Controllers/FormulaireController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../projet-laravel/resources/views/formulaire/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../projet-laravel/resources/views/formulaire/index.blade.php" afterDir="false" />
     </list>
@@ -223,12 +229,12 @@
       <screen x="0" y="23" width="2048" height="1049" />
     </state>
     <state x="1143" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.2048.1049@0.23.2048.1049" timestamp="1592731200998" />
-    <state x="577" y="138" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592733098914">
+    <state x="577" y="138" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592748807377">
       <screen x="0" y="23" width="2048" height="1049" />
     </state>
     <state x="433" y="85" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.778/-1920.0.1920.1080@0.0.1536.778" timestamp="1592497264527" />
     <state x="451" y="94" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1600.860@0.0.1600.860" timestamp="1592688895622" />
-    <state x="577" y="138" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.2048.1049@0.23.2048.1049" timestamp="1592733098914" />
+    <state x="577" y="138" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.2048.1049@0.23.2048.1049" timestamp="1592748807377" />
     <state x="496" y="85" key="FileChooserDialogImpl" timestamp="1592484031813">
       <screen x="0" y="0" width="1536" height="778" />
     </state>

@@ -65,6 +65,9 @@ Route::get('/mes-sessions/{id}', 'SessionsController@show')->middleware('auth');
 
 //inscription dans une session
 Route::resource('inscription-session', 'SessionController')->middleware('auth');
+//Désinscription session
+Route::put('desinscription/{id}', 'SessionController@update')->name('desinscription.update')->middleware('auth');
+
 
 // MESSAGE (tchat par session) en tant que membre
 // Ajouter un message au tchat

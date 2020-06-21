@@ -71,6 +71,7 @@
                     <div class="col-md-6">
 
                         <form action="{{ route('inscription-session.create') }}" method="get">
+                            @csrf
                   <span>
                     <button class="btnViolet">Inscription !</button>
                     <input type="hidden" name="session_id" value="{{ $sessions->id }}"/>
@@ -83,11 +84,11 @@
 
         <div class="row mt-3">
             <div class="col-md-6">
-
-               {{-- <form action="{{ route('inscription-session.create') }}" method="get">--}}
+                <form action="{{ route('desinscription.update', $sessions->id) }}" method="post">
+                    @csrf
+                    @method('PUT')
                   <span>
-                    <button class="btnViolet">se désinscrire !</button>
-              {{--      <input type="hidden" name="session_id" value="{{ $sessions->id }}"/> --}}
+                      <button class="btn btn-danger" >se désinscrire </button>
                   </span>
                 </form>
             </div>

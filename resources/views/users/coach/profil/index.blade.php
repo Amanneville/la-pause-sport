@@ -58,7 +58,7 @@
                             <th>heure de fin</th>
                             <th>nombre de participants</th>
                             <th>niveau séance</th>
-                            <th>Accèder à séance</th>
+                            <th>Accèder à la séance</th>
                             <th>Mettre à jour</th>
                             <th>supprimer</th>
                         </tr>

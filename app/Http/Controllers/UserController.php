@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Role;
+use App\Model\Session;
 use App\Model\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -26,7 +27,9 @@ class UserController extends Controller
     public function profilCoach()
     {
             $user = auth::user();
-            return view('users.coach.profil.index')->with('user', $user);
+            $sessions = Session::all()->where('auteur_id', '=', $user->id);
+
+            return view('users.coach.profil.index')->with('sessions', $sessions);
     }
 
     public function profilAdmin()

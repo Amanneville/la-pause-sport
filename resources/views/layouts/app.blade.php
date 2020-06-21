@@ -82,7 +82,7 @@
                                         <li><a href="{{ url('/profil-coach') }}"><i class="fa fa-btn fa-user"></i>Profil coach</a></li>
                                         @endif
                                         @if(Auth::user()->roles->keyBy('id')->has(1) === true )
-                                        <li><a href="{{ url('/profil-admin') }}"><i class="fa fa-btn fa-user"></i>Profil Admin</a></li>
+                                        <li><a href="{{ url('/profil-admin') }}"><i class="fa fa-btn fa-user"></i>Admin dashboard</a></li>
                                         @endif
                                     <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Se déconnecter</a></li>
                                 </ul>

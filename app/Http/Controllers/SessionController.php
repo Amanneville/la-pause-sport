@@ -17,8 +17,6 @@ class SessionController extends Controller
 
         $user = Auth::user();
 
-
-
         return view('users.sessions.index')->with('user', $user);
 
     }
@@ -68,6 +66,38 @@ class SessionController extends Controller
 
         return back()->with('user', $user);
 
+    }
+
+    public function destroy($id)
+    {
+        $user = auth::user();
+        $idToDelete = SessionUser::all()
+                         ->where('user_id', '=', $user->id)
+                       ->where('session_id','=', $id)
+                    ->keyBy('id');
+
+        $sessionToDelete = SessionUser::all()
+            ->where('user_id', '=', $user->id)
+            ->where('session_id','=', $id);
+
+
+        return back()->with($id);
+    }
+
+    public function update(Request $request, $id)
+    {
+
+        $user = auth::user();
+        $idToDetatch = SessionUser::all()
+            ->where('user_id', '=', $user->id)
+            ->where('session_id','=', $id)
+            ->keyBy('id');
+
+         $usertofind = User::find($user->id);
+
+         $usertofind->sessions()->detach($id);
+
+            return back();
     }
 
 
