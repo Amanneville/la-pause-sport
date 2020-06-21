@@ -88,7 +88,7 @@
 
                {{-- <form action="{{ route('inscription-session.create') }}" method="get">--}}
                   <span>
-                    <button class="btnViolet">se désinscrire !</button>
+                    <button class="btnViolet">Se désinscrire !</button>
               {{--      <input type="hidden" name="session_id" value="{{ $sessions->id }}"/> --}}
                   </span>
                 </form>

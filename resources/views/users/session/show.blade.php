@@ -1,77 +1,63 @@
 {{-- PAGE : mes-sessions{id} --}}
-{{-- Informations de la session du user connecté --}}
+{{-- TCHAT de la session du user connecté --}}
 
 @extends('layouts.app')
 @section('content')
+    <section class="container-fluid text-center fondpro">
+        <div class="container">
+            <div class="row justify-content-center">
 
+                <div class="card animate__animated animate__backInDown" style="width:60%">
 
-
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-6">
-                <h5>Informations de votre session :</h5>
-                {{-- Affiche le sport de la session --}}
-                <h6>Session : <b>{{ $session->sports->name }}</b></h6>
-
-                <p>Session du {{ $session->date }}</p>
-                <p>infos de la table sessions/session...</p>
-
-                {{--Personne qui a créé la session : session->coach--}}
-                <p> Le(la) coach de cette session est : <b>{{ ($session->coach->firstname) }}</b></p>
-
-                {{--utilisateur dans la session : session->users (attention sans le coach)--}}
-                <p>La liste des participants inscrits à cette session :</p>
-                {{--{{$session->users}}--}}
-                {{--{{dd($session->users->lastname)}}--}}
-                @foreach($session->users as $user)
-                    <ul>
-                        <li>{{ $user->firstname }}  {{ $user->lastname }} {{ $user->age }} ans</li>
-                    </ul>
-                @endforeach
-
-            </div>
-
-            <div class="col-md-6">
-                <h3>Discutez entre participants :</h3>
-                {{--    Messages //session->messages--}}
-                <form action="" method="post" id="formMessage">
-                    @csrf
-                    <div class="d-flex justify-content-start">
-                        <label for="message"></label>
-                        <textarea name="message" cols="50" rows="1" required placeholder="votre message..."></textarea>
-                        <button class="btnViolet">Envoyer</button>
-                    </div>
-                    <div>{{--récup le numéro de la session--}}
-                        <label for="session"></label>
-                        <input type="hidden" name="session" id="session" value="{{$session->id}}"/>
+                    <div class="card-header">
+                        <h4>Discutez entre participants !</h4>
                     </div>
 
-                </form>
+                    <div class="container mt-5">
+                        <div class="row">
+                             <div class="col-md-12">
+                                <h4>Session {{ $session->sports->name }} du {{ date('d-m-Y', strtotime($session->date)) }} à {{ date('h', strtotime($session->heure_debut)) }} h {{ date('m', strtotime($session->heure_debut)) }} !</h4>
+                            </div>
+                        </div>
 
-                <div class="col-md-6 mt-2" id="messages">
-                    @foreach($session->messages as $message)
-                        <p><b>{{ $message->from->firstname }} a écrit :</b> {{ $message->message }}</p>
-                    @endforeach
+                        <div class="row">
+                            <div class="col-md-12 justify-content-center mt-2">
+                                <p>Profitez du tchat de votre session pour vous organiser entre participants, mais aussi posez toutes vos questions au coach !</p>
+                            </div>
+                        </div>
 
-                </div>
+                        <div class="row">
+                            <div class="col-md-12 justify-content-center mt-5">
+                                <form action="" method="post" id="formMessage" class="ml-5">
+                                    @csrf
+                                    <div class="d-flex justify-content-start">
+                                        <label for="message"></label>
+                                        <textarea name="message" cols="50" rows="1" required placeholder="votre message..."></textarea>
+                                        <button class="btnViolet">Envoyer</button>
+                                    </div>
+                                    <div>{{--récup le numéro de la session--}}
+                                        <label for="session"></label>
+                                        <input type="hidden" name="session" id="session" value="{{$session->id}}"/>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 justify-content-center ml-5 mt-2 mb-5" id="boxmessages">
+                                @foreach($session->messages as $message)
+                                    <p><b>{{ $message->from->firstname }} a écrit :</b> {{ $message->message }}</p>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
             </div>
-
         </div>
-
-        {{--INSERER UN BOUTON D'INSCRIPTION--}}
-
-        <form action="{{ route('inscription-session.create') }}" method="get">
-
-            <button class="btn-info"> inscription !</button>
-            <input type="hidden" name="session_id" value="{{ $session->id }}"/>
-
-        </form>
-
-
-    </div>
+    </section>
 
 @endsection
+
+
 @section('scripts-footer')
     {{--Actualiser la box du tchat--}}
     <script>

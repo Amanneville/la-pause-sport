@@ -118,7 +118,7 @@ function buttonClickGET() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Applications/XAMPP/xamppfiles/htdocs/la-pause-sport/resources/js/meteo.js */"./resources/js/meteo.js");
+module.exports = __webpack_require__(/*! C:\laragon\www\la-pause-sport\resources\js\meteo.js */"./resources/js/meteo.js");
 
 
 /***/ })

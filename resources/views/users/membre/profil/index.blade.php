@@ -39,7 +39,7 @@
                         <div class="row ml-5">
                             <ul>
                             @foreach($user->sessions as $session)
-                                    <li>Sesion du : <a href="/infos-session/{{$session->id}}">{{ date('d-m-Y', strtotime($session->date)) }}</a></li>
+                                    <li>Session du : <a href="/infos-session/{{$session->id}}">{{ date('d-m-Y', strtotime($session->date)) }}</a></li>
                                 @endforeach
                                 </ul>
                         </div>
@@ -48,7 +48,7 @@
                             <div class="col-md-12"><p><b>Rappel des catégories de niveaux :</b></p></div>
                             <ol>
                                 <li> comme débutant. Le membre débute dans la pratique de ce sport.</li>
-                                <li> comme intermédiaire. Le membre a une certainer aisance dans la pratique de ce sport.</li>
+                                <li> comme intermédiaire. Le membre a une certaine aisance dans la pratique de ce sport.</li>
                                 <li> comme avancé. Le membre maitrise la pratique de ce sport.</li>
                             </ol>
                         </div>

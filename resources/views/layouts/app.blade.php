@@ -33,7 +33,7 @@
 </head>
 <body>
 <div id="app">
-    <nav class="degrad_fond navbar navbar-expand-md navbar-light bg-white shadow-sm ">
+    <nav class="navbar navbar-expand-md navbar shadow-sm ">
         <div class="container-fluid">
             <img src="/uploads/lps.jpg" style="width:300px; float:left;">
 
@@ -114,6 +114,10 @@
     </main>
 </div>
 
-@yield('scripts-footer')
+
+    @yield('scripts-footer')
+    @yield('scripts-footer')
+
+</div>
 </body>
 </html>

@@ -33,7 +33,7 @@
                                                          alt="">
                                                     <div class="card-body">
                                                         <p class="card-text">Session</p>
-                                                        <h3 class="card-text">{{ $session->name }}</h3>
+                                                        <h3 class="card-text">{{ $session->sports->name }}</h3>
                                                         <h5 class="card-text">{{ $session->titre }}</h5>
                                                         <h5 class="card-text">à <b>{{ $session->ville }}</b></h5>
 
