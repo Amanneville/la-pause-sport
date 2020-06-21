@@ -55,9 +55,9 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'firstname'     => ['required', 'string', 'max:255'],
             'lastname'      => ['required', 'string', 'max:255'],
-            'age'           => ['required', 'int', 'max:150'],
+            'age'           => ['required', 'max:255'],
             'adresse'       => ['required', 'string', 'max:255'],
-            'code_postal'   => ['required', 'string'],
+            'code_postal'   => ['required', 'size:5'],
             'email'         => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password'      => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -88,34 +88,35 @@ class RegisterController extends Controller
 
         LevelSportUser::create([
 
-            'user_id'            => $user->id,
-            'sport_id'           => $data['sportYoga'],
+            'user_id'  => $user->id,
+            'sport_id' => $data['sportYoga'],
             'level_id' => $data['niveauSportYoga'],
 
         ]);
 
         LevelSportUser::create([
 
-            'user_id'               => $user->id,
-            'sport_id'              => $data['sportMusculation'],
-            'level_id'    => $data['niveauSportMusculation'],
+            'user_id'   => $user->id,
+            'sport_id'  => $data['sportMusculation'],
+            'level_id'  => $data['niveauSportMusculation'],
         ]);
         LevelSportUser::create([
 
-            'user_id'               => $user->id,
-            'sport_id'              => $data['sportRunning'],
-            'level_id'    => $data['niveauSportRunning'],
+            'user_id'  => $user->id,
+            'sport_id' => $data['sportRunning'],
+            'level_id' => $data['niveauSportRunning'],
         ]);
 
         LevelSportUser::create([
-            'user_id'               => $user->id,
-            'sport_id'              => $data['sportFitness'],
-            'level_id'    => $data['niveauSportFitness'],
+            'user_id'  => $user->id,
+            'sport_id' => $data['sportFitness'],
+            'level_id' => $data['niveauSportFitness'],
         ]);
+
 
         RoleUser::create([
-            'user_id'               => $user->id,
-            'role_id'              => $data['role'],
+            'user_id' => $user->id,
+            'role_id' => $data['role'],
         ]);
 
         return $user;

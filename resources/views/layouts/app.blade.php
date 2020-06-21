@@ -11,11 +11,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery.min.js" defer></script>
 
-    <script src="{{ asset('js/meteo.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/boostrap.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/jquery-2.2.3.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/meteo.js') }}" defer></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -29,27 +27,7 @@
 
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
-    <!-- fullcalendar -->
-
-    <link href='{{asset('css/fullcalendar/core/main.css')}}' rel='stylesheet' />
-    <link href='{{asset('css/fullcalendar/daygrid/main.css')}}' rel='stylesheet' />
-
-    <script src='{{asset('js/fullcalendar/core/main.js')}}'></script>
-    <script src='{{asset('js/fullcalendar/daygrid/main.js')}}'></script>
-    <script>
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                plugins: [ 'dayGrid' ]
-            });
-
-            calendar.render();
-        });
-
-    </script>
-
+    @yield('header-fullcalendar')
 
 
 </head>
@@ -68,7 +46,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="mr-5 ml-5"><a class="blacklink" href="{{ url('/home') }}">Acceuil</a></li>
+                        <li class="mr-5 ml-5"><a class="blacklink" href="{{ url('/home') }}">Accueil</a></li>
                         <li class="mr-3 ml-5"><a class="greenlink" href="{{ url('/musculation') }}">Musculation</a></li>
                         <li class="mr-3"><a class="greenlink" href="{{ url('/yoga') }}">Yoga</a></li>
                         <li class="mr-3"><a class="greenlink" href="{{ url('/running') }}">Running</a></li>
@@ -94,15 +72,15 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px;">
                                     <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:32px; height:32px; position:absolute; top:-7px; left:10px; border-radius:50%">
-                                    {{ Auth::user()->lastname }} <span class="caret"></span>
                                     {{ Auth::user()->firstname }} <span class="caret"></span>
+                                    {{ Auth::user()->lastname }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{ url('/profile') }}"><i class="fa fa-btn fa-user"></i>Profile</a></li>
-                                    <li><a href="{{ url('/profileCoach') }}"><i class="fa fa-btn fa-user"></i>Profile Coach</a></li>
-                                    <li><a href="{{ url('/profileAdmin') }}"><i class="fa fa-btn fa-user"></i>Profile Admin</a></li>
-                                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Se deconnecter</a></li>
+                                    <li><a href="{{ url('/profil') }}"><i class="fa fa-btn fa-user"></i>Profil</a></li>
+                                    <li><a href="{{ url('/profil-coach') }}"><i class="fa fa-btn fa-user"></i>Profil Coach</a></li>
+                                    <li><a href="{{ url('/profil-admin') }}"><i class="fa fa-btn fa-user"></i>Profil Admin</a></li>
+                                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Se déconnecter</a></li>
                                 </ul>
 
                             </li>
@@ -133,9 +111,11 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-0">
             @yield('content')
         </main>
     </div>
+    @yield('footer-fullcalendar')
+    @yield('scripts-footer')
 </body>
 </html>

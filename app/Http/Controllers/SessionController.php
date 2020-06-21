@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Model\Message;
 use App\Model\Session;
 use App\Model\SessionUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class SessionsController extends Controller
+class SessionController extends Controller
 {
+
+
     public function index()
     {
 

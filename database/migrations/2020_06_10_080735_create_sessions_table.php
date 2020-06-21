@@ -22,16 +22,17 @@ class CreateSessionsTable extends Migration
             $table->time('heure_debut');
             $table->time('heure_fin');
             $table->date('date');
+            $table->string('titre');
             $table->string('adresse');
             $table->string('ville');
             $table->string('code_postal');
+            $table->string('infos');
             $table->integer('niveau');
             $table->integer('nb_max_participants');
             $table->integer('prix');
             $table->integer('note')->nullable();
             $table->integer('chat_id')->nullable();
             $table->timestamps();
-
         });
     }
 

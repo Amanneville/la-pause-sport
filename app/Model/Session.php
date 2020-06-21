@@ -12,8 +12,10 @@ class Session extends Model
         'heure_debut',
         'heure_fin',
         'date',
+        'titre',
         'adresse',
         'code_postal',
+        'infos',
         'ville',
         'niveau',
         'nb_max_participants',
@@ -21,6 +23,10 @@ class Session extends Model
         'note',
         'chat_id'
     ];
+
+
+    protected $dates = ['date', 'another_date_field'];
+
 
     public function sport()
     {

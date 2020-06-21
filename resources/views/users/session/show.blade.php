@@ -37,24 +37,21 @@
                 {{--    Messages //session->messages--}}
                 <form action="" method="post" id="formMessage">
                     @csrf
-                    <div>
+                    <div class="d-flex justify-content-start">
                         <label for="message"></label>
                         <textarea name="message" cols="50" rows="1" required placeholder="votre message..."></textarea>
+                        <button class="btnViolet">Envoyer</button>
                     </div>
                     <div>{{--récup le numéro de la session--}}
                         <label for="session"></label>
                         <input type="hidden" name="session" id="session" value="{{$session->id}}"/>
                     </div>
-                    <div class="col-md-4">
-                        <button>Envoyer</button>
-                    </div>
+
                 </form>
 
-
-                <div class="col-md-6" class="box" id="here">
-
+                <div class="col-md-6 mt-2" id="messages">
                     @foreach($session->messages as $message)
-                        <p><b>{{ $message->from->firstname }} a écrit :</b><br> {{ $message->message }}</p>
+                        <p><b>{{ $message->from->firstname }} a écrit :</b> {{ $message->message }}</p>
                     @endforeach
 
                 </div>
@@ -64,9 +61,9 @@
 
         {{--INSERER UN BOUTON D'INSCRIPTION--}}
 
-        <form action="{{ route('inscription.create') }}" method="get">
+        <form action="{{ route('inscription-session.create') }}" method="get">
 
-            <button class="btn-info"> inscription</button>
+            <button class="btn-info"> inscription !</button>
             <input type="hidden" name="session_id" value="{{ $session->id }}"/>
 
         </form>
@@ -74,18 +71,48 @@
 
     </div>
 
-
-
+@endsection
+@section('scripts-footer')
     {{--Actualiser la box du tchat--}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        {{--var url = 'tchat/{{$session->id}}'--}}
-        {{--$("#here").load("url #ici");--}}
-        setInterval('load_messages()', 500)
+        (function(){
+           document.addEventListener('DOMContentLoaded', function(e){
+               let sessionId = {{$session->id}};
+               let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-        function load_messages() {
-            $("#here").load(" #here")
-        }
+               let myInit = {
+                method : 'POST',
+                headers : {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json, text-plain, */*",
+                    "X-Requested-With": "XMLHttpRequest",
+                    "X-CSRF-TOKEN": token
+                }
+               };
+
+              setInterval(function(){
+                  fetch('/getMessages/'+sessionId, myInit)
+                      .then(function(response){
+                          if(response.ok){
+                              return response.json();
+                          }else{
+                              console.log('Erreur');
+                          }
+                      })
+                      .then(function(data){
+                          console.log(data);
+                          let messages = document.querySelectorAll('#messages p');
+                          for (let message of messages) {
+                              message.remove();
+                          }
+                          let chat = document.querySelector('#messages');
+                          for (let message of data) {
+                              console.log(message);
+                              chat.insertAdjacentHTML('beforeend',  '<p><b>' + message.from.firstname + ' a écrit : </b>' + message.message + '</p>')
+                          }
+                      });
+              }, 2500);
+           });
+        })()
     </script>
-
 @endsection

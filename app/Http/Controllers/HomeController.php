@@ -26,12 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-            $userId = Auth::user();
+        // PAUL auth::user()->levels->sport(1)->level_id;
+        //$userId = Auth::user();
+       // $users = User::find($userId->id)->levels;
 
-        $users = User::find($userId->id)->levels;
-
-        //auth::user()->levels->sport(1)->level_id;
-
+        // Récupére toutes les sessions avec le nom du sport
         $sessions =  Session::all();
 
         return view('home')->with('sessions', $sessions);
