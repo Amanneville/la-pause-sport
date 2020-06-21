@@ -64,16 +64,37 @@
 
             </div>
         </div>
+        @if(Auth::user()->roles->keyBy('id')->has(3) === true )
 
-        {{--INSERER UN BOUTON D'INSCRIPTION--}}
-        <div class="row mt-3">
-            <div class="col-md-6">
-                <form action="{{ route('inscription-session.create') }}" method="get">
+            @if (Auth::user()->sessions->keyBy('id')->has($sessions->id) === false )
+                <div class="row mt-3">
+                    <div class="col-md-6">
+
+                        <form action="{{ route('inscription-session.create') }}" method="get">
+                  <span>
                     <button class="btnViolet">Inscription !</button>
                     <input type="hidden" name="session_id" value="{{ $sessions->id }}"/>
+                  </span>
+                        </form>
+                    </div>
+                </div>
+            @else
+        {{--INSERER UN BOUTON D'INSCRIPTION--}}
+
+        <div class="row mt-3">
+            <div class="col-md-6">
+
+               {{-- <form action="{{ route('inscription-session.create') }}" method="get">--}}
+                  <span>
+                    <button class="btnViolet">se désinscrire !</button>
+              {{--      <input type="hidden" name="session_id" value="{{ $sessions->id }}"/> --}}
+                  </span>
                 </form>
             </div>
         </div>
+            @endif
+    @endif
+
 
 
 

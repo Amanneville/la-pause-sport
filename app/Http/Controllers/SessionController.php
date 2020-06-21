@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Model\Session;
 use App\Model\SessionUser;
+use App\Model\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -57,7 +58,6 @@ class SessionController extends Controller
         // Je récupère l'id de la session
         $values = $request->all();
 
-
         // J'instancie la classe SessionUser qui servira à créer une nouvelle asssociation (user/session)
         $inscription = new SessionUser();
         $inscription->user_id = $user->id;
@@ -65,6 +65,8 @@ class SessionController extends Controller
 
         // J'enregistre en BDD
         $inscription->save();
+
+        return back()->with('user', $user);
 
     }
 
