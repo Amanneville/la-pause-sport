@@ -1,6 +1,6 @@
-
+{{--La pause sport--}}
+{{-- Gestion avatar profil--}}
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="row">

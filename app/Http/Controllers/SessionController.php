@@ -16,10 +16,7 @@ class SessionController extends Controller
     {
 
         $user = Auth::user();
-
-
-
-        return view('users.sessions.index')->with('user', $user);
+        return view('users.membre.profil.index')->with('user', $user);
 
     }
 

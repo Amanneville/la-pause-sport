@@ -33,23 +33,25 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm ">
+    <nav class="degrad_fond navbar navbar-expand-md navbar-light bg-white shadow-sm ">
         <div class="container-fluid">
-            <img src="/uploads/lps.jpg" style="width:350px; float:left;">
+            <img src="/uploads/lps.jpg" style="width:300px; float:left;">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                 <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto ml-5">
                     <li class="mr-5 ml-5"><b><a class="blacklink" href="{{ url('/home') }}">Accueil</a></b></li>
                     <li class="mr-3 ml-5"><a class="greenlink" href="{{ url('/musculation') }}">Musculation</a></li>
                     <li class="mr-3"><a class="greenlink" href="{{ url('/yoga') }}">Yoga</a></li>
                     <li class="mr-3"><a class="greenlink" href="{{ url('/running') }}">Running</a></li>
                     <li class="mr-3"><a class="greenlink" href="{{ url('/fitness') }}">Fitness</a></li>
-
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -80,6 +82,7 @@
                                     <li><a href="{{ url('/profil-admin') }}"><i class="fa fa-btn fa-user"></i>Profil Admin</a></li>
                                     <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Se déconnecter</a></li>
                                 </ul>
+
 
                         </li>
 
