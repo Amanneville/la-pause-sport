@@ -58,7 +58,7 @@ Route::post('profil', 'UserController@update_avatar');
 //Route::get('/profil', 'SessionController@index')->middleware('auth');
 
 // Infos de la session du user inscrit => view users.session.show
-Route::get('/mes-sessions/{id}', 'SessionController@show')->middleware('auth');
+Route::get('/mes-sessions/{id}', 'SessionsController@show')->middleware('auth');
 
 // Formulaire de modification des infos personnelles membre
 // view A CREER
@@ -122,3 +122,8 @@ Route::post('/mes-sessions/{id}', 'SessionController@store');
 
 //inscription dans une session membre
 //Route::resource('inscription', 'User\SessionController')->middleware('auth');
+
+
+
+
+

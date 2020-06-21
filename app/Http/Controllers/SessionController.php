@@ -2,25 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Model\Message;
 use App\Model\Session;
 use App\Model\SessionUser;
 use App\Model\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class SessionController extends Controller
 {
+
+
     public function index()
     {
+
         $user = Auth::user();
-        $userId = Auth::user();
-        $users = User::find($userId->id)->levels;
 
 
-        return view('users.membre.profil.index')->with('user', $user)->with('users', $users);
+
+        return view('users.sessions.index')->with('user', $user);
+
     }
 
     // Méthode pour afficher une session d'un utilisateur
@@ -31,7 +31,10 @@ class SessionController extends Controller
 
         // Récupère la session
         $session = Session::where('id', $id)->first();
-        return view('users.session.show')->with('session',$session);
+
+        //dd($session->users->count());
+
+        return view('users.sessions.show')->with('session',$session);
     }
 
     public function store(Request $request)
@@ -47,12 +50,8 @@ class SessionController extends Controller
         return back();
     }
 
-    public function chat(Request $request){
-        $messages = Session::find($request->id)->messages()->with('from')->get();
-        return response()->json($messages);
-    }
-
     public function create(Request $request) // inscription dans une session d'un membre
+
     {
         //Je récupère l'id user
         $user = Auth::user();
@@ -67,6 +66,9 @@ class SessionController extends Controller
         // J'enregistre en BDD
         $inscription->save();
 
+        return back()->with('user', $user);
+
     }
+
 
 }

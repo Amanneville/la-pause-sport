@@ -158,7 +158,7 @@ class CreateSessionController extends Controller
     public function destroy($id)
     {
         $user = Auth::user();
-       // dd($user);
+      // dd($user);
         $sessionAuthor = Session::find($id)->auteur_id;
        // dd($sessionAuthor);
         $numeroSession = Session::find($id);
@@ -169,7 +169,7 @@ class CreateSessionController extends Controller
             $sessionToDelete = Session::find($id);
             $sessionToDelete->delete();
         }
-            return view ('users.coach.profil.profileCoach')->with('user', $user)->with('numeroSession', $numeroSession);
+            return view ('users.coach.profil.index')->with('user', $user)->with('numeroSession', $numeroSession);
     }
 
 }

@@ -74,12 +74,12 @@
                                 {{ Auth::user()->lastname }} <span class="caret"></span>
                             </a>
 
-                            <ul class="dropdown-menu">
-                                <li><a href="{{ url('/profil') }}"><i class="fa fa-btn fa-user"></i>Profil</a></li>
-                                <li><a href="{{ url('/profilCoach') }}"><i class="fa fa-btn fa-user"></i>Profil Coach</a></li>
-                                <li><a href="{{ url('/profilAdmin') }}"><i class="fa fa-btn fa-user"></i>Profil Admin</a></li>
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Se déconnecter</a></li>
-                            </ul>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ url('/profil') }}"><i class="fa fa-btn fa-user"></i>Profil</a></li>
+                                    <li><a href="{{ url('/profil-coach') }}"><i class="fa fa-btn fa-user"></i>Profil Coach</a></li>
+                                    <li><a href="{{ url('/profil-admin') }}"><i class="fa fa-btn fa-user"></i>Profil Admin</a></li>
+                                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Se déconnecter</a></li>
+                                </ul>
 
                         </li>
 
