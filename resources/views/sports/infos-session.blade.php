@@ -1,4 +1,4 @@
-{{-- PAGE : mes-sessions{id} --}}
+{-- PAGE : mes-sessions{id} --}}
 {{-- Informations d'une session --}}
 
 @extends('layouts.app')
@@ -94,10 +94,5 @@
         </div>
             @endif
     @endif
-
-
-
-
-
 
 @endsection

@@ -10720,7 +10720,7 @@ button.bg-dark:focus {
 
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #1d68a7 !important;
+  color: black !important;
 }
 
 .text-secondary {
@@ -10747,7 +10747,7 @@ a.text-success:focus {
 
 a.text-info:hover,
 a.text-info:focus {
-  color: #298fe2 !important;
+  color: black !important;
 }
 
 .text-warning {
@@ -10926,5 +10926,120 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+
+
+/* LA PAUSE SPORT*/
+/*
+violet : #9E73A9
+vert : #73A999
+*/
+
+/*Fenêtre du tchat-messages*/
+#messages{
+    text-align:left;
+    padding:10px;
+    background:#fff;
+    height:400px;
+    max-width: 80%;
+    border:1px solid #ACD8F0;
+    overflow:auto;
+}
+.boxWrite{
+    max-width: 100%;
+    padding: 0;
+}
+.title_axe {
+    color: #3B0351;
+    font-weight: bold;
+}
+
+
+/* Bouton VIOLET */
+.btnViolet {
+    display: inline-block;
+    background-color: #9E73A9;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 14px;
+    padding: 5px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+.btnViolet span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.btnViolet span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.btnViolet:hover {
+    background-color: #73A999;
+}
+.btnViolet:hover span {
+    padding-right: 25px;
+}
+.btnViolet:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+
+ /*Bouton VERT*/
+/* Bouton VIOLET */
+.btnVert {
+    display: inline-block;
+    background-color: #73A999;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 14px;
+    padding: 5px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+.btnVert span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.btnVert span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.btnVert:hover {
+    background-color: #9E73A9;
+}
+.btnVert:hover span {
+    padding-right: 25px;
+}
+.btnVert:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.nbInfo{
+    font-style: italic;
+    font-weight: bold;
+    color: #3B0351;
 }
 

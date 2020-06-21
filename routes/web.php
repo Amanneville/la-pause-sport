@@ -58,7 +58,7 @@ Route::post('profil', 'UserController@update_avatar');
 //Route::get('/profil', 'SessionController@index')->middleware('auth');
 
 // Infos de la session du user inscrit => view users.session.show
-Route::get('/mes-sessions/{id}', 'SessionController@show')->middleware('auth');
+Route::get('/mes-sessions/{id}', 'SessionsController@show')->middleware('auth');
 
 // Formulaire de modification des infos personnelles membre
 // view A CREER
@@ -91,13 +91,13 @@ Route::get('/infos-session/{id}', 'SessionSportController@index')->middleware('a
 
 // MUSCULATION
 // Affiche toutes les sessions du niveau de l'user connecté => sports.musculation.index
-Route::get('/musculation', 'SessionSportController@musculationindex')->middleware('auth');;
+Route::get('/musculation', 'SessionSportController@musculationindex')->middleware('auth');
 // YOGA
-Route::get('/yoga', 'SessionSportController@yogaindex');
+Route::get('/yoga', 'SessionSportController@yogaindex')->middleware('auth');
 // RUNNING
-Route::get('/running', 'SessionSportController@runningindex');
+Route::get('/running', 'SessionSportController@runningindex')->middleware('auth');
 // FITNESS
-Route::get('/fitness', 'SessionSportController@fitnessindex');
+Route::get('/fitness', 'SessionSportController@fitnessindex')->middleware('auth');
 // Ajoute une session
 //Route::post('/musculation', 'SessionListController@index');
 //--------------------------------------------------------------------------

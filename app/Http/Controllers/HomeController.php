@@ -32,7 +32,6 @@ class HomeController extends Controller
 
         // Récupére toutes les sessions avec le nom du sport
         $sessions =  Session::all();
-
         return view('home')->with('sessions', $sessions);
     }
 }
