@@ -40,6 +40,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/users/coach/create-session/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/coach/create-session/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/membre/profil/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/membre/profil/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../projet-laravel/app/Http/Controllers/FormulaireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../projet-laravel/app/Http/Controllers/FormulaireController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../projet-laravel/resources/views/formulaire/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../projet-laravel/resources/views/formulaire/index.blade.php" afterDir="false" />
     </list>
@@ -192,7 +193,7 @@
       <updated>1592469028378</updated>
       <workItem from="1592469079908" duration="15709000" />
       <workItem from="1592494945600" duration="9777000" />
-      <workItem from="1592724329514" duration="15762000" />
+      <workItem from="1592724329514" duration="17197000" />
     </task>
     <servers />
   </component>
@@ -212,10 +213,11 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="447" y="159" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592498967045">
-      <screen x="0" y="0" width="1536" height="778" />
+    <state x="466" y="176" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592753243043">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="447" y="159" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.778/-1920.0.1920.1080@0.0.1536.778" timestamp="1592498967045" />
+    <state x="466" y="176" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.860@0.0.1600.860" timestamp="1592753243043" />
     <state x="527" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1592485816755">
       <screen x="0" y="0" width="1536" height="778" />
     </state>

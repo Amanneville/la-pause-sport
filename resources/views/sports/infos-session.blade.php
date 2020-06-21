@@ -1,8 +1,10 @@
-{-- PAGE : mes-sessions{id} --}}
+{{-- PAGE : mes-sessions{id} --}}
 {{-- Informations d'une session --}}
 
 @extends('layouts.app')
 @section('content')
+
+
 
     <div class="container mt-5">
         <div class="row">
@@ -29,8 +31,8 @@
                 <div class="col-md-6">
                     <ul>
                         <li>N° référence : {{ $sessions->id }}</li>
-                        <li>Heure de début : <b>{{ date('h', strtotime($sessions->heure_debut)) }} h 00</b> soyez à l'heure !</li>
-                        <li>Heure de fin :      {{ date('h', strtotime($sessions->heure_fin)) }} h 00, environ !</li>
+                        <li>Heure de début : <b>{{ date('h', strtotime($sessions->heure_debut)) }} h {{ date('m', strtotime($sessions->heure_debut)) }}</b> soyez à l'heure !</li>
+                        <li>Heure de fin :      {{ date('h', strtotime($sessions->heure_fin)) }} h {{ date('m', strtotime($sessions->heure_fin)) }}, environ !</li>
                         <li>Session : <b>{{ $sessions->titre }}</b></li>
                         <li>Adresse : {{ $sessions->adresse }} à {{ $sessions->ville }} ({{ $sessions->code_postal }})</li>
                         <li>Prix par participants: {{ $sessions->prix }} €</li>

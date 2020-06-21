@@ -1,6 +1,9 @@
-@extends('layouts.app')
+{{--La pause sport--}}
+{{-- PAGE ACCUEIL--}}
 
+@extends('layouts.app')
 @section('content')
+
     <section class=" container-fluid text-center  back1">
         <div class="container-fluid" >
             <div class="row justify-content-center">
@@ -10,13 +13,12 @@
                             <h5>Bonjour et bienvenue sur <b>La pause sport</b> !</h5>
                         </div>
 
-
                         {{-- Si personne non membre affiche --}}
                         @guest
                             <div class="center fadeInUp">
 
                                 <br>
-                                <h6>Consultez nos prochaines sessions et n'hésitez pas à vous inscrire !</h6>br>
+                                <h6>Consultez nos prochaines sessions et n'hésitez pas à vous inscrire !</h6><br>
                                 <p id="zone_meteo" class="mb-5"><em>Connectez-vous pour profiter de toutes les fonctionnalités !</em></p>
 
                                 <div class="container">
@@ -26,7 +28,9 @@
                                         @foreach($sessions ?? '' as $session)
                                             <div class="card col-md-4 mb-2" style="width: 18rem;">
                                                 <div class="center">
-                                                    <img class="card-img-top" src="images/courir.jpg" alt="">
+                                                    <img class="card-img-top"
+                                                         src="/uploads/courir.jpg" style="width: 150px;"
+                                                         alt="">
                                                     <div class="card-body">
                                                         <p class="card-text">Session</p>
                                                         <h3 class="card-text">{{ $session->name }}</h3>
@@ -69,7 +73,9 @@
 
                                             <div class="card col-md-4 mb-2" style="width: 18rem;">
                                                 <div class="center">
-                                                    <img class="card-img-top" src="images/courir.jpg" alt="" style="width: 400px">
+                                                    <img class="card-img-top"
+                                                         src="/uploads/courir.jpg" style="width: 150px;"
+                                                         alt="">
                                                     <div class="card-body">
                                                         <p class="card-text">Session</p>
                                                         <h3 class="card-text">{{ $session->sports->name }}</h3>

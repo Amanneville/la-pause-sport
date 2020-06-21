@@ -29,7 +29,7 @@ class UserController extends Controller
             $user = auth::user();
             $sessions = Session::all()->where('auteur_id', '=', $user->id);
 
-            return view('users.coach.profil.index')->with('sessions', $sessions);
+            return view('users.coach.profil.index')->with('sessions', $sessions)->with('user', $user);
     }
 
     public function profilAdmin()

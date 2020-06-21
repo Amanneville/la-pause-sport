@@ -48,20 +48,19 @@ Route::middleware ('auth', 'verified')->group (function (){
         ]);
 });
 
-
 // users MEMBRE
 
 // Modifier avatar => view users.avatar = incorporée dans view users.membre.profil.index
 Route::post('profil', 'UserController@update_avatar');
 
 // Profil membre => view users.membre.profil.index     VALIDATOR A CREER
-//Route::get('/profil', 'SessionController@index')->middleware('auth');
+Route::get('/profil', 'SessionController@index')->middleware('auth');
 
 // Infos de la session du user inscrit => view users.session.show
 Route::get('/mes-sessions/{id}', 'SessionsController@show')->middleware('auth');
 
 // Formulaire de modification des infos personnelles membre
-// view A CREER
+//Route::post('/modif-profil/{id}')
 
 //inscription dans une session
 Route::resource('inscription-session', 'SessionController')->middleware('auth');
@@ -105,16 +104,12 @@ Route::get('/fitness', 'SessionSportController@fitnessindex')->middleware('auth'
 //Route::post('/musculation', 'SessionListController@index');
 //--------------------------------------------------------------------------
 
-
-
-
 // Création d'une session coach
 Route::get('/session', 'CreateSessionController@index');
 Route::post('/session', 'CreateSessionController@store');
 
 // Supprimer une session coach
 Route::get('destroy-session/{id}', 'CreateSessionController@destroy');
-
 
 // Mes sessions, je n'autorise que les users connectés
 Route::get('/mes-sessions', 'SessionController@index')->middleware('auth');
