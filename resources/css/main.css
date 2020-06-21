@@ -50,4 +50,12 @@
 
     color: black;
 }
+
+.navbar-default{
+    background:transparent;
+    background-image:none;
+    background-color: transparent;
+    border-color:transparent;
+    box-shadow:none;
+}
 /*==

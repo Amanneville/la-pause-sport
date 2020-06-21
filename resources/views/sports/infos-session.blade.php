@@ -9,6 +9,13 @@
     <div class="container mt-5">
         <div class="row">
 
+            <div>
+                <input type="hidden" id="code_postal_user" value="{{ Auth::user()->code_postal }}"/>
+                <input type="button" value="APPEL API METEO" onclick="buttonClickGET()"/>
+                <p>Temperature d'aujourd'hui dans votre ville est de: <span id="zone_meteo" class="mb-5"> </span> </p>
+
+            </div>
+
             <div class="col-md-12">
                 <h4>Informations Session <b>{{ $sessions->sports->name }} !</b></h4><br>
                 {{-- Affiche le sport de la session --}}
@@ -112,3 +119,35 @@
     @endif
 
 @endsection
+
+@section('scripts-footer')
+    <script>
+
+var callBackSucess = function(data) {
+    console.log("donnes api", data)
+
+    var element = document.getElementById("zone_meteo");
+     element.textContent = "";
+     element.insertAdjacentHTML('beforeend', '<b>' + data.main.temp.toFixed(2) + 'C°</b>');
+
+
+}
+
+function buttonClickGET(){
+    var codePostalUser = document.getElementById("code_postal_user").value;
+
+    var url = "https://api.openweathermap.org/data/2.5/weather?zip="+codePostalUser+",fr&appid=f0ee7cd8f45c9cdcafd9dffea5bb05d3&units=metric"
+
+    $.get(url, callBackSucess).done(function() {
+
+        //alert ("second sucess" );
+    })
+        .fail(function() {
+            alert("error");
+        })
+        .always(function(){
+            //alert( "finished" );
+        })
+            }
+            </script>
+    @endsection

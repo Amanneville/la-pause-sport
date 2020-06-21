@@ -12,8 +12,6 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <script src="{{ asset('js/meteo.js') }}" defer></script>
-
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -33,7 +31,7 @@
 </head>
 <body>
 <div id="app">
-    <nav class="degrad_fond navbar navbar-expand-md navbar-light bg-white shadow-sm ">
+    <nav class="degrad_fond navbar navbar-expand-md navbar-default shadow-sm ">
         <div class="container-fluid">
             <img src="/uploads/lps.jpg" style="width:300px; float:left;">
 
