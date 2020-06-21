@@ -31,7 +31,7 @@
 </head>
 <body>
 <div id="app">
-    <nav class="degrad_fond navbar navbar-expand-md navbar-default shadow-sm ">
+    <nav class="navbar navbar-expand-md navbar shadow-sm ">
         <div class="container-fluid">
             <img src="/uploads/lps.jpg" style="width:300px; float:left;">
 
@@ -45,11 +45,11 @@
 
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto ml-5">
-                    <li class="mr-5 ml-5"><b><a class="blacklink" href="{{ url('/home') }}">Accueil</a></b></li>
-                    <li class="mr-3 ml-5"><a class="greenlink" href="{{ url('/musculation') }}">Musculation</a></li>
-                    <li class="mr-3"><a class="greenlink" href="{{ url('/yoga') }}">Yoga</a></li>
-                    <li class="mr-3"><a class="greenlink" href="{{ url('/running') }}">Running</a></li>
-                    <li class="mr-3"><a class="greenlink" href="{{ url('/fitness') }}">Fitness</a></li>
+                    <li class="mr-5 ml-5"><b><a class=" text-decoration-none text-white" href="{{ url('/home') }}">Accueil</a></b></li>
+                    <li class="mr-3 ml-5"><a class=" text-decoration-none text-white" href="{{ url('/musculation') }}">Musculation</a></li>
+                    <li class="mr-3"><a class=" text-decoration-none text-white" href="{{ url('/yoga') }}">Yoga</a></li>
+                    <li class="mr-3"><a class=" text-decoration-none text-white" href="{{ url('/running') }}">Running</a></li>
+                    <li class="mr-3"><a class=" text-decoration-none text-white" href="{{ url('/fitness') }}">Fitness</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

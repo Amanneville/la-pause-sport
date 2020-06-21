@@ -3,7 +3,9 @@
 
 @extends('layouts.app')
 @section('content')
-    <section class="container-fluid text-center  backgroundhomemusculation">
+    <body class="backgroundhomemusculation">
+
+    <section class="container-fluid text-center">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -59,11 +61,11 @@
                                         @endforeach
                                     </div>
                                 </div>
-                            </div>
-                        @endguest
+                            @endguest
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </body>
 @endsection

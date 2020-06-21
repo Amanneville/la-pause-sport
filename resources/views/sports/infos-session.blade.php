@@ -11,7 +11,7 @@
 
             <div>
                 <input type="hidden" id="code_postal_user" value="{{ Auth::user()->code_postal }}"/>
-                <input type="button" value="APPEL API METEO" onclick="buttonClickGET()"/>
+                <input type="button" class="btnVert" value="Météo du jour" onclick="buttonClickGET()"/>
                 <p>Temperature d'aujourd'hui dans votre ville est de: <span id="zone_meteo" class="mb-5"> </span> </p>
 
             </div>
@@ -101,7 +101,7 @@
                     @csrf
                     @method('PUT')
                   <span>
-                      <button class="btn btn-danger" >se désinscrire </button>
+                    <button class="btnViolet">Se désinscrire !</button>
                   </span>
                 </form>
             </div>
@@ -109,7 +109,7 @@
             {{-- BOUTON DU CHAT ACTIF SI INSCRIT--}}
 
             <div class="col-md-6">
-                <a href="/mes-sessions/{{$sessions->id}}" class="btn btn-info"> Accèder au chat</a>
+                <a href="/mes-sessions/{{$sessions->id}}" class="btn btnViolet"> Accèder au chat</a>
             </div>
 
         </div>

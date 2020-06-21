@@ -4,8 +4,8 @@
 @extends('layouts.app')
 @section('content')
 
-    <section class=" container-fluid text-center  back1">
-        <div class="container-fluid" >
+    <section class=" container-fluid text-center back1">
+        <div class="container" >
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card animate__animated animate__backInDown" style="width:100%px;">
@@ -33,7 +33,7 @@
                                                          alt="">
                                                     <div class="card-body">
                                                         <p class="card-text">Session</p>
-                                                        <h3 class="card-text">{{ $session->name }}</h3>
+                                                        <h3 class="card-text">{{ $session->sports->name }}</h3>
                                                         <h5 class="card-text">{{ $session->titre }}</h5>
                                                         <h5 class="card-text">à <b>{{ $session->ville }}</b></h5>
 
@@ -104,4 +104,5 @@
                 </div>
             </div>
     </section>
+
 @endsection

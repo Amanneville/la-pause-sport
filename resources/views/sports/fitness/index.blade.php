@@ -3,19 +3,17 @@
 
 @extends('layouts.app')
 @section('content')
-    <section class="container-fluid text-center  backgroundhomemusculation">
+    <body class="backgroundhomefitness">
+    <section class="container-fluid text-center">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card animate__animated animate__backInDown" style="width:850px;">
                         <div class="card-header">
                             <h5>Ici, pour vous, les sessions fitness de votre niveau !</h5></div>
-
-
                         @guest
                             {{-- page accéssible uniquement par les membres connectés --}}
                         @else
-
                                 {{-- CARD AJOUT NOUVELLE SESSION --}}
                                 <div class="container">
                                     <div class="row">
@@ -59,11 +57,11 @@
                                         @endforeach
                                     </div>
                                 </div>
-                            </div>
                         @endguest
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </body>
 @endsection

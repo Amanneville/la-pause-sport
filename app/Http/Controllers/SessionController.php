@@ -15,7 +15,6 @@ class SessionController extends Controller
 
     public function index()
     {
-
         $user = Auth::user();
         return view('users.membre.profil.index')->with('user', $user);
 
@@ -24,20 +23,14 @@ class SessionController extends Controller
     // Méthode pour afficher une session d'un utilisateur
     public function show($id)
     {
-        // Mécanique avec validateur
-
-
         // Récupère la session
         $session = Session::where('id', $id)->first();
-
-        //dd($session->users->count());
 
         return view('users.session.show')->with('session',$session);
     }
 
     public function store(Request $request)
     {
-
         $values = $request->all();
         $message = new Message();
         $message->from_id = Auth::id();
@@ -49,10 +42,13 @@ class SessionController extends Controller
         return back();
     }
 
+
     public function chat(Request $request){
         $messages = Session::find($request->id)->messages()->with('from')->get();
         return response()->json($messages);
     }
+
+
 
     public function create(Request $request) // inscription dans une session d'un membre
 
