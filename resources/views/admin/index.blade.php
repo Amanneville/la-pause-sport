@@ -3,11 +3,13 @@
 @section('content')
 
     <div class="container animate__animated animate__fadeInDown back2">
+
         <div class="row">
             <div class="col-md-12">
-                <h3>Bienvenue sur votre espace personnel Admin</h3>
+                <h3>Dashboard</h3>
             </div>
         </div><br>
+
         <div class="row">
             <div class="col-md-10 col-md-offset-1 ">
 
@@ -25,35 +27,94 @@
         <br>
         <br>
 
+        <div class="row">
+            <table>
+                <thead>
+                <tr class="table table-dark">
+                    <td>N° Session</td>
+                    <td>Coach</td>
+                    <td>Sport</td>
+                    <td>Heure début</td>
+                    <td>Heure fin</td>
+                    <td>Date</td>
+                    <td>Adresse</td>
+                    <td>Code postal</td>
+                    <td>Ville</td>
+                    <td>Niveau requis</td>
+                    <td>Nombre de participants</td>
+                    <td>Prix de la session</td>
+                    <td>Note attribuée</td>
+                    <td>Réf. Tchat</td>
+                    <td>consulter</td>
+                    <td>Modifier</td>
+                    <td>Supprimer</td>
+
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($sessions as $session)
+                    <tr>
+                        <td>{{ $session->id }}</td>
+                        <td>{{ $session->auteur_id }}</td>
+                        <td>{{ $session->name }}</td>
+                        <td>{{ $session->heure_debut }}</td>
+                        <td>{{ $session->heure_fin }}</td>
+                        <td>{{ $session->date }}</td>
+                        <td>{{ $session->adresse }}</td>
+                        <td>{{ $session->code_postal }}</td>
+                        <td>{{ $session->ville }}</td>
+                        <td>{{ $session->niveau }}</td>
+                        <td>{{ $session->nb_max_participants }}</td>
+                        <td>{{ $session->prix }}  €</td>
+                        <td>{{ $session->note }}</td>
+                        <td>{{ $session->chat_id }}</td>
+                        <td><a href="{{$session->id}}" class="btn btn-info">voir</a></td>
+                        <td><a href="{{url ('')}}/{{$session->id}}"  class="btn btn-warning">modifier</a></td>
+                        <td><a href="{{url ('')}}/{{$session->id}}"  class="btn btn-danger">supprimer</a></td>
+                    </tr>
+                @endforeach
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row">
+            <table>
+                <thead>
+                <tr class="table table-dark">
+                    <td>#</td>
+                    <td>Nom</td>
+                    <td>Prénom</td>
+                    <td>Role</td>
+                    <td>consulter</td>
+                    <td>Modifier</td>
+                    <td>Supprimer</td>
+
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($users as $user)
+                    <tr>
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->firstname }}</td>
+                        <td>{{ $user->lastname }}</td>
+                        <td>{{ $user }}</td>
+                        <td><a href="{{$user->id}}" class="btn btn-info">voir</a></td>
+                        <td><a href="{{url ('')}}/{{$user->id}}"  class="btn btn-warning">modifier</a></td>
+                        <td><a href="{{url ('')}}/{{$user->id}}"  class="btn btn-danger">supprimer</a></td>
+                    </tr>
+                @endforeach
+
+                </tbody>
+            </table>
+        </div>
+
 
 
 
         <div class="container">
             <div class="row ">
 
-                <div class="col-md-6"> {{--informations personnelles user--}}
-                    <h1>Vos informations :</h1><br>
-                    <ul>
-                        <li><h2>Prénom : </h2>{{ $user->firstname }}</li>
-                        <li><h2>Nom : </h2> {{ $user->lastname }}</li>
-                        <li><h2>Adresse : </h2>{{ $user->adresse }} ({{ $user->code_postal }})</li><br>
-                        <li><h2>Votre adresse mail :</h2>{{ $user->email }}</li><br>
-                        <li><h2>Âge : </h2>{{ $user->age }} ans.</li>
-                    </ul>
-
-                    <div class="text-center"><img src="{{ $user->avatar }}" alt="" height="100px"></div><br>
-                    <div class="text-center"><button>Modifier vos informations</button></div>
-                </div>
-
-                <div class="col-md-6"> {{--liste et liens des sessions--}}
-                    <h1>Vous êtes inscrit aux sessions suivantes :</h1>
-                    <p><em>cliquez sur la date pour consulter les informations de la session et accéder au tchat !</em></p><br>
-                    @foreach($user->sessions as $session)
-                        <ul>
-                            <li><a href="/mes-sessions/{{$session->id}}">{{ $session->date }}</a></li>
-                        </ul>
-                    @endforeach
-                </div>
 
             </div>
         </div>

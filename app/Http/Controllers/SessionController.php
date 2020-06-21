@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Message;
 use App\Model\Session;
 use App\Model\SessionUser;
 use App\Model\User;
@@ -31,11 +32,12 @@ class SessionController extends Controller
 
         //dd($session->users->count());
 
-        return view('users.sessions.show')->with('session',$session);
+        return view('users.session.show')->with('session',$session);
     }
 
     public function store(Request $request)
     {
+
         $values = $request->all();
         $message = new Message();
         $message->from_id = Auth::id();
@@ -45,6 +47,11 @@ class SessionController extends Controller
 
         //dd($values);
         return back();
+    }
+
+    public function chat(Request $request){
+        $messages = Session::find($request->id)->messages()->with('from')->get();
+        return response()->json($messages);
     }
 
     public function create(Request $request) // inscription dans une session d'un membre
@@ -69,18 +76,7 @@ class SessionController extends Controller
 
     public function destroy($id)
     {
-        $user = auth::user();
-        $idToDelete = SessionUser::all()
-                         ->where('user_id', '=', $user->id)
-                       ->where('session_id','=', $id)
-                    ->keyBy('id');
 
-        $sessionToDelete = SessionUser::all()
-            ->where('user_id', '=', $user->id)
-            ->where('session_id','=', $id);
-
-
-        return back()->with($id);
     }
 
     public function update(Request $request, $id)

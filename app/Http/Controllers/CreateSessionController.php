@@ -39,11 +39,11 @@ class CreateSessionController extends Controller
      */
     public function store(Request $request)
     {
-        //dd('toto');
+
         $values = $request->all();
         $author = Auth::user();
 
-        $rules = [
+        $rules = [// règles pour valider la session du coach
             'sport_id'              => 'required|numeric',
             'date'                  => 'required|date|date_format:Y-m-d|after_or_equal:today',
             'titre'                 => 'required',
@@ -59,7 +59,7 @@ class CreateSessionController extends Controller
 
         ];
 
-        $validator = Validator::make($values, $rules, [
+        $validator = Validator::make($values, $rules, [// messages renvoyés à l'utilisateur en cas d'erreur
             'sport_id.required'             => 'un sport doit être choisi',
             'date.required'                 => 'une date doit doit être renseignée',
             'date.after_or_equal:today'     => 'une date égale ou supérieure doit doit être renseignée',
@@ -82,18 +82,17 @@ class CreateSessionController extends Controller
             'prix.min'                      => 'indiquez prix égal ou supérieur à 1',
         ]);
 
-        //dd($validator);
 
         if($validator->fails()){
 
 
 
-            return back()
+                return back()
                 ->withErrors($validator)
                 ->withInput();
         }
 
-        $session = Session::create([
+        $session = Session::create([// creation en base de données de la session créée par les utilisateurs coach
 
             'auteur_id'             => $author->id,
             'sport_id'              => $values['sport_id'],
@@ -111,7 +110,7 @@ class CreateSessionController extends Controller
 
         ]);
 
-        return $session;
+        return view ('users.coach.profil.index');
 
     }
 
@@ -154,15 +153,17 @@ class CreateSessionController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     *
+     * Suppression d'une session par le coach uniquement s'il en est l'auteur (user_id === auteur_id)
      */
     public function destroy($id)
     {
         $user = Auth::user();
-      // dd($user);
+
         $sessionAuthor = Session::find($id)->auteur_id;
-       // dd($sessionAuthor);
+
         $numeroSession = Session::find($id);
-        // dd($sessionAuthor);
+
         if ($user->id === $sessionAuthor)
 
         {

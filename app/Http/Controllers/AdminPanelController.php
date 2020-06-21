@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class AdminPanelController extends Controller
@@ -14,14 +16,17 @@ class AdminPanelController extends Controller
      */
     public function index()
     {
+        //
+        $user = auth::user();
 
       // Récupération des données de la table session
         $sessions = DB::table('sessions')->leftJoin('sports', 'sessions.sport_id', '=', 'sports.id')->get();
-        //dd($sessions);
+
+        //Retourne tous les utilisateurs
+        $users = User::all();
 
         // Retourne la liste des sessions existantes
-        return view('admin.sessions-list')
-            ->with('sessions', $sessions);
+        return view('admin.index')->with('sessions', $sessions)->with('users', $users)->with('user', $user);
 
     }
 

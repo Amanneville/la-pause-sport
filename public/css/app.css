@@ -10720,7 +10720,7 @@ button.bg-dark:focus {
 
 a.text-primary:hover,
 a.text-primary:focus {
-  color: black !important;
+  color: #1d68a7 !important;
 }
 
 .text-secondary {
@@ -10747,7 +10747,7 @@ a.text-success:focus {
 
 a.text-info:hover,
 a.text-info:focus {
-  color: black !important;
+  color: #298fe2 !important;
 }
 
 .text-warning {
@@ -10928,135 +10928,3 @@ a.text-dark:focus {
   }
 }
 
-
-/* LA PAUSE SPORT*/
-/*
-violet : #9E73A9
-vert : #73A999
-*/
-
-/*Fenêtre du tchat-messages*/
-#messages{
-    text-align:left;
-    padding:10px;
-    background:#fff;
-    height:400px;
-    max-width: 80%;
-    border:1px solid #ACD8F0;
-    overflow:auto;
-}
-.boxWrite{
-    max-width: 100%;
-    padding: 0;
-}
-.title_axe {
-    color: #3B0351;
-    font-weight: bold;
-}
-
-
-/* Bouton VIOLET */
-.btnViolet {
-    display: inline-block;
-    background-color: #9E73A9;
-    border-radius: 10px;
-    border: 4px double #cccccc;
-    color: black;
-    text-align: center;
-    font-size: 14px;
-    padding: 5px;
-    width: 150px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-}
-.btnViolet span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-.btnViolet span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}
-.btnViolet:hover {
-    background-color: #73A999;
-}
-.btnViolet:hover span {
-    padding-right: 25px;
-}
-.btnViolet:hover span:after {
-    opacity: 1;
-    right: 0;
-}
-
-
- /*Bouton VERT*/
-/* Bouton VIOLET */
-.btnVert {
-    display: inline-block;
-    background-color: #73A999;
-    border-radius: 10px;
-    border: 4px double #cccccc;
-    color: black;
-    text-align: center;
-    font-size: 14px;
-    padding: 5px;
-    width: 150px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-}
-.btnVert span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-.btnVert span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}
-.btnVert:hover {
-    background-color: #9E73A9;
-}
-.btnVert:hover span {
-    padding-right: 25px;
-}
-.btnVert:hover span:after {
-    opacity: 1;
-    right: 0;
-}
-
-.nbInfo{
-    font-style: italic;
-    font-weight: bold;
-    color: #3B0351;
-}
-
-.degrad_fond{
-    background-image: linear-gradient(to left bottom, #86e7b0, #9debbe, #b2efcb, #c7f3d9, #dbf7e6, #d5f3e8, #d0efea, #ceeaea, #b3dbea, #a5c9eb, #acb4e4, #bf9acf);
-}
-
-.btnVoir{
-    background: #73A999;
-}
-.btnSuprr{
-    background: #73A999;
-}
-.btnModif{
-    background: #9E73A9;
-}
-
-.fondpro{
-    background-image: url("../assets/images/fondVV.jpg");
-}

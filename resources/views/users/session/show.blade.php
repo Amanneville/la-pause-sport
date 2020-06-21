@@ -72,14 +72,14 @@
     </div>
 
 @endsection
+
 @section('scripts-footer')
-    {{--Actualiser la box du tchat--}}
+
     <script>
         (function(){
            document.addEventListener('DOMContentLoaded', function(e){
                let sessionId = {{$session->id}};
                let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
                let myInit = {
                 method : 'POST',
                 headers : {
@@ -89,7 +89,6 @@
                     "X-CSRF-TOKEN": token
                 }
                };
-
               setInterval(function(){
                   fetch('/getMessages/'+sessionId, myInit)
                       .then(function(response){

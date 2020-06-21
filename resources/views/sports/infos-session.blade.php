@@ -66,11 +66,14 @@
 
             </div>
         </div>
-        @if(Auth::user()->roles->keyBy('id')->has(3) === true )
+
+        {{-- BOUTON D'INSCRIPTION ACTIF SI NON INSCRIT--}}
+
+    @if(Auth::user()->roles->keyBy('id')->has(3) === true )
 
             @if (Auth::user()->sessions->keyBy('id')->has($sessions->id) === false )
                 <div class="row mt-3">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
 
                         <form action="{{ route('inscription-session.create') }}" method="get">
                             @csrf
@@ -82,7 +85,8 @@
                     </div>
                 </div>
             @else
-        {{--INSERER UN BOUTON D'INSCRIPTION--}}
+
+        {{-- BOUTON DE DESINSCRIPTION ACTIF SI INSCRIT--}}
 
         <div class="row mt-3">
             <div class="col-md-6">
@@ -94,7 +98,16 @@
                   </span>
                 </form>
             </div>
+
+            {{-- BOUTON DU CHAT ACTIF SI INSCRIT--}}
+
+            <div class="col-md-6">
+                <a href="/mes-sessions/{{$sessions->id}}" class="btn btn-info"> Accèder au chat</a>
+            </div>
+
         </div>
+
+
             @endif
     @endif
 

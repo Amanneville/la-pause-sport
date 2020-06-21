@@ -99,7 +99,7 @@
                             </div>
 
                         @endguest
-
+                         </div>
                     </div>
                 </div>
             </div>

@@ -32,7 +32,7 @@
                               class="d-none">
                             @csrf
                             {{--PRENOM--}}
-                            <div>
+
                                 <div class="form-group row">
                                     <label for="firstname"
                                            class="col-md-4 col-form-label text-md-right">{{ __('Prénom') }}</label>
@@ -310,11 +310,13 @@
                                         </button>
                                     </div>
                                 </div>
+
                         </form>
+
                     </div>
                 </div>
             </div>
-        </div>
+
         </div>
     </section>
 

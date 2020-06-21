@@ -32,7 +32,7 @@ class SessionSportController extends Controller
 
     public function index($id)
     {
-        // Récupére infos de LA session avec le nom du sport
+        // Récupère infos de la session avec le nom du sport
         $sessions = Session::where('id', $id)->first();
         return view('sports.infos-session')->with('sessions', $sessions);
     }

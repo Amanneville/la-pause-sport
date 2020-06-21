@@ -33,7 +33,7 @@ Route::get('logout', 'Auth\LoginController@logout', function () {
 // ADMIN
 
 // Liste & gestion toutes les sessions existantes => view admin.sessions-list
-Route::get('/admin-sessions', 'AdminPanelController@index');
+Route::get('/admin', 'AdminPanelController@index');
 // controller à créer
 // Liste & gestion de tous les users  Route::get('/index'), A CREER
 
