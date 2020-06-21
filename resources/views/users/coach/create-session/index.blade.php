@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
     <div class="container pt-5">
-        <form action="" method="post">
+
+              <form action="" method="post">
             @csrf
 
             <label for="sport" class="col-md-5">{{ __('sport') }}</label>
@@ -152,3 +153,6 @@
         </form>
     </div>
 @endsection
+
+@section('script-footer')
+    @endsection

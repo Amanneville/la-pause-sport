@@ -52,6 +52,7 @@
                             <div class="center fadeInUp">
 
                                 <div class="container">
+
                                     <div class="row">
                                         <div class="card col-md-4 mb-2" style="width: 18rem;">
                                             <div class="center">
