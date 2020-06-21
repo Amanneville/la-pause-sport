@@ -26,7 +26,7 @@
                                         @foreach($sessions ?? '' as $session)
                                             <div class="card col-md-4 mb-2" style="width: 18rem;">
                                                 <div class="center">
-                                                    <img class="card-img-top" src="images/courir.jpg" alt="">
+                                                    <img class="card-img-top" src="" alt="">
                                                     <div class="card-body">
                                                         <p class="card-text">Session</p>
                                                         <h3 class="card-text">{{ $session->name }}</h3>

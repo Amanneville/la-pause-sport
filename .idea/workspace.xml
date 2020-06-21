@@ -38,27 +38,9 @@
       <change afterPath="$PROJECT_DIR$/../tp-crm/.idea/crm.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../tp-crm/.idea/tp-crm.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CreateSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CreateSessionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SessionsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SessionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/basquettes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/femmesport.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/hommesport.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/session-list.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/loginCoach.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/courir.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sports/fitness/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sports/fitness/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sports/infos-session.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sports/infos-session.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sports/musculation/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sports/musculation/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sports/running/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sports/running/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sports/yoga/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sports/yoga/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/coach/create-session/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/coach/create-session/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../projet-laravel/app/Http/Controllers/FormulaireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../projet-laravel/app/Http/Controllers/FormulaireController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../projet-laravel/resources/views/formulaire/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../projet-laravel/resources/views/formulaire/index.blade.php" afterDir="false" />
     </list>
@@ -204,7 +186,7 @@
       <updated>1592469028378</updated>
       <workItem from="1592469079908" duration="15709000" />
       <workItem from="1592494945600" duration="9777000" />
-      <workItem from="1592724329514" duration="15762000" />
+      <workItem from="1592724329514" duration="17197000" />
     </task>
     <servers />
   </component>
