@@ -10814,7 +10814,7 @@ button.bg-dark:focus {
 
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #1d68a7 !important;
+  color: black !important;
 }
 
 .text-secondary {
@@ -10841,7 +10841,7 @@ a.text-success:focus {
 
 a.text-info:hover,
 a.text-info:focus {
-  color: #298fe2 !important;
+  color: black !important;
 }
 
 .text-warning {
@@ -11136,5 +11136,4 @@ vert : #73A999
     font-weight: bold;
     color: #3B0351;
 }
-
 

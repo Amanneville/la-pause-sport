@@ -26,14 +26,14 @@ class UserController extends Controller
     public function profilCoach()
     {
             $user = auth::user();
-            return view('users.coach.profil.profileCoach')->with('user', $user);
+            return view('users.coach.profil.index')->with('user', $user);
     }
 
     public function profilAdmin()
     {
             $user = Auth::user();
             $UserSessions = User::find($user->id);
-            return view('profileAdmin')->with('user', $user)->with('UserSessions', $UserSessions);
+            return view('admin.index')->with('user', $user)->with('UserSessions', $UserSessions);
     }
 
     public function update_avatar(Request $request){

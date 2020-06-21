@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class SessionsController extends Controller
+class SessionController extends Controller
 {
     public function index()
     {

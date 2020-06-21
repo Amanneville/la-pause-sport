@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 @section('content')
     <div class="container pt-5">
         <form action="" method="post">
@@ -73,6 +73,17 @@
             <div class="form-row">
 
                 <div class="form-group col-md-6">
+                    <label for="titre">Titre de la session</label>
+                    <input type="text" class="form-control" id="titre" name="titre"
+                           class="{{$errors->has('titre') ? 'has-error' : '' }}">
+                    @if($errors->has('titre'))
+                        <span class="help-block">
+                            <strong>{{$errors->first('titre')}}</strong>
+                        </span>
+                    @endif
+                </div>
+
+                <div class="form-group col-md-6">
                     <label for="ville">Entrez la ville de la séance</label>
                     <input type="text" class="form-control" id="ville" name="ville"
                            class="{{$errors->has('ville') ? 'has-error' : '' }}">
@@ -122,6 +133,18 @@
                     @endif
                 </div>
             </div>
+
+            <div class="form-group col-md-6">
+                <label for="infos">Description</label>
+                <input type="text" class="form-control" id="infos" name="infos"
+                       class="{{$errors->has('infos') ? 'has-error' : '' }}">
+                @if($errors->has('infos'))
+                    <span class="help-block">
+                            <strong>{{$errors->first('infos')}}</strong>
+                        </span>
+                @endif
+            </div>
+
 
             <div>
                 <button type="submit" class="btn btn-primary">Valider la séance</button>

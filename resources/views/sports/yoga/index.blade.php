@@ -28,12 +28,9 @@
                                     <div class="row">
                                         <div class="card col-md-4 mb-2" style="width: 18rem;">
                                             <div class="center">
-                                                <img class="card-img-top"
-                                                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/OOjs_UI_icon_add.svg/1200px-OOjs_UI_icon_add.svg.png"
-                                                     alt="Card image cap">
+
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Créer une nouvelle session.</h5>
-                                                    <p class="card-text">+</p>
+                                                    <p class="card-title">Créer une nouvelle session.</p>
                                                     <a href="{{ url('/session') }}" class="btnViolet">Ajouter</a>
                                                 </div>
                                             </div>
