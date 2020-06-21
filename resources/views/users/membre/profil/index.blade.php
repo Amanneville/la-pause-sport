@@ -5,7 +5,7 @@
 @section('content')
 
 
-    <section class="container-fluid text-center">
+    <section class="container-fluid text-center fondpro">
         <div class="container">
             <div class="row justify-content-center">
 

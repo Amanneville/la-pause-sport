@@ -1,8 +1,32 @@
+{{--La pause sport--}}
+{{--Page création de session--}}
 @extends('layouts.app')
 @section('content')
-    <div class="container pt-5">
+
+
+    <div class="row mt-5 justify-content-center">
+        <h4>Création d'une session</h4>
+        <p>   Merci de compléter le formulaire ci-dessous afin, de proposer votre évènement aux membres !</p>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+
+
         <form action="" method="post">
             @csrf
+
+
+
+
+
+
+{{--EN COURS AU PUSH --}}
+
+
+
+
 
             <label for="sport" class="col-md-5">{{ __('sport') }}</label>
             <div class="col-md-6"> {{-- ATTENTION C EST UN EXEMPLE LES SPORTS SONT RENSEIGNES ALEATOIREMENT--}}
@@ -150,5 +174,8 @@
                 <button type="submit" class="btn btn-primary">Valider la séance</button>
             </div>
         </form>
+    </div>
+
+
     </div>
 @endsection
