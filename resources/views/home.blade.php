@@ -3,8 +3,8 @@
 
 @extends('layouts.app')
 @section('content')
-
-    <section class=" container-fluid text-center back1">
+<body class="back1">
+    <section class=" container-fluid text-center">
         <div class="container" >
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -104,5 +104,5 @@
                 </div>
             </div>
     </section>
-
+</body>
 @endsection
