@@ -145,7 +145,9 @@ class CreateSessionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        Session::find($id);
+
     }
 
     /**
@@ -157,7 +159,7 @@ class CreateSessionController extends Controller
      * Suppression d'une session par le coach uniquement s'il en est l'auteur (user_id === auteur_id)
      */
     public function destroy($id)
-    { dd('test');
+    {
         $user = Auth::user();
 
         $sessionAuthor = Session::find($id)->auteur_id;

@@ -76,6 +76,7 @@ vert : #73A999
 
 
 /* Bouton VIOLET */
+/**
 .btnViolet {
     display: inline-block;
     background-color: #9E73A9;
@@ -115,9 +116,10 @@ vert : #73A999
     right: 0;
 }
 
-
+**/
 /*Bouton VERT*/
 /* Bouton VIOLET */
+/**
 .btnVert {
     display: inline-block;
     background-color: #73A999;
@@ -180,3 +182,4 @@ vert : #73A999
 .fondpro{
     background-image: url("../assets/images/fondVV.jpg");
 }
+**/

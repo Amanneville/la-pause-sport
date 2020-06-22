@@ -58,15 +58,18 @@
                                         <td>{{ $session->nb_max_participants }}</td>
                                         <td>{{ $session->niveau }}</td>
                                         <td>
-                                            <button><a href="/infos-session/{{$session->id}}" class="btnVoir"></a>
-                                            </button>
+                                           <a href="/infos-session/{{$session->id}}" class="btn btn-info"></a>
+
                                         </td>
                                         <td>
-                                            <button><a href="{{url ('modification.update')}}/{{$session->id}}" class="btnModil"></a>
-                                            </button>
+                                            <form action= "{{ route('modification.update', $session->id) }}" method="post"><button class="btn btn-warning"></button>
+                                            @csrf
+                                                @method('PUT')
+                                            </form>
+
                                         </td>
                                         <td>
-                                            <button><a href="{{url ('destroy-session')}}/{{$session->id}}" class="btnSuppr"></a></button>
+                                            <a href="{{url ('destroy-session')}}/{{$session->id}}" class="btn btn-danger"></a>
                                         </td>
                                     </tr>
                                 @endforeach
