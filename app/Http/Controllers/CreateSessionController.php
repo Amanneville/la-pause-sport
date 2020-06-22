@@ -87,14 +87,12 @@ class CreateSessionController extends Controller
 
         if($validator->fails()){
 
-
-
                 return back()
                 ->withErrors($validator)
                 ->withInput();
         }
 
-        $session = Session::create([// creation en base de données de la session créée par les utilisateurs coach
+        $session = Session::insert([// creation en base de données de la session créée par les utilisateurs coach
 
             'auteur_id'             => $author->id,
             'sport_id'              => $values['sport_id'],
@@ -112,8 +110,8 @@ class CreateSessionController extends Controller
 
         ]);
 
-        return view('home')->with('sessions', $sessions);
 
+        return view('users.coach.create-session.index');
     }
 
     /**
