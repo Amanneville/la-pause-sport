@@ -38,8 +38,10 @@
       <change afterPath="$PROJECT_DIR$/../tp-crm/.idea/crm.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../tp-crm/.idea/tp-crm.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CreateSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CreateSessionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/coach/create-session/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/coach/create-session/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/users/coach/profil/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/coach/profil/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/membre/profil/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/membre/profil/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../projet-laravel/app/Http/Controllers/FormulaireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../projet-laravel/app/Http/Controllers/FormulaireController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../projet-laravel/resources/views/formulaire/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../projet-laravel/resources/views/formulaire/index.blade.php" afterDir="false" />
     </list>

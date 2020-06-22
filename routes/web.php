@@ -79,6 +79,10 @@ Route::post('/getMessages/{id}', 'SessionController@chat');
 // users COACH
 // Profil coach => view users.membre.coach.index     CONTROLLER
 Route::get('profil-coach', 'UserController@profilCoach');
+//modification d'une séance par le coach
+Route::put('modification/{id}', 'CreateSessionController@update')->name('modification.update')->middleware('auth');
+
+
 // Modifier avatar => view users.avatar = incorporée dans view users.coach.profil.index
 // Création d'une sessions sport => users.coach.create-session.index
 Route::get('/session', 'SessionController@index')->name('creationSession');

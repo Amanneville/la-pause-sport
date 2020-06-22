@@ -50,7 +50,7 @@
 
                                 @foreach($sessions as $session)
                                     <tr>
-                                        <td>{{$session->id}}</td>
+                                        <td> {{ $session->id }} </td>
                                         <td>{{ date('d-m-Y', strtotime($session->date)) }}</td>
                                         <td>{{ $session->sports->name }}</td>
                                         <td>{{  date('h:m', strtotime($session->heure_debut)) }}</td>
@@ -62,12 +62,11 @@
                                             </button>
                                         </td>
                                         <td>
-                                            <button><a href="{{url ('')}}/{{$session->id}}" class="btnModil"></a>
+                                            <button><a href="{{url ('modification.update')}}/{{$session->id}}" class="btnModil"></a>
                                             </button>
                                         </td>
                                         <td>
-                                            <button><a href="{{url ('destroy-session')}}/{{$session->id}}"
-                                                       class="btnSuppr"></a></button>
+                                            <button><a href="{{url ('destroy-session')}}/{{$session->id}}" class="btnSuppr"></a></button>
                                         </td>
                                     </tr>
                                 @endforeach

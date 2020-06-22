@@ -39,7 +39,8 @@ class CreateSessionController extends Controller
      */
     public function store(Request $request)
     {
-
+        $sessions = Session::all();
+        $user = Auth::user();
         $values = $request->all();
         $author = Auth::user();
 
@@ -80,6 +81,7 @@ class CreateSessionController extends Controller
             'prix.numeric'                  => 'indiquez une valeur numérique',
             'prix.integer'                  => 'indiquez un entier (prix rond)',
             'prix.min'                      => 'indiquez prix égal ou supérieur à 1',
+
         ]);
 
 
@@ -103,14 +105,14 @@ class CreateSessionController extends Controller
             'adresse'               => $values['adresse'],
             'ville'                 => $values['ville'],
             'code_postal'           => $values['code_postal'],
-            'infos'                 =>$values['infos'],
+            'infos'                 => $values['infos'],
             'niveau'                => $values['niveau'],
             'nb_max_participants'   => $values['nb_max_participants'],
             'prix'                  => $values['prix'],
 
         ]);
 
-        return view ('users.coach.profil.index');
+        return view('home')->with('sessions', $sessions);
 
     }
 
@@ -157,7 +159,7 @@ class CreateSessionController extends Controller
      * Suppression d'une session par le coach uniquement s'il en est l'auteur (user_id === auteur_id)
      */
     public function destroy($id)
-    {
+    { dd('test');
         $user = Auth::user();
 
         $sessionAuthor = Session::find($id)->auteur_id;
