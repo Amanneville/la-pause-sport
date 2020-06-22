@@ -4,8 +4,8 @@
 @extends('layouts.app')
 @section('content')
 
-
-    <section class="container-fluid text-center fondpro">
+<body class="back2">
+    <section class="container-fluid text-center">
         <div class="container">
             <div class="row justify-content-center">
 
@@ -88,4 +88,5 @@
             </div>
         </div>
     </section>
+</body>
 @endsection

@@ -2,8 +2,8 @@
 {{--Page PROFIL COACH url=/profil-coach--}}
 @extends('layouts.app')
 @section('content')
-
-    <section class="container-fluid text-center fondpro">
+    <body class="back2">
+    <section class="container-fluid text-center">
         <div class="container">
             <div class="row justify-content-center">
 
@@ -24,7 +24,8 @@
                         <div class="row justify-content-center mt">
                             <div>
                                 <h5>vous êtes ici, dans votre espace coach</h5>
-                                <p> et vous êtes parmis nous depuis le {{ date('d-m-Y', strtotime($user->created_at)) }} !</p>
+                                <p> et vous êtes parmis nous depuis le {{ date('d-m-Y', strtotime($user->created_at)) }}
+                                    !</p>
                             </div>
                         </div>
                         <hr>
@@ -33,7 +34,7 @@
                         </div>
 
                         <div class="row ml-2 mr-2"> {{--liste et liens des sessions--}}
-                            <table class="table-striped" style="width: 100%" >
+                            <table class="table-striped" style="width: 100%">
                                 <tr>
                                     <th>#</th>
                                     <th>Date</th>
@@ -56,20 +57,32 @@
                                         <td>{{  date('h:m', strtotime($session->heure_fin)) }}</td>
                                         <td>{{ $session->nb_max_participants }}</td>
                                         <td>{{ $session->niveau }}</td>
-                                        <td><button><a href="/infos-session/{{$session->id}}"  class="btnVoir"></a></button></td>
-                                        <td><button><a href="{{url ('')}}/{{$session->id}}"  class="btnModil"></a></button></td>
-                                        <td><button><a href="{{url ('destroy-session')}}/{{$session->id}}"  class="btnSuppr"></a></button></td>
+                                        <td>
+                                            <button><a href="/infos-session/{{$session->id}}" class="btnVoir"></a>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button><a href="{{url ('')}}/{{$session->id}}" class="btnModil"></a>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button><a href="{{url ('destroy-session')}}/{{$session->id}}"
+                                                       class="btnSuppr"></a></button>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </table>
                         </div>
-                        <hr><br>
+                        <hr>
+                        <br>
 
                         <div class="row text-left ml-5">
                             <div class="col-md-12"><p><b>Rappel des catégories de niveaux :</b></p></div>
                             <ol>
                                 <li> comme débutant. Le membre débute dans la pratique de ce sport.</li>
-                                <li> comme intermédiaire. Le membre a une certainer aisance dans la pratique de ce sport.</li>
+                                <li> comme intermédiaire. Le membre a une certainer aisance dans la pratique de ce
+                                    sport.
+                                </li>
                                 <li> comme avancé. Le membre maitrise la pratique de ce sport.</li>
                             </ol>
                         </div>
@@ -104,14 +117,15 @@
                             </div>
                         </div>
 
-    <div class="container-fluid text-white">
-        <div class="row bg-dark align-content-center">
-            <div class="col-md-8 ml-5 mr-2  mb-5 text-center">
-                <br>
-                <h1>Calendrier</h1>
-                <div id='calendar'></div>
-            </div>
+                        <div class="container-fluid text-white">
+                            <div class="row bg-dark align-content-center">
+                                <div class="col-md-8 ml-5 mr-2  mb-5 text-center">
+                                    <br>
+                                    <h1>Calendrier</h1>
+                                    <div id='calendar'></div>
+                                </div>
+                            </div>
+                        </div>
 
-        </div>
-    </div>
+    </body>
 @endsection
