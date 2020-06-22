@@ -37,7 +37,6 @@
       <change afterPath="$PROJECT_DIR$/../projet-laravel/.idea/projet-laravel.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../tp-crm/.idea/crm.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../tp-crm/.idea/tp-crm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../projet-laravel/app/Http/Controllers/FormulaireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../projet-laravel/app/Http/Controllers/FormulaireController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../projet-laravel/resources/views/formulaire/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../projet-laravel/resources/views/formulaire/index.blade.php" afterDir="false" />
     </list>

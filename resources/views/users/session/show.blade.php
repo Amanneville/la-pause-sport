@@ -3,7 +3,8 @@
 
 @extends('layouts.app')
 @section('content')
-    <section class="container-fluid text-center fondpro">
+    <body class="back1">
+    <section class="container-fluid">
         <div class="container">
             <div class="row justify-content-center">
 
@@ -55,6 +56,7 @@
         </div>
     </section>
 
+
 @endsection
 
 @section('scripts-footer')
@@ -99,3 +101,4 @@
         })()
     </script>
 @endsection
+    </body>
